@@ -24,7 +24,7 @@ const routes=[
 
 function App(){
     return (
-        <HashRouter>
+        <HashRouter >
             <div>
                 <Routes>
                     {routes.map(({path,element})=>(

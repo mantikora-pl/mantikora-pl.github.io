@@ -1,6 +1,7 @@
 import React from "react"
 import './style.css'
 import {defaultLang,getTranslation} from "../../helper/translation"
+import {Link} from "react-router-dom";
 
 function Navbar(){
     const lang=defaultLang
@@ -27,7 +28,8 @@ function Navbar(){
             <header className={"navbar"}>
                 {elements.map((item,id)=>(
                     <div className={"navbarItem"} key={id}>
-                        <a href={item.href}>{item.name}</a>
+                        <Link to={item.href} className={"a"}>{item.name}</Link>
+
                     </div>
                 ))}
             </header>
@@ -37,3 +39,5 @@ function Navbar(){
 }
 
 export default Navbar
+
+//<a href={item.href}>{item.name}</a>
