@@ -1,0 +1,47 @@
+.socialsWrapper{
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+
+    width:auto;
+    max-width:14vw;
+    min-width:320px;
+    padding:10px;
+    text-align:center;
+
+    //background-color:dimgrey;
+    border:1px solid black;
+    background-color:inherit;
+    border-radius:8px;
+}
+
+.socialsWrapper > p{
+    font-size:24px;
+    margin:5px;
+    padding:0;
+}
+
+
+.socialsList{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.mainImg{
+    margin:5px;
+    display:block;
+    max-height:80px;
+}
+
+.socialsLink{
+    margin:2px;
+    align-content:center;
+}
+
+.socialsLink > img{
+    max-width:40px;
+    width:auto;
+    height:auto;
+}

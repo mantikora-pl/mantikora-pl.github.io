@@ -1,0 +1,16 @@
+.songLyricsHeader{
+    font-size:28px;
+    margin:5px;
+    color:#a92a2a;
+}
+
+.songLyrics{
+    font-size:18px;
+    width:auto;
+    text-align:center;
+    white-space: pre-line;
+}
+
+.songLyricsCredits{
+
+}

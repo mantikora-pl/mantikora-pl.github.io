@@ -1,0 +1,67 @@
+.concertRow{
+    display:flex;
+    flex-direction:row;
+    min-height:100px;
+    vertical-align:middle;
+    border-bottom:1px solid white;
+    border-top:1px solid white;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1200px;
+    min-width:50vw;
+    border-collapse:collapse;
+    padding:10px;
+}
+
+.concertRow:first-of-type{
+    border-top:2px solid white;
+}
+
+.concertRow:last-of-type{
+    border-bottom:2px solid white;
+}
+
+
+.concertDate{
+    min-width:140px;
+    min-height:100px;
+    border:solid 1px white;
+    border-radius:10px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+
+.concertMonth{
+    font-size:22px;
+}
+
+.concertDay{
+    font-size:26px;
+}
+
+.concertYear{
+    font-size:22px;
+}
+
+
+.concertName{
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.concertLocation{
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.ticketsButton{
+    width:140px;
+    height:40px;
+    background-color:darkred;
+    color:white;
+    font-size:20px;
+    border:0;
+    border-radius:5px;
+}

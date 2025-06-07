@@ -1,0 +1,30 @@
+.newsWrapperS{
+
+}
+.newsItemWrapperS{
+    max-width:300px;
+    display:flex;
+    background-color:#181B1C66;
+    padding:5px;
+    flex-direction:column;
+    justify-content:start;
+}
+.newsImageS{
+    width:200px;
+    aspect-ratio:1;
+    margin-bottom:10px;
+}
+.newsDetailsWrapperS{
+
+}
+.newsTitleS{
+    font-size:22px;
+    font-weight:500;
+}
+.newsDateS{
+    font-size:16px;
+    margin-bottom:20px;
+}
+.newsContentS{
+    font-size:14px;
+}

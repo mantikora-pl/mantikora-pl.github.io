@@ -1,0 +1,17 @@
+.timelineItemTitle{
+    font-size:32px;
+}
+
+.timelineItemSubtitle{
+    font-size:28px;
+}
+.timelineItemDetails{
+    font-size:22px;
+}
+p{
+    margin:0;
+}
+
+.verticalTimelineElement{
+    background:#383737;
+}

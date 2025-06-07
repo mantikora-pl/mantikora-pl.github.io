@@ -1,0 +1,27 @@
+.newsWrapperB{
+
+}
+.newsItemWrapperB{
+    display:flex;
+    background-color:rgba(24, 27, 28, 0.4);
+    padding:5px;
+    flex-direction:row;
+    justify-content:start;
+}
+.newsImageB{
+    height:200px;
+    width:200px;
+    margin-right:12px;
+}
+.newsDetailsWrapperB{
+
+}
+.newsTitleB{
+    font-size:24px;
+}
+.newsDateB{
+    font-size:16px;
+}
+.newsContentB{
+    font-size:18px;
+}
