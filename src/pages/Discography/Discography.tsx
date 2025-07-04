@@ -1,11 +1,14 @@
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import DiscList,{Disc} from "../../components/DiscList";
+import {defaultLang,getTranslation} from "../../helper/translation";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 const discs:Disc[]=[
     {
         title:"Devil's Mouth (Single)",
-        date:"??.06.2025",
+        date:"??.07.2025",
         coverArtSrc:"https://picsum.photos/500?random=1",
         songs:[
             "Devil's Mouth"
@@ -13,38 +16,43 @@ const discs:Disc[]=[
         credits:""
     },
     {
-        title:"Davy Jones's Locker (Single)",
+        title:"Vanitas (Single)",
         date:"??.07.2025",
         coverArtSrc:"https://picsum.photos/500?random=2",
         songs:[
-            "Davy Jones's Locker"
+            "Vanitas"
         ],
         credits:""
     },
     {
-        title:"Album 1",
+        title:"M.I.N.D",
         date:"??.??.2025",
         coverArtSrc:"https://picsum.photos/500?random=3",
         songs:[
             "Devil's Mouth",
             "Davy Jones's Locker",
-            "Umieranie w szpitalu",
-            "Żołnierze",
-            "TBA",
-            "TBA",
-            "TBA",
-            "TBA",
-            "TBA"
+            "Vanitas",
+            "Koszmary",
+            "Kompania",
+            "The Hanged Man XII",
+            "Judgement XX",
+            "Herxheim",
+            "Dead God"
         ],
         credits:"Written by the whole band"
     },
 ]
 
 export default function Discography(){
+    const lang=defaultLang
     return <div>
-        <Header/>
-        <Navbar/>
-        <p className={"pageTitle"}>Our cds</p>
-        <DiscList items={discs}/>
+        <div className={"page"}>
+            <Header/>
+            <Navbar/>
+            <p className={"pageTitle"}>{getTranslation(lang,"our-cds")}</p>
+            <DiscList items={discs}/>
+        </div>
+        <MyFooter/>
     </div>
+
 }

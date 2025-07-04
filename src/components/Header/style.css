@@ -1,13 +1,75 @@
 .pageHeader{
-    padding-top:10px;
+    padding-top:15px;
     background-color:#181b1c;
-    height:auto;
+    height:8vh;
+    position:sticky;
+    top:0; /*do not delete*/
+    display:flex;
+    justify-content:space-between;
     align-items:center;
+    z-index:5000;
 }
 
 #headerLogo{
     display:block;
     margin-left:auto;
     margin-right:auto;
-    max-height:70px;
+    max-height:160px;
+    height:8vh;
+    min-height:80px;
+}
+
+.svg{
+    margin:0 30px;
+}
+
+
+#hamburgerM{
+    height:25px;
+}
+#hamburgerW{
+    visibility:hidden;
+    height:25px;
+}
+#shoppingCartM{
+    height:35px;
+}
+#shoppingCartW{
+    height:35px;
+}
+
+
+#headerLogoM{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    height:8vh;
+    margin-bottom:2px;
+}
+.svgM{
+    margin:0 10px;
+    height:100%;
+}
+
+
+#sideMenu{
+    font-size:20px;
+    font-family:Georgia, serif, "Noto Sans Jap";
+    text-transform:uppercase;
+    font-weight:500;
+    margin-top:calc(8vh - 10px); /*TODO SEE THIS!!!*/
+    background-color:#181b1c;
+    z-index:1000;
+    position:absolute;
+    min-width:75vw;
+    height:100vh;
+    text-align:start;
+}
+.sideItem{
+    margin:20px 10px;
+}
+
+#sideMenuWrapper{
+   display:flex;
+    flex-direction:column;
 }

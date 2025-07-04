@@ -14,7 +14,7 @@ export interface Socials{
 function ContactEntity({items}:{items: Socials}){
     return(
         <div className={"socialsWrapper"}>
-          {/*  <p>{items.entityName}</p>*/}
+          {<p>{items.entityName}</p>}
             <img src={items.mainImage} alt={items.entityName} className={"mainImg"}/>
             <div className={"socialsList"}>
                 {items.items1.map((item,id)=>(

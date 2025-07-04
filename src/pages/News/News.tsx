@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import BigNewsItem, {NewsI} from "../../components/BigNewsItem";
 import SmallNewsItem from "../../components/SmallNewsItem";
+import React from "react";
+import MyFooter from "../../components/MyFooter";
 
 const news:NewsI[]=[
     {
@@ -43,7 +45,9 @@ const news:NewsI[]=[
 ]
 
 export default function News(){
+    // @ts-ignore
     return <div>
+        <div className={"page"}>
         <Header/>
         <Navbar/>
         <p>news here</p>
@@ -73,6 +77,7 @@ export default function News(){
                 )}
             </div>
         </div>
-
+    </div>
+        <MyFooter/>
     </div>
 }

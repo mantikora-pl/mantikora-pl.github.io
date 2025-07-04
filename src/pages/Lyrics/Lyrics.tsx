@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
 import {lyricsConst} from "../../helper/lyrics";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 const lyrics:LyricsItems[]=[
     {
@@ -35,6 +37,7 @@ const lyricsR=lyrics.reverse()
 //const length=lyricsR.length
 export default function Lyrics(){
     return <div id={"lyricsPage"}>
+        <div className={"page"}>
         <Header/>
         <Navbar/>
         <h1 className={"pageTitle"}>Lyrics</h1>
@@ -58,5 +61,7 @@ export default function Lyrics(){
             </aside>
             <LyricsItem items={lyricsR}/>
         </main>
+        <MyFooter/>
+        </div>
     </div>
 }

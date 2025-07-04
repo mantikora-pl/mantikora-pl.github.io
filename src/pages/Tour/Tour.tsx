@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import ConcertItem from "../../components/ConcertItem";
 import concertItem from "../../components/ConcertItem";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 const items=[
     {
@@ -24,6 +26,7 @@ const items=[
 
 export default function Tour(){
     return <div>
+        <div className={"page"}>
         <Header/>
         <Navbar/>
         <h1 className={"pageTitle"}>Tour</h1>
@@ -34,5 +37,7 @@ export default function Tour(){
                 ))}
             </div>
         </div>
+        </div>
+        <MyFooter/>
     </div>
 }
