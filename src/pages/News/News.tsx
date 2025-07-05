@@ -48,8 +48,10 @@ export default function News(){
     // @ts-ignore
     return <div>
         <div className={"page"}>
-        <Header/>
-        <Navbar/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
         <p>news here</p>
         {/*<div>
             {news.map((item,i)=>(

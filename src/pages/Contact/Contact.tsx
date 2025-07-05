@@ -70,8 +70,10 @@ const lorem:string="Lorem ipsum dolor sit amet consectetur adipiscing elit males
 export default function Contact(){
     return <div>
         <div className={"page"}>
-            <Header/>
-            <Navbar/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
             <p id={"contactSubHeader"}><NewLineToBr>{lorem}</NewLineToBr></p>
             <div id={"socialEntitiesWrapperWrapper"}>
                 <section id={"socialEntitiesWrapper"}>

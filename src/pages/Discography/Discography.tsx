@@ -47,8 +47,10 @@ export default function Discography(){
     const lang=defaultLang
     return <div>
         <div className={"page"}>
-            <Header/>
-            <Navbar/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
             <p className={"pageTitle"}>{getTranslation(lang,"our-cds")}</p>
             <DiscList items={discs}/>
         </div>

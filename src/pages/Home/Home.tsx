@@ -6,8 +6,10 @@ import React from "react";
 export default function Home(){
     return <div>
         <div className={"page"}>
-            <Header/>
-            <Navbar/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
             <p>home</p>
         </div>
         <MyFooter/>

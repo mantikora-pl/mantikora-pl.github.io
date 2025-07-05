@@ -12,11 +12,16 @@ html, body{
 }
 
 /*overflow:visible;*/
+.stickyTop{
+    position:sticky;
+    top:0; /*do not delete*/
+    z-index:5000;
+}
 
 .pageTitle{
     text-align:center;
     font-size:44px;
-    margin:15px;
+    margin-bottom:15px;
 }
 a{
     text-decoration:none;

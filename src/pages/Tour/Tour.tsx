@@ -27,9 +27,11 @@ const items=[
 export default function Tour(){
     return <div>
         <div className={"page"}>
-        <Header/>
-        <Navbar/>
-        <h1 className={"pageTitle"}>Tour</h1>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
+        <p className={"pageTitle"}>Tour</p>
         <div className={"concertItemsWrapper"}>
             <div className={"concertItems"}>
                 {items.map((item,i)=>(

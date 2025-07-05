@@ -2,12 +2,12 @@
     padding-top:15px;
     background-color:#181b1c;
     height:8vh;
-    position:sticky;
-    top:0; /*do not delete*/
+/*    position:sticky;
+    top:0; !*do not delete*!
+    z-index:5000;*/
     display:flex;
     justify-content:space-between;
     align-items:center;
-    z-index:5000;
 }
 
 #headerLogo{

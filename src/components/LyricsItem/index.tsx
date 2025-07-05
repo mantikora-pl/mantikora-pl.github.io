@@ -16,7 +16,8 @@ function LyricsItem({items}:{items: LyricsItems[]}){
         <>
             {items.map((item,i)=>(
                 <div key={i}>
-                    <h2 className={"songLyricsHeader"} id={"header"+i}>{item.name}</h2>
+                    <a className={"anchor"} id={"header"+i}/>
+                    <h2 className={"songLyricsHeader"} >{item.name}</h2>
                     <p className={"songLyrics"}>
                         <NewLineToBr>{item.lyrics}</NewLineToBr>
                     </p>

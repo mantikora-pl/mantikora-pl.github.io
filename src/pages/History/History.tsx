@@ -42,8 +42,10 @@ const timeLineItems:TimelineElement[]=[
 export default function History(){
     return <div>
         <div className={"page"}>
-            <Header/>
-            <Navbar/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
             {/*<VerticalTimeline>
             <VerticalTimelineElement className="vertical-timeline-element" contentStyle={{background:'#383737'}} date="20.04.2025">
                 <h3 className="timeline-item-title">Title</h3>
