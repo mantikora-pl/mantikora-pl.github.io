@@ -22,7 +22,7 @@ export const lyricsConst:string[]=[
         "I need to keep; my mind sealed shut\n"+
         "Shit now it's bad; I'm losing it all\n"+
         "I’ll butcher all, puny mortals\n"+
-        "in my sight\nn"+
+        "in my sight\n"+
         "Delusions in my mind\n"+
         "Psychosis is my life\n"+
         "Imagination running wild\n"+
