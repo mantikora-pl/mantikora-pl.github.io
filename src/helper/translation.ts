@@ -37,6 +37,10 @@ export const translations={
         "en":"Store",
         "pl":"Sklep"
     },
+    "our-cds":{
+        "en":"Our releases",
+        "pl":"Nasze albumy"
+    },
 } as const
 
 export function getTranslation(locale:string,key:string):string{

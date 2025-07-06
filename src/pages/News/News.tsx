@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import BigNewsItem, {NewsI} from "../../components/BigNewsItem";
 import SmallNewsItem from "../../components/SmallNewsItem";
+import React from "react";
+import MyFooter from "../../components/MyFooter";
 
 const news:NewsI[]=[
     {
@@ -43,9 +45,13 @@ const news:NewsI[]=[
 ]
 
 export default function News(){
+    // @ts-ignore
     return <div>
-        <Header/>
-        <Navbar/>
+        <div className={"page"}>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
         <p>news here</p>
         {/*<div>
             {news.map((item,i)=>(
@@ -73,6 +79,7 @@ export default function News(){
                 )}
             </div>
         </div>
-
+    </div>
+        <MyFooter/>
     </div>
 }

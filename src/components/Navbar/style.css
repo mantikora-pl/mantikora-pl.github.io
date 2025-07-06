@@ -33,7 +33,12 @@ html, body{
 }
 
 .navbarItem > .a{
+    font-family:Georgia, serif, "Noto Sans Jap";
+    text-transform:uppercase;
+    font-weight:500;
     font-size:24px;
     text-decoration:none;
     color:azure;
 }
+
+

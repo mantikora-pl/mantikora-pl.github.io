@@ -1,7 +1,27 @@
+.lyricsTitleRow{
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+}
+.lyricsClose{
+    height:30px;
+    width:30px;
+}
+
+
+
 .songLyricsHeader{
     font-size:28px;
     margin:5px;
     color:#a92a2a;
+}
+
+.anchor{
+    display:block;
+    position:relative;
+    top:-180px;
+    visibility:hidden;
 }
 
 .songLyrics{
@@ -13,4 +33,7 @@
 
 .songLyricsCredits{
 
+}
+.lyricsItemWrapper{
+    margin:10px 0;
 }

@@ -2,6 +2,12 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
 import {lyricsConst} from "../../helper/lyrics";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
+import {defaultLang,getTranslation} from "../../helper/translation";
+import {HashLink as Link} from 'react-router-hash-link';
+import {BrowserView} from "react-device-detect";
+import ScrollToTop from "react-scroll-to-top";
 
 const lyrics:LyricsItems[]=[
     {
@@ -9,36 +15,43 @@ const lyrics:LyricsItems[]=[
         name:"Devil's Mouth",
         lyrics:lyricsConst[0],
         credits:"",
-        visible:false
+        visible:true
     },
     {
         id:2,
         name:"Davy Jones's Locker",
         lyrics:lyricsConst[1],
-        credits:""
+        credits:"",
+        visible:true
     },
     {
         id:3,
-        name:"Śmierć w szpitalu",
+        name:"Vanitas",
         lyrics:"Coming soon",
-        credits:""
+        credits:"",
+        visible:true
     },
     {
         id:4,
-        name:"Żołnierze",
+        name:"M.I.N.D",
         lyrics:"Coming soon",
-        credits:""
+        credits:"",
+        visible:true
     },
 
 ]
 const lyricsR=lyrics.reverse()
 //const length=lyricsR.length
 export default function Lyrics(){
+
     return <div id={"lyricsPage"}>
-        <Header/>
-        <Navbar/>
-        <h1 className={"pageTitle"}>Lyrics</h1>
-        <main>
+        <div className={"page"}>
+        <div className={"stickyTop"}>
+            <Header/>
+            <Navbar/>
+        </div>
+        <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
+        <main id={"lyricsPageIn"}>
             <aside id={"songListAside"}>
                 <ul id={"songList"}>
                     <section>
@@ -46,17 +59,22 @@ export default function Lyrics(){
                             <span key={i}>
                                 {lyricsR?.at(i)?.visible===true&&
                                 <li>
-                                    <a href={"/lyrics#header"+i}>
-                                        {lyricsR?.at(i)?.name}
-                                    </a>
-                                </li>
-                                }
+                                    <Link to={"/lyrics/#header"+i}>
+                                        {lyricsR?.at(i)?.name}</Link>
+                                </li>}
                             </span>
                         )}
                     </section>
                 </ul>
             </aside>
-            <LyricsItem items={lyricsR}/>
+
+            <div id={"lyricsContainer"}>
+                <LyricsItem items={lyricsR}/>
+            </div>
+
+        <ScrollToTop smooth/>
         </main>
+        <MyFooter/>
+        </div>
     </div>
 }

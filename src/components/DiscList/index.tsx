@@ -36,5 +36,5 @@ function DiscList({items}:{items: Disc[]}){
         </div>
     )
 }
-
+//TODO: WHOLE NEW FUNCTION FOR MOBILE!!!
 export default DiscList

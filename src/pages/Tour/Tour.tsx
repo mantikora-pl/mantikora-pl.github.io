@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import ConcertItem from "../../components/ConcertItem";
 import concertItem from "../../components/ConcertItem";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 const items=[
     {
@@ -24,9 +26,12 @@ const items=[
 
 export default function Tour(){
     return <div>
-        <Header/>
-        <Navbar/>
-        <h1 className={"pageTitle"}>Tour</h1>
+        <div className={"page"}>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
+        <p className={"pageTitle"}>Tour</p>
         <div className={"concertItemsWrapper"}>
             <div className={"concertItems"}>
                 {items.map((item,i)=>(
@@ -34,5 +39,7 @@ export default function Tour(){
                 ))}
             </div>
         </div>
+        </div>
+        <MyFooter/>
     </div>
 }

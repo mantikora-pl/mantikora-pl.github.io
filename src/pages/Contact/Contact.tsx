@@ -2,11 +2,13 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import ContactEntity,{Socials} from "../../components/ContactEntity";
 import NewLineToBr from "../../components/NewLineToBr";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 
 const items:Socials[]=[
-    {entityName: "Band",
-        mainImage: "/mantikoraLogo.png",
+    {entityName: "Mantikora",
+        mainImage: "/mantikoraLogo1.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/@Mantikora-band",name:"youtube"},
             {icon:"./socials/instagram.png",link:"https://www.instagram.com/mantikora_band/",name:"instagram"},
@@ -47,13 +49,13 @@ const items:Socials[]=[
         mainImage: "/socials/MonsterBoomer.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
-            {icon:"./socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
+            {icon:"./socials/instagram.png",link:"https://www.instagram.com/blacksuide_/#",name:"instagram"},
             {icon:"./socials/facebook.png",link:"https://www.facebook.com",name:"Facebook"},
             {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
 
-    {entityName: "Wokalista którego nie ma",
+    {entityName: "Sebastian",
         mainImage: "/socials/HappyNordicChad.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
@@ -66,18 +68,23 @@ const items:Socials[]=[
 const lorem:string="Lorem ipsum dolor sit amet consectetur adipiscing elit malesuada penatibus turpis vulputate,\n ultrices donec eu interdum pharetra nostra proin pulvinar ac risus tempor viverra,\n blandit elementum purus est iaculis non tortor lobortis scelerisque curabitur.\n Proin mollis sapien primis accumsan phasellus sollicitudin sagittis magnis,\n quam gravida luctus ut scelerisque cubilia imperdiet facilisis risus."
 
 export default function Contact(){
-    return <>
-        <Header/>
-        <Navbar/>
-        <p id={"contactSubHeader"}><NewLineToBr>{lorem}</NewLineToBr></p>
-        <div id={"socialEntitiesWrapperWrapper"}>
-            <section id={"socialEntitiesWrapper"}>
-            {items.map((item,id)=>(
-                <ContactEntity items={item} key={id}/>
-            ))}
-            </section>
+    return <div>
+        <div className={"page"}>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
+            <p id={"contactSubHeader"}><NewLineToBr>{lorem}</NewLineToBr></p>
+            <div id={"socialEntitiesWrapperWrapper"}>
+                <section id={"socialEntitiesWrapper"}>
+                    {items.map((item,id)=>(
+                        <ContactEntity items={item} key={id}/>
+                    ))}
+                </section>
+            </div>
         </div>
-    </>
+        <MyFooter/>
+    </div>
 }
 
 /*

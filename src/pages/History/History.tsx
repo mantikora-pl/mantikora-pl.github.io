@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import 'react-vertical-timeline-component/style.min.css';
 import Timeline,{TimelineElement} from "../../components/Timeline";
+import MyFooter from "../../components/MyFooter";
+import React from "react";
 
 const timeLineItems:TimelineElement[]=[
     {
@@ -39,9 +41,12 @@ const timeLineItems:TimelineElement[]=[
 
 export default function History(){
     return <div>
-        <Header/>
-        <Navbar/>
-        {/*<VerticalTimeline>
+        <div className={"page"}>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
+            </div>
+            {/*<VerticalTimeline>
             <VerticalTimelineElement className="vertical-timeline-element" contentStyle={{background:'#383737'}} date="20.04.2025">
                 <h3 className="timeline-item-title">Title</h3>
                 <h4 className="timeline-item-subtitle">Subitle</h4>
@@ -49,7 +54,8 @@ export default function History(){
             </VerticalTimelineElement>
         </VerticalTimeline>*/}
 
-        <Timeline items={timeLineItems}/>
-
+            <Timeline items={timeLineItems}/>
+        </div>
+        <MyFooter/>
     </div>
 }
