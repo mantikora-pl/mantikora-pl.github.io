@@ -44,14 +44,13 @@ const discs:Disc[]=[
 ]
 
 export default function Discography(){
-    const lang=defaultLang
     return <div>
         <div className={"page"}>
             <div className={"stickyTop"}>
                 <Header/>
                 <Navbar/>
             </div>
-            <p className={"pageTitle"}>{getTranslation(lang,"our-cds")}</p>
+            <p className={"pageTitle"}>{getTranslation(defaultLang,"our-cds")}</p>
             <DiscList items={discs}/>
         </div>
         <MyFooter/>

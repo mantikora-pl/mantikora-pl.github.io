@@ -60,12 +60,13 @@ p{
     text-align:center;
     overflow:visible;
 }
-#songListAside{
-    position:fixed;
-}
+
 #songList{
     list-style-type:none;
+    margin-left:20px;
 }
+
+
 #songList li{
     text-align:start;
     font-size:22px;
@@ -79,5 +80,32 @@ p{
     flex-direction:column;
 }
 #smallNewsWrapper{
+    display:flex;
+}
+
+#songListAside{
+   /* padding-left:100px;*/
+    width:20%;
+}
+
+@media screen and (max-width:700px){
+    #songListAside{
+        visibility:hidden;
+    }
+    #lyricsContainer{
+        width:100%;
+    }
+    #songList{
+        margin:0;
+    }
+
+}
+
+#lyricsContainer{
+    width:60%;
+    text-align:center;
+}
+
+#lyricsPageIn{
     display:flex;
 }

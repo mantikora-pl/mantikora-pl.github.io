@@ -8,9 +8,10 @@
     margin-right:auto;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:1100px){
     .discWrapperLeft, .discWrapperRight{
         display:block;
+        flex-direction:column!important;
     }
     .coverArt,.albumDetailsWrapper{
         width:100%;
@@ -34,7 +35,7 @@
     width:50%;
 }
 .coverArt{
-    aspect-ratio:1;
+    aspect-ratio:1!important;
 }
 
 .albumTitle{

@@ -6,6 +6,8 @@ import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
+import {BrowserView} from "react-device-detect";
+import ScrollToTop from "react-scroll-to-top";
 
 const lyrics:LyricsItems[]=[
     {
@@ -24,14 +26,14 @@ const lyrics:LyricsItems[]=[
     },
     {
         id:3,
-        name:"Śmierć w szpitalu",
+        name:"Vanitas",
         lyrics:"Coming soon",
         credits:"",
         visible:true
     },
     {
         id:4,
-        name:"Żołnierze",
+        name:"M.I.N.D",
         lyrics:"Coming soon",
         credits:"",
         visible:true
@@ -49,7 +51,7 @@ export default function Lyrics(){
             <Navbar/>
         </div>
         <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
-        <main>
+        <main id={"lyricsPageIn"}>
             <aside id={"songListAside"}>
                 <ul id={"songList"}>
                     <section>
@@ -59,14 +61,18 @@ export default function Lyrics(){
                                 <li>
                                     <Link to={"/lyrics/#header"+i}>
                                         {lyricsR?.at(i)?.name}</Link>
-                                </li>
-                                }
+                                </li>}
                             </span>
                         )}
                     </section>
                 </ul>
             </aside>
-            <LyricsItem items={lyricsR}/>
+
+            <div id={"lyricsContainer"}>
+                <LyricsItem items={lyricsR}/>
+            </div>
+
+        <ScrollToTop smooth/>
         </main>
         <MyFooter/>
         </div>
