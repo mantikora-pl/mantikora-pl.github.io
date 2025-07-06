@@ -22,6 +22,8 @@ html, body{
     text-align:center;
     font-size:44px;
     margin-bottom:15px;
+    margin-top:6px;
+    padding-top:14px;
 }
 a{
     text-decoration:none;
@@ -63,13 +65,14 @@ p{
 
 #songList{
     list-style-type:none;
-    margin-left:20px;
+    /*margin-left:20px;*/
 }
 
 
 #songList li{
+    font-weight:500;
     text-align:start;
-    font-size:22px;
+    font-size:26px;
     margin-bottom:10px;
 }
 
@@ -84,21 +87,15 @@ p{
 }
 
 #songListAside{
-   /* padding-left:100px;*/
+    top:0;
+    position:sticky;
+    align-self:flex-start;
+    height:100vh;
     width:20%;
-}
-
-@media screen and (max-width:700px){
-    #songListAside{
-        visibility:hidden;
-    }
-    #lyricsContainer{
-        width:100%;
-    }
-    #songList{
-        margin:0;
-    }
-
+    z-index:5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #lyricsContainer{
@@ -108,4 +105,27 @@ p{
 
 #lyricsPageIn{
     display:flex;
+    filter:grayscale(0%);
+    min-height:1000px;
+    align-items:flex-start;
+}
+
+#lyricsImageBG{
+    background-image:url("../public/bg3.png");
+    background-size:100% auto;
+    background-position:top;
+}
+
+@media screen and (max-width:1100px){
+    #songListAside{
+        visibility:hidden;
+        width:0;
+    }
+    #lyricsContainer{
+        width:100%;
+    }
+    #songList{
+        margin:0;
+    }
+
 }

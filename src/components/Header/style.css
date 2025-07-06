@@ -1,21 +1,20 @@
 .pageHeader{
-    padding-top:15px;
+    padding-top:14px;
     background-color:#181b1c;
     height:8vh;
-/*    position:sticky;
-    top:0; !*do not delete*!
-    z-index:5000;*/
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding-bottom:14px;
 }
 
 #headerLogo{
-    display:block;
+    object-fit:cover;
+    display:block!important;
     margin-left:auto;
     margin-right:auto;
-    max-height:160px;
-    height:8vh;
+    max-height:7vh;
+    height:auto;
     min-height:80px;
 }
 

@@ -46,34 +46,36 @@ export default function Lyrics(){
 
     return <div id={"lyricsPage"}>
         <div className={"page"}>
-        <div className={"stickyTop"}>
-            <Header/>
-            <Navbar/>
-        </div>
-        <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
-        <main id={"lyricsPageIn"}>
-            <aside id={"songListAside"}>
-                <ul id={"songList"}>
-                    <section>
-                        {Array.from({length:lyrics.length},(_,i)=>
-                            <span key={i}>
-                                {lyricsR?.at(i)?.visible===true&&
-                                <li>
-                                    <Link to={"/lyrics/#header"+i}>
-                                        {lyricsR?.at(i)?.name}</Link>
-                                </li>}
-                            </span>
-                        )}
-                    </section>
-                </ul>
-            </aside>
-
-            <div id={"lyricsContainer"}>
-                <LyricsItem items={lyricsR}/>
+            <div className={"stickyTop"}>
+                <Header/>
+                <Navbar/>
             </div>
+        <div id={"lyricsImageBG"}>
+            <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
+            <main id={"lyricsPageIn"}>
+                <aside id={"songListAside"}>
+                    <ul id={"songList"}>
+                        <section>
+                            {Array.from({length:lyrics.length},(_,i)=>
+                                <span key={i}>
+                                    {lyricsR?.at(i)?.visible===true&&
+                                    <li>
+                                        <Link to={"/lyrics/#header"+i}>
+                                            {lyricsR?.at(i)?.name}</Link>
+                                    </li>}
+                                </span>
+                            )}
+                        </section>
+                    </ul>
+                </aside>
 
-        <ScrollToTop smooth/>
-        </main>
+                <div id={"lyricsContainer"}>
+                    <LyricsItem items={lyricsR}/>
+                </div>
+
+            </main>
+            <ScrollToTop/>
+        </div>
         <MyFooter/>
         </div>
     </div>

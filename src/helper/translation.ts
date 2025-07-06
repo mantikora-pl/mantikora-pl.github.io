@@ -41,6 +41,10 @@ export const translations={
         "en":"Our releases",
         "pl":"Nasze albumy"
     },
+    "single":{
+        "en":"single",
+        "pl":"singiel"
+    }
 } as const
 
 export function getTranslation(locale:string,key:string):string{

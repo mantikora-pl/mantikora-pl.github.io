@@ -1,4 +1,4 @@
-.listWrapper{
+.listWrapperM{
     width:100%;
     display:flex;
     align-items:center;
@@ -7,41 +7,38 @@
     margin-left:auto;
     margin-right:auto;
 }
-.discWrapperLeft,.discWrapperRight{
-    display:flex;
+
+.discWrapperM{
+    display:block;
+    flex-direction:column!important;
     justify-content:space-between;
     margin-top:40px;
     max-width:800px;
 }
-.discWrapperLeft{
-    flex-direction:row;
-}
-.discWrapperRight{
-    flex-direction:row-reverse;
-}
 
-.coverArt,.albumDetailsWrapper{
-    width:50%;
+.coverArtM,.albumDetailsWrapperM{
+    width:100%;
 }
-.coverArt{
+.coverArtM{
     aspect-ratio:1!important;
 }
 
-.albumTitle{
+.albumTitleM{
+    margin-top:10px;
     text-align:center;
     font-size:28px;
     font-weight:bold;
 }
-.albumDate{
+.albumDateM{
     text-align:center;
     font-size:24px;
     font-weight:500;
 }
-.songLi{
+.songLiM{
     margin:5px;
     font-size:22px;
 }
-.albumCredits{
+.albumCreditsM{
     margin-top:20px;
     font-size:20px;
     text-align:center;

@@ -14,7 +14,7 @@
 .songLyricsHeader{
     font-size:28px;
     margin:5px;
-    color:#a92a2a;
+    color:#c72525;
 }
 
 .anchor{
@@ -25,7 +25,8 @@
 }
 
 .songLyrics{
-    font-size:18px;
+    font-weight:500;
+    font-size:20px;
     width:auto;
     text-align:center;
     white-space: pre-line;
