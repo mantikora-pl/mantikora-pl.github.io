@@ -84,11 +84,35 @@ p{
 }
 
 #songListAside{
-   /* padding-left:100px;*/
+    top:0;
+    position:sticky;
+    align-self:flex-start;
+    height:100vh;
     width:20%;
+    z-index:5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media screen and (max-width:700px){
+#lyricsContainer{
+    width:60%;
+    text-align:center;
+}
+
+#lyricsPageIn{
+    display:flex;
+    filter:grayscale(0%);
+    min-height:1000px;
+    align-items:flex-start;
+}
+
+#lyricsImageBG{
+    background-image:url("../public/bg2.jpg");
+    background-size:100% auto;
+}
+
+@media screen and (max-width:1100px){
     #songListAside{
         visibility:hidden;
     }
@@ -99,13 +123,4 @@ p{
         margin:0;
     }
 
-}
-
-#lyricsContainer{
-    width:60%;
-    text-align:center;
-}
-
-#lyricsPageIn{
-    display:flex;
 }
