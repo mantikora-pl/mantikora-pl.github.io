@@ -7,6 +7,7 @@
 }
 .timelineItemDetails{
     font-size:22px;
+    width:50%;
 }
 p{
     margin:0;
@@ -14,4 +15,22 @@ p{
 
 .verticalTimelineElement{
     background:#383737;
+}
+
+.timelineImg{
+    max-width:50%;
+    aspect-ratio:initial!important;
+    /*max-height:100px;*/
+}
+@media only screen and (min-width: 1170px){
+    .vertical-timeline-element-icon{
+        height:40px!important;
+        width:40px!important;
+        margin-left:-20px!important;
+        margin-top:10px!important;
+    }
+
+    .vertical-timeline-element-content{
+        width:46%!important;
+    }
 }

@@ -7,34 +7,33 @@ import React from "react";
 
 const timeLineItems:TimelineElement[]=[
     {
-        title:"title",
-        subtitle:"subtitle",
-        description:"description",
-        date:"date"
+        date:"2025 ???",
+        description:"Zostaje nagrany singiel devil's mouth",
+        photo:""
     },
     {
-        title:"title1",
+        date:"10.06.2025",
         subtitle:"subtitle1",
-        description:"description1",
-        date:"date1"
+        description:"Pierwsza próba",
+        photo:""
     },
     {
-        title:"title2",
+        date:"2025 June",
         subtitle:"subtitle2",
-        description:"description2",
-        date:"date2"
+        description:"Powstało logo",
+        photo:"mantikoraLogo1.png"
     },
     {
-        title:"title3",
+        date:"2025 Late April",
         subtitle:"subtitle3",
-        description:"description3",
-        date:"date3"
+        description:"Zespół w pełnym składzie",
+        photo:""
     },
     {
-        title:"title4",
-        subtitle:"subtitle4",
-        description:"description4",
-        date:"date4"
+        date:"2025 Mid April",
+        subtitle:"",
+        description:"Zaczyna powstawać pierwszy wspólny utwór - Devil's Mouth ",
+        photo:""
     }
 ]
 

@@ -1,0 +1,39 @@
+.personMain{
+    display:flex;
+}
+.personLeft,.personRight{
+    margin-top:50px;
+}
+
+.personLeft{
+    width:30%;
+    min-height:500px;
+    background-color:blueviolet;
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+}
+
+.personPhoto{
+    /*max-height:500px;
+    width:auto;*/
+    aspect-ratio:initial!important;
+}
+
+.personRight{
+    width:70%;
+    min-height:500px;
+    background-color:chocolate;
+}
+
+
+
+
+
+
+.personName{
+    text-transform:capitalize;
+    font-size:32px;
+    font-weight:700;
+}

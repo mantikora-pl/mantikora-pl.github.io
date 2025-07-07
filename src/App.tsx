@@ -7,8 +7,15 @@ import Tour from "./pages/Tour/Tour";
 import Discography from "./pages/Discography/Discography";
 import Lyrics from "./pages/Lyrics/Lyrics";
 import History from "./pages/History/History";
-import Gallery from "./pages/Gallery/Gallery";
-import Contact from "./pages/Contact/Contact";
+/*import Gallery from "./pages/Gallery/Gallery";*/
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Person,{PersonalData} from "./components/Person";
+import NotFound from "./pages/404/404";
+
+const filip:PersonalData={
+    name:"Filip",
+    photo:"https://picsum.photos/450?random=4"
+}
 
 
 const routes=[
@@ -18,8 +25,8 @@ const routes=[
     {path:'/discography',element:<Discography/>},
     {path:'/lyrics',element:<Lyrics/>},
     {path:'/history',element:<History/>},
-    {path:'/gallery',element:<Gallery/>},
-    {path:'/contact',element:<Contact/>},
+    {path:'/contact',element:<AboutUs/>},
+    {path:'/about/:filip',element:<Person person={filip}/>},
 ]
 
 function App(){

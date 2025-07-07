@@ -44,6 +44,7 @@ export const lyricsConst:string[]=[
         "Imagination way too wild\n"+
         "Delirium ruining life\n",
 
+
         "The unlit bottom of the world  \n"+
         "Life forms from (the) abyss, waiting for you\n"+
         "Just thinking about it, makes me tremble\n"+
@@ -81,4 +82,6 @@ export const lyricsConst:string[]=[
         "They are now, crawling here\n"+
         "to take what is theirs\n"+
         "to take my soul\n"
+
+
 ]

@@ -21,8 +21,8 @@ export const translations={
         "pl":"Teksty"
     },
     "history":{
-        "en":"Band History",
-        "pl":"Historia zespołu"
+        "en":"Timeline",
+        "pl":"Oś czasu"
     },
 
     "gallery":{
