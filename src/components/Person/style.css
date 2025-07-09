@@ -1,0 +1,75 @@
+.personMain{
+    display:flex;
+    margin-top:50px;
+}
+.personLeft,.personRight{
+
+}
+
+.partHeader{
+    font-family:Georgia, serif, "Noto Sans Jap";
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:34px;
+    color:azure;
+    margin-top:35px;
+    margin-bottom:35px;
+}
+
+.personLeft{
+    padding-left:30px;
+    padding-right:30px;
+    width:30%;
+    min-height:500px;
+    /*background-color:blueviolet;*/
+    align-content:center;
+   /* align-items:center;*/
+    justify-content:center;
+    display:flex;
+    flex-direction:column;
+}
+
+.personPhoto{
+    /*max-height:500px;
+    aspect-ratio:initial!important;
+    width:auto;*/
+    display:block;
+}
+
+.leftInner{
+    width:100%;
+    display:block;
+
+}
+
+.smallHeader{
+    color:#ff0000;
+    font-size:22px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.gearText{
+    font-size:18px;
+}
+
+.smallHeader, .gearText{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.personRight{
+    width:70%;
+    min-height:500px;
+    /*background-color:chocolate;*/
+}
+
+
+
+
+
+.personName{
+    text-transform:capitalize;
+    font-size:32px;
+    font-weight:700;
+}

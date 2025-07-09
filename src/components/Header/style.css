@@ -11,11 +11,12 @@
 #headerLogo{
     object-fit:cover;
     display:block!important;
+    margin-top:5px;
     margin-left:auto;
     margin-right:auto;
     max-height:7vh;
     height:auto;
-    min-height:80px;
+    min-height:90px;
 }
 
 .svg{
@@ -56,7 +57,7 @@
     font-family:Georgia, serif, "Noto Sans Jap";
     text-transform:uppercase;
     font-weight:500;
-    margin-top:calc(8vh - 10px); /*TODO SEE THIS!!!*/
+    margin-top:calc(8.5vh - 10px); /*TODO SEE THIS!!!*/
     background-color:#181b1c;
     z-index:1000;
     position:absolute;
