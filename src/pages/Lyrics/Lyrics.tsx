@@ -6,7 +6,6 @@ import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
-import {BrowserView} from "react-device-detect";
 import ScrollToTop from "react-scroll-to-top";
 
 const lyrics:LyricsItems[]=[
