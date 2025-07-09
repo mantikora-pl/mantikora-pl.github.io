@@ -12,7 +12,7 @@ export default function Home(){
                 <Header/>
                 <Navbar/>
             </div>
-            <p>home</p>
+            <p>STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE</p>
             <BrowserView>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <InstagramEmbed url={"https://www.instagram.com/mantikora_band/"} width={600} captioned/>
