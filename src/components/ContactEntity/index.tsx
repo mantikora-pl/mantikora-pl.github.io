@@ -14,7 +14,7 @@ export interface Socials{
 
 function ContactEntity({items}:{items: Socials}){
     function handleClick(link:string){
-        window.location.href=link;
+       // window.location.href=link
     }
     //const link=items.subpageLink
     const link="#/about/filip"

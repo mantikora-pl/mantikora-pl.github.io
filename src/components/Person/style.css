@@ -1,6 +1,7 @@
 .personMain{
     display:flex;
     margin-top:50px;
+    padding:0 5rem;
 }
 .personLeft,.personRight{
 
@@ -23,16 +24,12 @@
     min-height:500px;
     /*background-color:blueviolet;*/
     align-content:center;
-   /* align-items:center;*/
-    justify-content:center;
     display:flex;
     flex-direction:column;
 }
 
 .personPhoto{
-    /*max-height:500px;
-    aspect-ratio:initial!important;
-    width:auto;*/
+    max-width:500px;
     display:block;
 }
 
@@ -52,7 +49,10 @@
 .gearText{
     font-size:18px;
 }
-
+.infoText{
+    font-size:18px;
+    margin:15px 0;
+}
 .smallHeader, .gearText{
     margin-top:25px;
     margin-bottom:25px;
@@ -69,7 +69,5 @@
 
 
 .personName{
-    text-transform:capitalize;
-    font-size:32px;
-    font-weight:700;
+    margin-top:0!important;
 }

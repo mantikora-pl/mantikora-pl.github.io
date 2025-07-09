@@ -12,30 +12,62 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Person,{PersonalData} from "./components/Person";
 import NotFound from "./pages/404/404";
 
-const filip:PersonalData={
-    name:"Filip",
-    photo:"https://picsum.photos/450?random=4",
-    guitars:[
-        "Jackson",
-        "Ibanez"
-    ],
-    picks:[
-        "some picks"
-    ],
-    strings:[
-        "d'daddario",
-        "ernie ball",
-        "jakieśtam inne"
-    ],
-    amps:[
-        "something something"
-    ],
-    otherEquipment:[
-        "coś jeszcze",
-        "kolejne coś jeszcze"
-    ]
-}
+const sample:PersonalData={
+    name:"sample",
+    photo:"https://picsum.photos/400?random=4",
 
+    equipment:[
+        {name:"guitars",brands:"Jackson \n Ibanez"},
+        {name:"picks",brands:"some picks"},
+        {name:"strings",brands:"d'daddario \n ernie ball \n jakieśtam inne"},
+        {name:"amps",brands:"marshall \n boss"},
+        {name:"other equipment", brands:"Dunlop slider \n wah wah \n nie wiem"}
+    ],
+    basicInfo:[
+        {item:"DOB",value:"2003"},
+        {item:"status",value:"???"},
+        {item:"eyes",value:"???"},
+        {item:"siblings",value:"???"},
+        {item:"first band",value:"???"},
+        {item:"other bands",value:"???"},
+    ],
+    favorites:[
+        {item:"band",value:"???"},
+        {item:"album",value:"???"},
+        {item:"movie",value:"???"},
+        {item:"siblings",value:"???"},
+        {item:"book",value:"???"},
+        {item:"food",value:"???"},
+        {item:"language",value:"???"},
+        {item:"historical figure",value:"???"},
+        {item:"holiday",value:"???"},
+        {item:"solo",value:"???"},
+        {item:"riff",value:"???"},
+        {item:"venue",value:"???"},
+        {item:"tv show",value:"???"},
+        {item:"hobbies",value:"???"},
+        {item:"guitar",value:"???"},
+        {item:"sport",value:"???"},
+        {item:"season",value:"???"},
+        {item:"album cover art",value:"???"},
+        {item:"number",value:"???"},
+        {item:"piece of tech",value:"???"},
+        {item:"vacation",value:"???"},
+        {item:"website",value:"???"},
+        {item:"holiday song",value:"???"},
+        {item:"mantikora song",value:"???"},
+        {item:"anime/manga",value:"???"},
+    ],
+    funStuff:[
+        {item:"Other instruments played: ",value:"2003"},
+        {item:"Occupation if not musician: ",value:"???"},
+        {item:"Musical influences: ",value:"???"},
+        {item:"First concert seen: ",value:"???"},
+        {item:"Fondest memory: ",value:"???"},
+        {item:"Most memorable concert: ",value:"???"},
+        {item:"What year would you go to in time machine? ",value:"???"},
+    ],
+}
 
 const routes=[
     {path:'/',element:<Home/>},
@@ -45,7 +77,8 @@ const routes=[
     {path:'/lyrics',element:<Lyrics/>},
     {path:'/history',element:<History/>},
     {path:'/contact',element:<AboutUs/>},
-    {path:'/about/:filip',element:<Person person={filip}/>},
+    {path:'*',element:<NotFound/>},
+    /*{path:'/about/:filip',element:<Person person={sample}/>}*/
 ]
 
 function App(){
