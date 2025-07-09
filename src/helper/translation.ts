@@ -29,9 +29,9 @@ export const translations={
         "en":"Gallery",
         "pl":"Galeria"
     },
-    "contact":{
-        "en":"About us",
-        "pl":"O nas"
+    "band":{
+        "en":"Band",
+        "pl":"Zespół"
     },
     "merch":{
         "en":"Store",

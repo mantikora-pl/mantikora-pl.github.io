@@ -14,7 +14,26 @@ import NotFound from "./pages/404/404";
 
 const filip:PersonalData={
     name:"Filip",
-    photo:"https://picsum.photos/450?random=4"
+    photo:"https://picsum.photos/450?random=4",
+    guitars:[
+        "Jackson",
+        "Ibanez"
+    ],
+    picks:[
+        "some picks"
+    ],
+    strings:[
+        "d'daddario",
+        "ernie ball",
+        "jakieśtam inne"
+    ],
+    amps:[
+        "something something"
+    ],
+    otherEquipment:[
+        "coś jeszcze",
+        "kolejne coś jeszcze"
+    ]
 }
 
 
