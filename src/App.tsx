@@ -44,7 +44,7 @@ const sample:PersonalData={
         {item:"solo",value:"???"},
         {item:"riff",value:"???"},
         {item:"venue",value:"???"},
-        {item:"tv show",value:"???"},
+        {item:"tv visible",value:"???"},
         {item:"hobbies",value:"???"},
         {item:"guitar",value:"???"},
         {item:"sport",value:"???"},

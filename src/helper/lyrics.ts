@@ -29,7 +29,7 @@ export const lyricsConst:string[]=[
         "Delirium all the time\n\n"+
 
         "I hate you all I hate everyone \n"+
-        "I got a gun and I'll show them\n"+
+        "I got a gun and I'll visible them\n"+
         "This massacre; shall reach everyone\n"+
         "Show no mercy for human waste\n"+
         "Bloody mass such a lovely sight\n"+

@@ -42,6 +42,30 @@ const news:NewsI[]=[
         title:"Koncert gdzieś indziej",
         content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
     },
+    {
+        photoSrc:"https://picsum.photos/500?random=81",
+        date:"2025.07.15",
+        title:"Koncert gdzieśtam",
+        content:"dfhrt fuyfhd z ntuytkuikuytyd xcc cnhyjturtaes bkiulkyg",
+    },
+    {
+        photoSrc:"https://picsum.photos/500?random=91",
+        date:"2025.07.19",
+        title:"Koncert gdzieś indziej",
+        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
+    },
+    {
+        photoSrc:"https://picsum.photos/500?random=94",
+        date:"2026.02.31",
+        title:"Koncert gdzieś indziej",
+        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
+    },
+    {
+        photoSrc:"https://picsum.photos/500?random=96",
+        date:"2026.02.30",
+        title:"AAAAA",
+        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
+    },
 ]
 
 export default function News(){
