@@ -129,3 +129,10 @@ p{
     }
 
 }
+
+#messageNoConcertDates{
+    font-size:28px;
+    margin:20px;
+    text-transform:uppercase;
+}
+

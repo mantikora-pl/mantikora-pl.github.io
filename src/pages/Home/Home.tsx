@@ -12,12 +12,13 @@ export default function Home(){
                 <Header/>
                 <Navbar/>
             </div>
-            <p>STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE</p>
-            <BrowserView>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <InstagramEmbed url={"https://www.instagram.com/mantikora_band/"} width={600} captioned/>
-                </div>
-            </BrowserView>
+            <p style={{textAlign:"center"}}>STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE</p>
+
+            <div style={{ display:'flex',justifyContent:'center' }}>
+                <iframe src="https://app.mirror-app.com/feed-instagram/1b46c940-6f7b-48ed-ac53-7599deed245f/preview"
+                        style={{width:"100%",height:"800px",border:"none"}}
+                ></iframe>
+            </div>
         </div>
         <MyFooter/>
     </div>

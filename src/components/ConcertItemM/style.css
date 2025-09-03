@@ -1,0 +1,38 @@
+.concertItemM{
+    min-height:100px;
+    width:80vw;
+    padding:10px;
+}
+.concertRowM{
+    display:flex;
+
+}
+.concertLeftM{
+    width:50%;
+}
+
+.concertDateM{
+
+}
+
+.concertDateTextM{
+    font-size:22px;
+}
+.concertNameM{
+    text-transform:capitalize;
+    color:grey;
+}
+.concertLocationM{
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.ticketsButtonM{
+    width:100%;
+    height:60px;
+    background-color:darkred;
+    color:white;
+    font-size:20px;
+    border:0;
+    border-radius:5px;
+}
