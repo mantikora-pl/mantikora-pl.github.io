@@ -4,27 +4,27 @@
 .newsItemWrapperS{
     max-width:300px;
     display:flex;
-    background-color:#181B1C66;
-    padding:5px;
+    background-color:var(--backgroundColorMain);
+    padding:var(--spaceSmall);
     flex-direction:column;
     justify-content:start;
 }
 .newsImageS{
     width:200px;
     aspect-ratio:1;
-    margin-bottom:10px;
+    margin-bottom:var(--spaceStandard);
 }
 .newsDetailsWrapperS{
 
 }
 .newsTitleS{
-    font-size:22px;
-    font-weight:500;
+    font-size:var(--fontMl);
+    font-weight:var(--boldy);
 }
 .newsDateS{
-    font-size:16px;
-    margin-bottom:20px;
+    font-size:var(--fontSM);
+    margin-bottom:var(--spaceBig);
 }
 .newsContentS{
-    font-size:14px;
+    font-size:var(--fontS);
 }

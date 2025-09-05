@@ -10,7 +10,7 @@
 .discWrapperLeft,.discWrapperRight{
     display:flex;
     justify-content:space-between;
-    margin-top:40px;
+    margin-top:40px; {/*change because wtf*/}
     max-width:800px;
 }
 .discWrapperLeft{
@@ -21,7 +21,7 @@
 }
 
 .coverArt,.albumDetailsWrapper{
-    width:50%;
+    width:var(--half);
 }
 .coverArt{
     aspect-ratio:1!important;
@@ -29,20 +29,20 @@
 
 .albumTitle{
     text-align:center;
-    font-size:28px;
+    font-size:var(--fontL);
     font-weight:bold;
 }
 .albumDate{
     text-align:center;
-    font-size:24px;
-    font-weight:500;
+    font-size:var(--fontMl);
+    font-weight:var(--boldy);
 }
 .songLi{
-    margin:5px;
-    font-size:22px;
+    margin:var(--spaceSmall);
+    font-size:var(--fontMl);
 }
 .albumCredits{
-    margin-top:20px;
-    font-size:20px;
+    margin-top:var(--spaceBig);
+    font-size:var(--fontM);
     text-align:center;
 }

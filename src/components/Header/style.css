@@ -1,17 +1,17 @@
 .pageHeader{
-    padding-top:14px;
-    background-color:#181b1c;
+    padding-top:var(--spaceBig);
+    background-color:var(--backgroundColorMain);
     height:8vh;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding-bottom:14px;
+    padding-bottom:var(--spaceBig);
 }
 
 #headerLogo{
     object-fit:cover;
     display:block!important;
-    margin-top:5px;
+    margin-top:var(--spaceSmall);
     margin-left:auto;
     margin-right:auto;
     max-height:7vh;
@@ -20,7 +20,7 @@
 }
 
 .svg{
-    margin:0 30px;
+    margin:0 30px; {/*isn't there a better way?*/}
 }
 
 
@@ -47,26 +47,26 @@
     margin-bottom:2px;
 }
 .svgM{
-    margin:0 10px;
+    margin:0 var(--spaceStandard);
     height:100%;
 }
 
 
 #sideMenu{
-    font-size:20px;
-    font-family:Georgia, serif, "Noto Sans Jap";
+    font-size:var(--fontM);
+    font-family: var(--fontFamilyStandard), serif;
     text-transform:uppercase;
-    font-weight:500;
-    margin-top:calc(8.5vh - 10px); /*TODO SEE THIS!!!*/
-    background-color:#181b1c;
-    z-index:1000;
+    font-weight:var(--boldy);
+    margin-top:calc(8.5vh - var(--spaceStandard)); /*TODO SEE THIS!!!*/
+    background-color:var(--backgroundColorMain);
+    z-index:var(--zNear);
     position:absolute;
     min-width:75vw;
     height:100vh;
     text-align:start;
 }
 .sideItem{
-    margin:20px 10px;
+    margin:var(--spaceBig) var(--spaceSmall);
 }
 
 #sideMenuWrapper{

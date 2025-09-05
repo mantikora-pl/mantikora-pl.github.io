@@ -12,9 +12,9 @@
 
 
 .songLyricsHeader{
-    font-size:28px;
-    margin:5px;
-    color:#c72525;
+    font-size:var(--fontL);
+    margin:var(--spaceSmall);
+    color:var(--redAccentColor)
 }
 
 .anchor{
@@ -25,8 +25,8 @@
 }
 
 .songLyrics{
-    font-weight:500;
-    font-size:20px;
+    font-weight:var(--boldy);
+    font-size:var(--fontM);
     width:auto;
     text-align:center;
     white-space: pre-line;
@@ -36,5 +36,5 @@
 
 }
 .lyricsItemWrapper{
-    margin:10px 0;
+    margin:var(--spaceStandard) 0;
 }
