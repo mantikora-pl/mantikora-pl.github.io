@@ -16,12 +16,12 @@ const discs:Disc[]=[
         coverArtSrc:"https://picsum.photos/500?random=3",
         songs:[
             "Parasite",
-            "Ballada o chujwieczym",
             "Potop biblijny",
+            "Nie ma nic po śmierci lol",
+            "Ballada o chujwieczym",
             "Intro jako osobny utwór",
             "Gułagi",
             "Organy",
-            "Nie ma nic po śmierci lol",
             "Dziwne odłogsy",
             "Mantikora (chimera blood)",
             "A Dream about War, I Saw"
@@ -30,32 +30,30 @@ const discs:Disc[]=[
     },
     {
         title:"M.I.N.D",
-        date:"XX.XX.2025",
-        coverArtSrc:"https://picsum.photos/500?random=2",
+        date:"XX.XX.2026",
+        coverArtSrc:"/mind.png",
         songs:[
             "Devil's Mouth"+single,
             "Davy Jones's Locker",
-            "Vanitas"+single,
-            "Koszmary"+single,
-            "Kompania",
+            "Anima Sola"+single,
+            "Herxheim",
             "The Hanged Man XII",
             "Judgement XX",
-            "Herxheim",
-            "Dead God"+single
+            "Vanitas"+single,
+            "Kompania",
+            "MIND"+single,
         ],
         credits:"Written by the whole band"
     },
     {
-        title:"M.I.N.D DEMO",
-        date:"??.??.2025",
-        coverArtSrc:"https://picsum.photos/500?random=1",
+        title:"Devil's Mouth - demo",
+        date:"XX.12.2025",
+        coverArtSrc:"/devilsMouth.png",
         songs:[
             "Devil's Mouth",
             "Vanitas",
-            "Koszmary",
             "Kompania",
-            "Herxheim (?)",
-            "Dead God (?)"
+            "MIND",
         ],
         credits:"Written by the whole band"
     },

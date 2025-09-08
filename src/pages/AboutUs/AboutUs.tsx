@@ -19,7 +19,7 @@ const items:Socials[]=[
             {icon:"/socials/email.png",link:"mailto:mantikoraband@gmail.com",name:"E-mail"},
         ]},
     {entityName: "Filip",
-        mainImage: "/socials/JesusChad.png",
+        mainImage: "/socials/JapaneseSoldier.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
@@ -36,8 +36,8 @@ const items:Socials[]=[
             {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
-    {entityName: "Tamara",
-        mainImage: "/socials/DoomerGirl.png",
+    {entityName: "Maks",
+        mainImage: "/socials/JesusChad.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
@@ -55,7 +55,7 @@ const items:Socials[]=[
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
 
-    {entityName: "*wokalista*",
+    {entityName: "Janek",
         mainImage: "/socials/HappyNordicChad.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
@@ -82,6 +82,8 @@ export default function AboutUs(){
                     ))}
                 </section>
             </div>
+            {/*<p className={"smallHeader"}>People who are helping us, big thanks to:</p>*/}
+            {/*todo: honorable mentions*/}
         </div>
         <MyFooter/>
     </div>
