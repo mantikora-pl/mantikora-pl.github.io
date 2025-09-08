@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+ai.md
+
+src/helper/secretLyrics.ts

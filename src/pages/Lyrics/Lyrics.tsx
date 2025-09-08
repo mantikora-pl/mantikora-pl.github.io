@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
 import {lyricsConst} from "../../helper/lyrics";
+import {secretLyricsConst} from "../../helper/secretLyrics";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
@@ -26,17 +27,38 @@ const lyrics:LyricsItems[]=[
     {
         id:3,
         name:"Vanitas",
-        lyrics:"Coming soon",
+        lyrics:lyricsConst[2],
         credits:"",
         visible:true
     },
     {
         id:4,
-        name:"M.I.N.D",
+        name:"MIND",
+        lyrics:lyricsConst[3],
+        credits:"",
+        visible:true
+    },
+    /*{
+        id:5,
+        name:"źołnierze",
         lyrics:"Coming soon",
         credits:"",
         visible:true
     },
+    {
+        id:6,
+        name:"Herxheim",
+        lyrics:"Coming soon",
+        credits:"",
+        visible:true
+    },
+    {
+        id:7,
+        name:"Anima Sola",
+        lyrics:"Coming soon",
+        credits:"",
+        visible:true
+    },*/
 
 ]
 const lyricsR=lyrics.reverse()
