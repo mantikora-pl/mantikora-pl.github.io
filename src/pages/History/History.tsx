@@ -12,6 +12,12 @@ const timeLineItems:TimelineElement[]=[
         photo:""
     },
     {
+        date:"2025 August",
+        subtitle:"subtitle3",
+        description:"Zespół w pełnym składzie",
+        photo:""
+    },
+    {
         date:"10.06.2025",
         subtitle:"subtitle1",
         description:"Pierwsza próba",
@@ -22,12 +28,6 @@ const timeLineItems:TimelineElement[]=[
         subtitle:"subtitle2",
         description:"Powstało logo",
         photo:"mantikoraLogo1.png"
-    },
-    {
-        date:"2025 Late April",
-        subtitle:"subtitle3",
-        description:"Zespół w pełnym składzie",
-        photo:""
     },
     {
         date:"2025 Mid April",
