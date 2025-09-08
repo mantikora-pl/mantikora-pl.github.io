@@ -1,8 +1,8 @@
 html, body{
     margin:0 auto;
     box-sizing:border-box;
-    background-color:#181b1c;
-    color:azure;
+    background-color:var(--backgroundColorMain);
+    color:var(--textColorMain);
 }
 *{
     margin:0;
@@ -15,33 +15,33 @@ html, body{
 .stickyTop{
     position:sticky;
     top:0; /*do not delete*/
-    z-index:5000;
+    z-index:var(--zNearest);
 }
 
 .pageTitle{
     text-align:center;
     font-size:44px;
-    margin-bottom:15px;
-    margin-top:6px;
-    padding-top:14px;
+    margin-bottom:var(--spaceBig);
+    margin-top:var(--spaceSmall);
+    padding-top:var(--spaceBig);
 }
 a{
     text-decoration:none;
-    color:azure;
+    color:var(--textColorMain);
 }
 p{
-    font-size:22px;
+    font-size:var(--fontM);
 }
 
 
 
 #contactSubHeader{
-    font-size:24px;
+    font-size:var(--fontMl);
     text-align:center;
 }
 
 .socialsWrapper{
-    margin:20px;
+    margin:var(--spaceBig);
 }
 #socialEntitiesWrapper{
     max-width:70vw;
@@ -70,10 +70,10 @@ p{
 
 
 #songList li{
-    font-weight:500;
+    font-weight:var(--boldy);
     text-align:start;
-    font-size:26px;
-    margin-bottom:10px;
+    font-size:var(--fontMl);
+    margin-bottom:var(--spaceStandard);
 }
 
 .concertItemsWrapper{
@@ -92,7 +92,7 @@ p{
     align-self:flex-start;
     height:100vh;
     width:20%;
-    z-index:5000;
+    z-index:var(--zNearest);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,12 +111,12 @@ p{
 }
 
 #lyricsImageBG{
-    background-image:url("../public/bg3.png");
+    background-image:var(--bwSkullsBackground);
     background-size:100% auto;
     background-position:top;
 }
 
-@media screen and (max-width:1100px){
+@media screen and (max-width:var(--mediumScreen)){
     #songListAside{
         visibility:hidden;
         width:0;
@@ -131,8 +131,8 @@ p{
 }
 
 #messageNoConcertDates{
-    font-size:28px;
-    margin:20px;
+    font-size:var(--fontL);
+    margin:var(--spaceBig);
     text-transform:uppercase;
 }
 

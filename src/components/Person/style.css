@@ -8,11 +8,11 @@
 }
 
 .partHeader{
-    font-family:Georgia, serif, "Noto Sans Jap";
+    font-family: var(--fontFamilyStandard), serif;
     text-transform:uppercase;
     font-weight:bold;
-    font-size:34px;
-    color:azure;
+    font-size:var(--fontXXl);
+    color:var(--textColorMain);
     margin-top:35px;
     margin-bottom:35px;
 }
@@ -40,18 +40,18 @@
 }
 
 .smallHeader{
-    color:#ff0000;
-    font-size:22px;
+    color:var(--redAccentColor);
+    font-size:var(--fontMl);
     font-weight:bold;
     text-transform:uppercase;
 }
 
 .gearText{
-    font-size:18px;
+    font-size:var(--fontM);
 }
 .infoText{
-    font-size:18px;
-    margin:15px 0;
+    font-size:var(--fontM);
+    margin:var(--spaceBig) 0;
 }
 .smallHeader, .gearText{
     margin-top:25px;

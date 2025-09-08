@@ -3,9 +3,9 @@
     justify-content:center;
     height:6.5vh;
     min-width:100%;
-    background-color:#181b1c;
+    background-color:var(--backgroundColorMain);
     align-items:center;
-    color:azure;
+    color:var(--textColorMain);
 }
 
 .navbar{
@@ -14,25 +14,25 @@
     flex-direction:row;
     flex-wrap:nowrap;
     justify-content:space-between;
-    padding-top:12px;
-    padding-bottom:14px;
+    padding-top:var(--spaceStandard);
+    padding-bottom:var(--spaceBig);
     height:8vh;
     align-items:center;
 }
 
 .navbarItem{
-    margin:10px;
-    //padding:10px;
-    //background-color:#282c34;
+    margin:var(--spaceStandard);
+    /*padding:10px;*/
+    /*background-color:#282c34;*/
 }
 
 .navbarItem > .a{
-    font-family:Georgia, serif, "Noto Sans Jap";
+    font-family: var(--fontFamilyStandard), serif;
     text-transform:uppercase;
-    font-weight:500;
-    font-size:30px;
+    font-weight:var(--boldy);
+    font-size:var(--fontXl);
     text-decoration:none;
-    color:azure;
+    color:var(--textColorMain);
 }
 
 

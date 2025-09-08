@@ -1,0 +1,56 @@
+:root{
+    --backgroundColorDarker: #111315;
+    --backgroundColorMain:#181b1c;
+    --backgroundColorLighter:#282c34;
+    --itemBackgroundColor:#383737;
+
+    --bwSkullsBackground:url("../public/bwSkullsBg.png");
+
+    --redAccentColor: #c42424;
+    --blueAccentColor: #044b98;
+    --mantikoraRed:#690024;
+    --mantikoraPurple:#401378;
+    --textColorMain:#F0FFFF;
+    --textColorInactive:#808080;
+    --linkColor: #a6d8ff;
+    --testColor1:cadetblue;
+    --testColor2:darkolivegreen;
+    --testColor3:goldenrod;
+    --testColor4:plum;
+    --testColor5:slateblue;
+
+    --fontXXl:36px;
+    --fontXl:32px;
+    --fontL:28px;
+    --fontMl:24px;
+    --fontM:20px;
+    --fontSM:16px;
+    --fontS:14px;
+    --fontXS:12px;
+
+    --fontFamilyStandard:Georgia, serif, "Noto Sans Jap";
+
+    --borderThinWhite: 1px solid white;
+    --borderThinBlack: 1px solid black;
+    --borderThickWhite: 2px solid white;
+    --borderThickBlack: 2px solid black;
+
+    --roundedCornersSmall: 6px;
+    --roundedCorners:10px;
+    --roundedCornersCircle: 50%;
+
+    --boldy:500; /*font-weight*/
+
+    --spaceBig:15px; /*margin/padding*/
+    --spaceStandard:10px;
+    --spaceSmall:5px;
+
+    --zNormal:1; /*z-index*/
+    --zNear:10;
+    --zNearest:100;
+
+    --half:50%;
+
+    --mediumScreen:1100px; /** for @media **/
+    --smallScreen:650px;
+}

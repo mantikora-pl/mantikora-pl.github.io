@@ -2,6 +2,7 @@ import React from 'react'
 import News from './pages/News/News'
 import Home from './pages/Home/Home'
 import './App.css'
+import './Var.css'
 import {BrowserRouter as Router,HashRouter,Route,Routes} from 'react-router-dom';
 import Tour from "./pages/Tour/Tour";
 import Discography from "./pages/Discography/Discography";

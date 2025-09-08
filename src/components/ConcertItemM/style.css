@@ -1,14 +1,14 @@
 .concertItemM{
     min-height:100px;
     width:80vw;
-    padding:10px;
+    padding:var(--spaceStandard);
 }
 .concertRowM{
     display:flex;
 
 }
 .concertLeftM{
-    width:50%;
+    width:var(--half);
 }
 
 .concertDateM{
@@ -16,11 +16,11 @@
 }
 
 .concertDateTextM{
-    font-size:22px;
+    font-size:var(--fontM);
 }
 .concertNameM{
     text-transform:capitalize;
-    color:grey;
+    color:var(--textColorInactive);
 }
 .concertLocationM{
     text-transform:uppercase;
@@ -30,9 +30,9 @@
 .ticketsButtonM{
     width:100%;
     height:60px;
-    background-color:darkred;
-    color:white;
-    font-size:20px;
+    background-color:var(--mantikoraRed);
+    color:var(--textColorMain);
+    font-size:var(--fontM);
     border:0;
-    border-radius:5px;
+    border-radius:var(--roundedCornersSmall);
 }

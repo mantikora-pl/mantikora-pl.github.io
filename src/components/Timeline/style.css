@@ -1,24 +1,24 @@
 .timelineItemTitle{
-    font-size:32px;
+    font-size:var(--fontXl);
 }
 
 .timelineItemSubtitle{
-    font-size:28px;
+    font-size:var(--fontL);
 }
 .timelineItemDetails{
-    font-size:22px;
-    width:50%;
+    font-size:var(--fontM);
+    width:var(--half);
 }
 p{
     margin:0;
 }
 
 .verticalTimelineElement{
-    background:#383737;
+    background-color:var(--itemBackgroundColor);
 }
 
 .timelineImg{
-    max-width:50%;
+    max-width:var(--half);
     aspect-ratio:initial!important;
     /*max-height:100px;*/
 }
@@ -27,7 +27,7 @@ p{
         height:40px!important;
         width:40px!important;
         margin-left:-20px!important;
-        margin-top:10px!important;
+        margin-top:var(--spaceStandard)!important;
     }
 
     .vertical-timeline-element-content{
