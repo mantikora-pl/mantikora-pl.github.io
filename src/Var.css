@@ -44,6 +44,7 @@
     --spaceBig:15px; /*margin/padding*/
     --spaceStandard:10px;
     --spaceSmall:5px;
+    --spaceTiny:2px;
 
     --zNormal:1; /*z-index*/
     --zNear:10;
