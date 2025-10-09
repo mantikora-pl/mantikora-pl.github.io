@@ -4,6 +4,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import './style.css'
 
 export interface TimelineElement{
+    id:number,
     title?:string,
     subtitle?:string,
     description:string,

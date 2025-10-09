@@ -43,7 +43,7 @@ const discs:Disc[]=[
             "Kompania",
             "MIND"+single,
         ],
-        credits:"Written by the whole band"
+        credits:getTranslation(defaultLang,"writtenByEveryone")
     },
     {
         title:"Devil's Mouth - demo",
@@ -55,7 +55,7 @@ const discs:Disc[]=[
             "Kompania",
             "MIND",
         ],
-        credits:"Written by the whole band"
+        credits:getTranslation(defaultLang,"writtenByEveryone")
     },
 ]
 

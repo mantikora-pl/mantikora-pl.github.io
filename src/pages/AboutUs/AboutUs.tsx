@@ -4,7 +4,7 @@ import ContactEntity,{Socials} from "../../components/ContactEntity";
 import NewLineToBr from "../../components/NewLineToBr";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
-
+import { LoremIpsum } from "lorem-ipsum";
 
 const items:Socials[]=[
     {entityName: "Mantikora",
@@ -65,7 +65,7 @@ const items:Socials[]=[
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
 ]
-const lorem:string="Lorem ipsum dolor sit amet consectetur adipiscing elit malesuada penatibus turpis vulputate,\n ultrices donec eu interdum pharetra nostra proin pulvinar ac risus tempor viverra,\n blandit elementum purus est iaculis non tortor lobortis scelerisque curabitur.\n Proin mollis sapien primis accumsan phasellus sollicitudin sagittis magnis,\n quam gravida luctus ut scelerisque cubilia imperdiet facilisis risus."
+const lorem=new LoremIpsum()
 
 export default function AboutUs(){
     return <div>
@@ -74,7 +74,7 @@ export default function AboutUs(){
                 <Header/>
                 <Navbar/>
             </div>
-            <p id={"contactSubHeader"}><NewLineToBr>{lorem}</NewLineToBr></p>
+            <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
             <div id={"socialEntitiesWrapperWrapper"}>
                 <section id={"socialEntitiesWrapper"}>
                     {items.map((item,id)=>(

@@ -1,7 +1,6 @@
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
-import {lyricsConst} from "../../helper/lyrics";
 import {secretLyricsConst} from "../../helper/secretLyrics";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
@@ -9,32 +8,34 @@ import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
 
+const lyricsToUse:string[]=secretLyricsConst
+
 const lyrics:LyricsItems[]=[
     {
         id:1,
         name:"Devil's Mouth",
-        lyrics:lyricsConst[0],
+        lyrics:lyricsToUse[0],
         credits:"",
         visible:true
     },
     {
         id:2,
         name:"Davy Jones's Locker",
-        lyrics:lyricsConst[1],
+        lyrics:lyricsToUse[1],
         credits:"",
         visible:true
     },
     {
         id:3,
         name:"Vanitas",
-        lyrics:lyricsConst[2],
+        lyrics:lyricsToUse[2],
         credits:"",
         visible:true
     },
     {
         id:4,
         name:"MIND",
-        lyrics:lyricsConst[3],
+        lyrics:lyricsToUse[3],
         credits:"",
         visible:true
     },
