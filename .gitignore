@@ -24,3 +24,4 @@ yarn-error.log*
 ai.md
 
 src/helper/secretLyrics.ts
+/src/helper/cityData.ts
