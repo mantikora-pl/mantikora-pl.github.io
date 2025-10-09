@@ -4,6 +4,7 @@ import BigNewsItem, {NewsI} from "../../components/BigNewsItem";
 import SmallNewsItem from "../../components/SmallNewsItem";
 import React from "react";
 import MyFooter from "../../components/MyFooter";
+import PageInMaking from "../../components/PageInMaking";
 
 const news:NewsI[]=[
     {
@@ -76,7 +77,7 @@ export default function News(){
                 <Header/>
                 <Navbar/>
             </div>
-        <p>news here</p>
+            <PageInMaking/>
         {/*<div>
             {news.map((item,i)=>(
                 <div>

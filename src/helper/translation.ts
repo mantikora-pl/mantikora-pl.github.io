@@ -11,7 +11,6 @@ export const translations={
         "en":"Tour",
         "pl":"Trasa"
     },
-
     "discography":{
         "en":"Discography",
         "pl":"Dyskografia"
@@ -23,11 +22,6 @@ export const translations={
     "history":{
         "en":"Timeline",
         "pl":"Oś czasu"
-    },
-
-    "gallery":{
-        "en":"Gallery",
-        "pl":"Galeria"
     },
     "band":{
         "en":"Band",
@@ -44,7 +38,65 @@ export const translations={
     "single":{
         "en":"single",
         "pl":"singiel"
-    }
+    },
+    "page-in-making":{
+        "en":"THE PAGE IS IN MAKING, MOST OF THE INFORMATION IS JUST A TEMPLATE",
+        "pl":"STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE"
+    },
+    "aboutUsText":{
+        "en":"to do later",
+        "pl":"tu będzie o nas"
+    },
+    "writtenByEveryone":{
+        "en":"Written by the whole band",
+        "pl":"Napisany przez cały zespół"
+    },
+
+
+    "timelineDesc-1":{
+        "en":"We've started to work on our first song - Devil's Mouth",
+        "pl":"Zaczyna powstawać pierwszy wspólny utwór - Devil's Mouth"
+    },
+    "timelineSubTitle-1":{
+        "en":"",
+        "pl":""
+    },
+
+    "timelineDesc-2":{
+        "en":"We got our logo",
+        "pl":"Powstało logo"
+    },
+    "timelineSubTitle-2":{
+        "en":"",
+        "pl":""
+    },
+
+    "timelineDesc-3":{
+        "en":"First rehearsal together",
+        "pl":"Pierwsza próba"
+    },
+    "timelineSubTitle-3":{
+        "en":"",
+        "pl":""
+    },
+    "timelineDesc-4":{
+        "en":"Zespół w pełnym składzie",
+        "pl":"Zespół w pełnym składzie"
+    },
+    "timelineSubTitle-4":{
+        "en":"",
+        "pl":""
+    },
+
+    "timelineDesc-5":{
+        "en":"We've recorded our demo",
+        "pl":"Zostaje nagrane demo"
+    },
+    "timelineSubTitle-5":{
+        "en":"",
+        "pl":""
+    },
+
 } as const
 
 export function getTranslation(locale:string,key:string):string{

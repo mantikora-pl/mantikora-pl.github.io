@@ -4,35 +4,42 @@ import 'react-vertical-timeline-component/style.min.css';
 import Timeline,{TimelineElement} from "../../components/Timeline";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
+import {defaultLang,getTranslation} from "../../helper/translation";
 
 const timeLineItems:TimelineElement[]=[
     {
+        id:5,
         date:"2025 ???",
-        description:"Zostaje nagrany singiel devil's mouth",
+        subtitle:getTranslation(defaultLang,"timelineSubTitle-5"),
+        description:getTranslation(defaultLang,"timelineDesc-5"),
         photo:""
     },
     {
+        id:4,
         date:"2025 August",
-        subtitle:"subtitle3",
-        description:"Zespół w pełnym składzie",
+        subtitle:getTranslation(defaultLang,"timelineSubTitle-4"),
+        description:getTranslation(defaultLang,"timelineDesc-4"),
         photo:""
     },
     {
+        id:3,
         date:"10.06.2025",
-        subtitle:"subtitle1",
-        description:"Pierwsza próba",
+        subtitle:getTranslation(defaultLang,"timelineSubTitle-3"),
+        description:getTranslation(defaultLang,"timelineDesc-3"),
         photo:""
     },
     {
+        id:2,
         date:"2025 June",
-        subtitle:"subtitle2",
-        description:"Powstało logo",
+        subtitle:getTranslation(defaultLang,"timelineSubTitle-2"),
+        description:getTranslation(defaultLang,"timelineDesc-2"),
         photo:"mantikoraLogo1.png"
     },
     {
+        id:1,
         date:"2025 Mid April",
-        subtitle:"",
-        description:"Zaczyna powstawać pierwszy wspólny utwór - Devil's Mouth ",
+        subtitle:getTranslation(defaultLang,"timelineSubTitle-1"),
+        description:getTranslation(defaultLang,"timelineDesc-1"),
         photo:""
     }
 ]
