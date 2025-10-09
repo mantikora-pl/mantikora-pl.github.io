@@ -33,16 +33,16 @@
     justify-content:space-around;
 }
 
-.concertMonth{
+.concertMonth, .concertYear, .concertDay{
+    padding-bottom:var(--spaceSmall);
     font-size:var(--fontMl);
+    color:black;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white, 1px 1px 0 white;
 }
 
 .concertDay{
-    font-size:var(--fontL);
-}
-
-.concertYear{
-    font-size:var(--fontMl);
+    font-size:var(--fontL) !important;
 }
 
 
@@ -65,3 +65,4 @@
     border:0;
     border-radius:var(--roundedCornersSmall);
 }
+

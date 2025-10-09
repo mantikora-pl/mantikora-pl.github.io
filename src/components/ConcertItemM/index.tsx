@@ -1,23 +1,14 @@
 import React from 'react'
 import './style.css'
 import {defaultLang} from "../../helper/translation";
-import concertItem from "../ConcertItem";
-export interface Concert{
-    year:string
-    month:string
-    day:string
-    name:string
-    location:string
-    buyLink:string
-    visible:boolean
-}
-/**name is also club! location is only city+country **/
+import concertItem,{Concert, Concert_Old} from "../ConcertItem";
+
 function ConcertItemM({items}:{items: Concert}){
     function unifiedDate(){
-        return(items.day+' '+items.month+' '+items.year)
+        return(items.date.day+' '+items.date.month+' '+items.date.year)
     }
     function unifiedDateUS(){
-        return(items.month+' '+items.day+' '+items.year)
+        return(items.date.month+' '+items.date.day+' '+items.date.year)
     }
 
     return(
@@ -31,12 +22,12 @@ function ConcertItemM({items}:{items: Concert}){
                     }
                     {defaultLang!=="en" &&
                         <div className={"concertDateM"}>
-                            <p className={"concertDateTextM"}>{items.day} {items.month} {items.year}</p>
+                            <p className={"concertDateTextM"}>{unifiedDateUS()} </p>
                         </div>
                     }
                     <p className={"concertNameM"}>{items.name}</p>
                 </div>
-                <p className={"concertLocationM"}>{items.location}</p>
+                <p className={"concertLocationM"}>{items.city}</p>
             </div>
 
             <a href={items.buyLink}><button className={"ticketsButtonM"}>Tickets</button></a>
