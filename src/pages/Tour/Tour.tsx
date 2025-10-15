@@ -16,8 +16,8 @@ import {codeToCountry} from "../../helper/constants";
 const items:Concert[]=[
     {
         id:1,
-        date:translateDate(2005,4,2,defaultLang),
-        numericDate:{year:2005,month:4,day:2},
+        date:translateDate(2026,4,2,defaultLang),
+        numericDate:{year:2026,month:4,day:2},
         name:"Festiwal kremówki",
         country:"PL",
         state:undefined,
@@ -27,9 +27,9 @@ const items:Concert[]=[
     },
     {
         id:2,
-        date:translateDate(2001,9,11,defaultLang),
-        numericDate:{year:2001,month:9,day:11},
-        name:"Concert on the roof of World Trade Center",
+        date:translateDate(2026,5,3,defaultLang),
+        numericDate:{year:2026,month:5,day:3},
+        name:"idk",
         country:"US",
         state:"NY",
         city:"New York City",
@@ -41,9 +41,31 @@ const items:Concert[]=[
         date:translateDate(2026,6,4,defaultLang),
         numericDate:{year:2026,month:6,day:4},
         name:"Mystic",
-        country:"PL",
+        country:"DE",
         state:undefined,
         city:"Gdańsk",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:4,
+        date:translateDate(2026,9,12,defaultLang),
+        numericDate:{year:2026,month:9,day:12},
+        name:"Praha",
+        country:"CZ",
+        state:undefined,
+        city:"Praha",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:3,
+        date:translateDate(2026,12,12,defaultLang),
+        numericDate:{year:2026,month:12,day:12},
+        name:"o2",
+        country:"GB",
+        state:undefined,
+        city:"LONDON",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
     }
