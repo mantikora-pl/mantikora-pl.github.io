@@ -5,6 +5,7 @@ import NewLineToBr from "../../components/NewLineToBr";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
+import PageInMaking from "../../components/PageInMaking";
 
 const items:Socials[]=[
     {entityName: "Mantikora",
@@ -36,7 +37,7 @@ const items:Socials[]=[
             {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
-    {entityName: "Maks",
+    {entityName: "*gitarzysta którego nie ma*",
         mainImage: "/socials/JesusChad.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
@@ -74,6 +75,7 @@ export default function AboutUs(){
                 <Header/>
                 <Navbar/>
             </div>
+            <PageInMaking/>
             <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
             <div id={"socialEntitiesWrapperWrapper"}>
                 <section id={"socialEntitiesWrapper"}>
@@ -88,10 +90,3 @@ export default function AboutUs(){
         <MyFooter/>
     </div>
 }
-
-/*
-
-
-
-
- */
