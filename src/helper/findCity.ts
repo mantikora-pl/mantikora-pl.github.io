@@ -1,4 +1,4 @@
-import {cityData} from "./cityData";
+import {cityData} from "../data/cityData";
 
 
 /**
@@ -11,7 +11,7 @@ export function getDistance(userLat:number,userLng:number,lat:number,lng:number)
     ))
 }
 
-export function findClosestCity(lat:number,lng:number){
+/*export function findClosestCity(lat:number,lng:number){
     let closestDistance=13000000
     let closestId=-1
 
@@ -25,21 +25,24 @@ export function findClosestCity(lat:number,lng:number){
         }
     }
     return cityData[closestId]
-}
+}*/
 
-export function findCityByName(name:string){
+/*export function findCityByName(name:string){
     for (let i=0;i<cityData.length;i++){
         if(cityData[i].city===name){
             return cityData[i]
         }
     }
-}
+}*/
 
 export function findCityByNameAndCountry(city:string,country:string){
     for (let i=0;i<cityData.length;i++){
-        if(cityData[i].city===city&&cityData[i].country===country){
+        if(
+            cityData[i].city.toUpperCase()===city.toUpperCase() &&
+            cityData[i].country.toUpperCase()===country.toUpperCase()
+        ){
             return cityData[i]
         }
     }
-    return {city:"",country:"",lat:0,lng:0}
+    return {country:"",city:"",lat:-1,lng:-1}
 }
