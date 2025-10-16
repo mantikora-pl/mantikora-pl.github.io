@@ -7,7 +7,7 @@ import {BrowserRouter as Router,HashRouter,Route,Routes} from 'react-router-dom'
 import Tour from "./pages/Tour/Tour";
 import Discography from "./pages/Discography/Discography";
 import Lyrics from "./pages/Lyrics/Lyrics";
-import History from "./pages/History/History";
+import BandTimeline from "./pages/BandTimeline/BandTimeline";
 /*import Gallery from "./pages/Gallery/Gallery";*/
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Person,{PersonalData} from "./components/Person";
@@ -76,7 +76,7 @@ const routes=[
     {path:'/tour',element:<Tour/>},
     {path:'/discography',element:<Discography/>},
     {path:'/lyrics',element:<Lyrics/>},
-    {path:'/history',element:<History/>},
+    {path:'/history',element:<BandTimeline/>},
     {path:'/contact',element:<AboutUs/>},
     {path:'*',element:<NotFound/>},
     /*{path:'/about/:filip',element:<Person person={sample}/>}*/

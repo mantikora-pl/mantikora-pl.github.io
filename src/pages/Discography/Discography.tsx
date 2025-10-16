@@ -6,6 +6,7 @@ import {defaultLang,getTranslation} from "../../helper/translation";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {BrowserView,MobileView} from "react-device-detect";
+import PageInMaking from "../../components/PageInMaking";
 
 const single=" ("+getTranslation(defaultLang,"single")+")"
 
@@ -66,6 +67,7 @@ export default function Discography(){
                 <Header/>
                 <Navbar/>
             </div>
+            <PageInMaking/>
             <p className={"pageTitle"}>{getTranslation(defaultLang,"our-cds")}</p>
             <MobileView>
                 <DiscListM items={discs}/>
