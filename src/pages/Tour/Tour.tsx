@@ -3,100 +3,60 @@ import Navbar from "../../components/Navbar";
 import ConcertItem,{Concert} from "../../components/ConcertItem";
 import ConcertItemM from "../../components/ConcertItemM";
 import MyFooter from "../../components/MyFooter";
-import React from "react";
-import {defaultLang,getTranslation} from "../../helper/translation";
+import React,{useEffect,useRef,useState} from "react";
 import {BrowserView,MobileView} from "react-device-detect";
 import PageInMaking from "../../components/PageInMaking";
-import {daysToEvent,translateDate} from "../../helper/date";
-import {findCityByName} from "../../helper/findCity";
-import {codeToCountry} from "../../helper/constants";
+import {daysToEvent} from "../../helper/date";
+import {getDistance} from "../../helper/findCity";
+import {getCoordinates} from "../../helper/CoordinateFetcher";
+import Cookies from "universal-cookie";
+import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
+import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
+//import {concertsRaw as concertsRaw} from "../../data/concertList"
 
 
-
-const items:Concert[]=[
-    {
-        id:1,
-        date:translateDate(2026,4,2,defaultLang),
-        numericDate:{year:2026,month:4,day:2},
-        name:"Festiwal kremówki",
-        country:"PL",
-        state:undefined,
-        city:"Wadowice",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    },
-    {
-        id:2,
-        date:translateDate(2026,5,3,defaultLang),
-        numericDate:{year:2026,month:5,day:3},
-        name:"idk",
-        country:"US",
-        state:"NY",
-        city:"New York City",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    },
-    {
-        id:3,
-        date:translateDate(2026,6,4,defaultLang),
-        numericDate:{year:2026,month:6,day:4},
-        name:"Mystic",
-        country:"DE",
-        state:undefined,
-        city:"Gdańsk",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    },
-    {
-        id:4,
-        date:translateDate(2026,9,12,defaultLang),
-        numericDate:{year:2026,month:9,day:12},
-        name:"Praha",
-        country:"CZ",
-        state:undefined,
-        city:"Praha",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    },
-    {
-        id:3,
-        date:translateDate(2026,12,12,defaultLang),
-        numericDate:{year:2026,month:12,day:12},
-        name:"o2",
-        country:"GB",
-        state:undefined,
-        city:"LONDON",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    }
-]
-
-
+const cookies=new Cookies();
 export default function Tour(){
-    const date={
-        "year":new Date().getFullYear(),
-        "month":new Date().getMonth()+1,
-        "day":new Date().getDate()
-    }
-    console.log(date)
+    const [coordinates,setCoordinates]=useState({lat:0,lng:0})
+    const gpsLocation=useRef(false)
 
-    /**
-     * has to have visible=true and date in the future/present
-     * **/
-    function shouldBeVisible(item:Concert):boolean{
-        return item.visible&&daysToEvent({
-            year:item.numericDate.year,
-            month:item.numericDate.month,
-            day:item.numericDate.day
-        })>=0;
-    }
+    /** has to have visible=true and date in the future/present **/
     function visibleCount():boolean{
         let count=0
-        items.forEach((item)=>{
+        concertsRaw.forEach((item)=>{
             if(shouldBeVisible(item)) count++
         })
         return count>0
     }
+
+    useEffect(()=>{
+        if(!Boolean(cookies.get('lat'))){
+            getCoordinates(setCoordinates,gpsLocation)
+            cookies.set('lat', coordinates.lat, { path: '/' })
+            cookies.set('lng', coordinates.lng, { path: '/' })
+        }
+        else
+            setCoordinates({lat:Number(cookies.get('lat')),lng:Number(cookies.get('lng'))})
+
+    },[coordinates.lat, coordinates.lng])
+
+    const concerts:Concert[]=concertsRaw.map(item=>({
+        id:item.id,
+        date:item.date,
+        numericDate:item.numericDate,
+        name:item.name,
+        country:item.country,
+        state:item.state,
+        city:item.city,
+        buyLink:item.buyLink,
+        visible:item.visible,
+        lat:getConcertLocation(item).lat,
+        lng:getConcertLocation(item).lng,
+        distanceKm:getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng),
+        daysToEvent:daysToEvent(item.numericDate),
+    }))
+    concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent) //sort by days to event
+    //concerts.sort((a,b)=>a.distanceKm-b.distanceKm) distance
 
     return <div>
         <div className={"page"}>
@@ -109,24 +69,24 @@ export default function Tour(){
             <div className={"concertItemsWrapper"}>
                 {visibleCount()&&
                     <div className={"concertItems"}>
-                        {/*<BrowserView>*/}
-                        {items.map((item,i)=>(
-                            <>
-                                {shouldBeVisible(item)&&
-                                    <ConcertItem item={items[i]} key={i}/>
-                                }
-                            </>
-                        ))}
-                        {/* </BrowserView>
-                        <MobileView>
-                            {items.map((item,i)=>(
+                        <BrowserView>
+                            {concerts.map((item,i)=>(
                                 <>
-                                    {item.visible&&
-                                        <ConcertItemM items={items[i]} key={i}/>
+                                    {shouldBeVisible(item)&&
+                                        <ConcertItem item={concerts[i]} key={i}/>
                                     }
                                 </>
                             ))}
-                        </MobileView>*/}
+                        </BrowserView>
+                        <MobileView>
+                            {concerts.map((item,i)=>(
+                                <>
+                                    {shouldBeVisible(item)&&
+                                        <ConcertItemM items={concerts[i]} key={i}/>
+                                    }
+                                </>
+                            ))}
+                        </MobileView>
                     </div>}
                 {!visibleCount()&&
                     <p id={"messageNoConcertDates"}>no tour dates for now : (</p>

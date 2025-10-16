@@ -7,7 +7,6 @@ export interface LyricsItems{
     name:string,
     lyrics:string,
     credits?:string,
-    visible?:boolean
 }
 
 function LyricsItem({items}:{items: LyricsItems[]}){
