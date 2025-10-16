@@ -5,6 +5,7 @@ import Timeline,{TimelineElement} from "../../components/Timeline";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
+import PageInMaking from "../../components/PageInMaking";
 
 const timeLineItems:TimelineElement[]=[
     {
@@ -14,13 +15,13 @@ const timeLineItems:TimelineElement[]=[
         description:getTranslation(defaultLang,"timelineDesc-5"),
         photo:""
     },
-    {
+ /*   {
         id:4,
         date:"2025 August",
         subtitle:getTranslation(defaultLang,"timelineSubTitle-4"),
         description:getTranslation(defaultLang,"timelineDesc-4"),
         photo:""
-    },
+    },*/
     {
         id:3,
         date:"10.06.2025",
@@ -45,21 +46,14 @@ const timeLineItems:TimelineElement[]=[
 ]
 
 
-export default function History(){
+export default function BandTimeline(){
     return <div>
         <div className={"page"}>
             <div className={"stickyTop"}>
                 <Header/>
                 <Navbar/>
             </div>
-            {/*<VerticalTimeline>
-            <VerticalTimelineElement className="vertical-timeline-element" contentStyle={{background:'#383737'}} date="20.04.2025">
-                <h3 className="timeline-item-title">Title</h3>
-                <h4 className="timeline-item-subtitle">Subitle</h4>
-                <p>description</p>
-            </VerticalTimelineElement>
-        </VerticalTimeline>*/}
-
+            <PageInMaking/>
             <Timeline items={timeLineItems}/>
         </div>
         <MyFooter/>
