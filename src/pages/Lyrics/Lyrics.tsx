@@ -7,8 +7,10 @@ import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
+import {lyricsConst} from "../../data/lyrics";
+import PageInMaking from "../../components/PageInMaking";
 
-const lyricsToUse:string[]=secretLyricsConst
+const lyricsToUse:string[]=lyricsConst
 
 const lyrics:LyricsItems[]=[
     {
@@ -68,6 +70,7 @@ export default function Lyrics(){
                 <Header/>
                 <Navbar/>
             </div>
+            <PageInMaking/>
         <div id={"lyricsImageBG"}>
             <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
             <main id={"lyricsPageIn"}>
