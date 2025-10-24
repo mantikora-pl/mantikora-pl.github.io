@@ -3,16 +3,17 @@ import News from './pages/News/News'
 import Home from './pages/Home/Home'
 import './App.css'
 import './Var.css'
-import {BrowserRouter as Router,HashRouter,Route,Routes} from 'react-router-dom';
+import {HashRouter,Route,Routes} from 'react-router-dom';
 import Tour from "./pages/Tour/Tour";
 import Discography from "./pages/Discography/Discography";
 import Lyrics from "./pages/Lyrics/Lyrics";
 import BandTimeline from "./pages/BandTimeline/BandTimeline";
 /*import Gallery from "./pages/Gallery/Gallery";*/
 import AboutUs from "./pages/AboutUs/AboutUs";
-import Person,{PersonalData} from "./components/Person";
+//import Person,{PersonalData} from "./components/Person";
 import NotFound from "./pages/404/404";
 
+/*
 const sample:PersonalData={
     name:"sample",
     photo:"https://picsum.photos/400?random=4",
@@ -69,6 +70,7 @@ const sample:PersonalData={
         {item:"What year would you go to in time machine? ",value:"???"},
     ],
 }
+*/
 
 const routes=[
     {path:'/',element:<Home/>},

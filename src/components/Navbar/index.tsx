@@ -2,7 +2,7 @@ import React from "react"
 import './style.css'
 import {defaultLang,getTranslation} from "../../helper/translation"
 import {Link} from "react-router-dom";
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect'
+import { BrowserView } from 'react-device-detect'
 
 const lang=defaultLang
 
