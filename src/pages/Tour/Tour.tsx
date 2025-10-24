@@ -11,8 +11,8 @@ import {getDistance} from "../../helper/findCity";
 import {getCoordinates} from "../../helper/CoordinateFetcher";
 import Cookies from "universal-cookie";
 import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
-import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
-//import {concertsRaw as concertsRaw} from "../../data/concertList"
+//import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
+import {concertsRaw} from "../../data/concertList"
 
 
 const cookies=new Cookies();
