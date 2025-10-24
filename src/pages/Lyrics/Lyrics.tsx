@@ -1,14 +1,15 @@
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
-import {secretLyricsConst} from "../../data/lyrics_secret";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
+import {lyricsConst} from "../../data/lyrics";
+//import {secretLyricsConst as lyricsConst} from "../../data/lyrics_secret";
 
-const lyricsToUse:string[]=secretLyricsConst
+const lyricsToUse:string[]=lyricsConst
 
 const lyrics:LyricsItems[]=[
     {
