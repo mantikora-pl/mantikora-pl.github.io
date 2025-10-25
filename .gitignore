@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 ai.md
 
-src/helper/secretLyrics.ts
-/src/helper/cityData.ts
+/src/data/cityData.ts
+/src/data/concertList_secret.ts
+/src/data/lyrics_secret.ts
+/src/data/discData_secret.ts
+/src/test

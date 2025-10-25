@@ -7,8 +7,7 @@
     border-top:1px solid white;
     justify-content:space-between;
     align-items:center;
-    max-width:1200px;
-    min-width:50vw;
+    min-width:60vw;
     border-collapse:collapse;
     padding:var(--spaceStandard);
 }
@@ -28,9 +27,20 @@
     border:solid 1px white;
     border-radius:var(--roundedCorners);
     text-align:center;
-    display:flex;
+    display:flex !important;
     flex-direction:column;
-    justify-content:space-around;
+    padding:0;
+    justify-content:space-evenly;
+}
+
+.fi:before {
+    content:none !important;
+}
+
+.concertMonth,.concertDay,.concertYear{
+    color:#000;
+    text-shadow: -1px -1px 0 var(--textColorMain), 1px -1px 0 var(--textColorMain),
+    -1px 1px 0 var(--textColorMain), 1px 1px 0 var(--textColorMain);
 }
 
 .concertMonth, .concertYear, .concertDay{
@@ -49,11 +59,14 @@
 .concertName{
     text-transform:uppercase;
     text-align:center;
+    text-overflow:ellipsis;
+    width:30%;
 }
 
 .concertLocation{
     text-transform:uppercase;
     text-align:center;
+    width:auto;
 }
 
 .ticketsButton{

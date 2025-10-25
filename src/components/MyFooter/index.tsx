@@ -1,6 +1,5 @@
 import React from 'react'
 import './style.css'
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect'
 
 
 function MyFooter(){

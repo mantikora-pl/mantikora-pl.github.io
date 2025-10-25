@@ -1,14 +1,15 @@
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
-import {secretLyricsConst} from "../../helper/secretLyrics";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {defaultLang,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
+import {lyricsConst} from "../../data/lyrics";
+//import {secretLyricsConst as lyricsConst} from "../../data/lyrics_secret";
 
-const lyricsToUse:string[]=secretLyricsConst
+const lyricsToUse:string[]=lyricsConst
 
 const lyrics:LyricsItems[]=[
     {
@@ -16,28 +17,24 @@ const lyrics:LyricsItems[]=[
         name:"Devil's Mouth",
         lyrics:lyricsToUse[0],
         credits:"",
-        visible:true
     },
     {
         id:2,
         name:"Davy Jones's Locker",
         lyrics:lyricsToUse[1],
         credits:"",
-        visible:true
     },
     {
         id:3,
         name:"Vanitas",
         lyrics:lyricsToUse[2],
         credits:"",
-        visible:true
     },
     {
         id:4,
         name:"MIND",
         lyrics:lyricsToUse[3],
         credits:"",
-        visible:true
     },
     /*{
         id:5,
@@ -80,11 +77,10 @@ export default function Lyrics(){
                         <section>
                             {Array.from({length:lyrics.length},(_,i)=>
                                 <span key={i}>
-                                    {lyricsR?.at(i)?.visible===true&&
                                     <li>
                                         <Link to={"/lyrics/#header"+i}>
                                             {lyricsR?.at(i)?.name}</Link>
-                                    </li>}
+                                    </li>
                                 </span>
                             )}
                         </section>
