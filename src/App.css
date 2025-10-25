@@ -141,3 +141,22 @@ p{
     flex-direction:column;
     align-items:center;
 }
+#honorableMentionsWrapper{
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    /*margin-left:var(--spaceHuge);*/
+    display:flex;
+    flex-direction:row;
+    text-align:center;
+}
+
+.centerText{
+    text-align:center;
+}
+
+.smallHeader{
+    color:var(--redAccentColor);
+    font-size:var(--fontMl);
+    font-weight:bold;
+    text-transform:uppercase;
+}
