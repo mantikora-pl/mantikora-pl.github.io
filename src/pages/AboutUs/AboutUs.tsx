@@ -6,8 +6,9 @@ import MyFooter from "../../components/MyFooter";
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
 import PageInMaking from "../../components/PageInMaking";
+import HonorableMentionsItem,{HonorableMentionsItemI} from "../../components/HonorableMentionsItem";
 
-const items:Socials[]=[
+const bandMembers:Socials[]=[
     {entityName: "Mantikora",
         mainImage: "/mantikoraLogo1.png",
         items1:[
@@ -66,6 +67,15 @@ const items:Socials[]=[
             {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
 ]
+const honorableMentions:HonorableMentionsItemI[]=[
+    {
+        name:"Michał",
+        link:"https://www.facebook.com/profile.php?id=100030973458749",
+        linkIcon:"/socials/facebook.png"
+    }
+]
+
+
 const lorem=new LoremIpsum()
 
 export default function AboutUs(){
@@ -75,17 +85,21 @@ export default function AboutUs(){
                 <Header/>
                 <Navbar/>
             </div>
-            <PageInMaking/>
-            <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
-            <div id={"socialEntitiesWrapperWrapper"}>
-                <section id={"socialEntitiesWrapper"}>
-                    {items.map((item,id)=>(
-                        <ContactEntity items={item} key={id}/>
-                    ))}
-                </section>
+            <div id={"aboutUsWrapper"}>
+                <PageInMaking/>
+                <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
+                <div id={"socialEntitiesWrapper"}>
+                    <section id={"socialEntityItemWrapper"}>
+                        {bandMembers.map((item,id)=>(
+                            <ContactEntity items={item} key={id}/>
+                        ))}
+                    </section>
+                </div>
             </div>
-            {/*<p className={"smallHeader"}>People who are helping us, big thanks to:</p>*/}
+            <p className={"smallHeader"}>People who are helping us, big thanks to:</p>
+            <HonorableMentionsItem item={honorableMentions[0]}/>
             {/*todo: honorable mentions*/}
+
         </div>
         <MyFooter/>
     </div>
