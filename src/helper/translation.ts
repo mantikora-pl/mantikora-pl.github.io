@@ -51,7 +51,10 @@ export const translations={
         "en":"Written by the whole band",
         "pl":"Napisany przez cały zespół"
     },
-
+    "honorableMentions":{
+        "en":"Honorable mentions: ",
+        "pl":"Podziękowania dla: "
+    },
 
     "timelineDesc-1":{
         "en":"We've started to work on our first song - Devil's Mouth",
