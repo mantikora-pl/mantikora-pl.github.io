@@ -7,6 +7,7 @@ import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
 import PageInMaking from "../../components/PageInMaking";
 import HonorableMentionsItem,{HonorableMentionsItemI} from "../../components/HonorableMentionsItem";
+import {defaultLang,getTranslation} from "../../helper/translation";
 
 const bandMembers:Socials[]=[
     {entityName: "Mantikora",
@@ -71,7 +72,8 @@ const honorableMentions:HonorableMentionsItemI[]=[
     {
         name:"Michał",
         link:"https://www.facebook.com/profile.php?id=100030973458749",
-        linkIcon:"/socials/facebook.png"
+        linkIcon:"/socials/facebook.png",
+        description:"example description",
     }
 ]
 
@@ -96,7 +98,7 @@ export default function AboutUs(){
                     </section>
                 </div>
             </div>
-            <p className={"smallHeader"}>People who are helping us, big thanks to:</p>
+            <h2 className={"smallHeader"}>{getTranslation(defaultLang,"honorableMentions")}</h2>
             <HonorableMentionsItem item={honorableMentions[0]}/>
             {/*todo: honorable mentions*/}
 

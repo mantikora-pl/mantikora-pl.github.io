@@ -11,10 +11,15 @@ export interface HonorableMentionsItemI{
 function HonorableMentionsItem({item}:{item: HonorableMentionsItemI}){
     return(
         <div>
-            <h4>{item.name}</h4>
-            {(item.link && item.linkIcon) &&
-                <a href={item.link}><img src={item.linkIcon} alt={"click to go to "+item.link}/></a>
-            }
+            <div className={"honorableMentionsItemWrapper"}>
+                <p className={"entityName"}>{item.name}</p>
+                {(item.link && item.linkIcon) &&
+                        <a href={item.link} className={"entityLink"}>
+                            <img src={item.linkIcon} alt={"click to go to "+item.link}/>
+                        </a>
+                }
+                {item.description && <p className={"entityDescription"}>{item.description}</p>}
+            </div>
         </div>
     )
 }

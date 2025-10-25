@@ -1,0 +1,23 @@
+.entityName{
+    font-size:var(--fontMl);
+}
+.entityDescription{
+    font-size:var(--fontSM);
+}
+
+.entityLink{
+    margin:5px;
+    align-content:center;
+}
+
+.entityLink > img{
+    max-width:30px;
+    width:auto;
+    height:auto;
+}
+
+.honorableMentionsItemWrapper{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
