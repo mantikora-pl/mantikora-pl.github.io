@@ -13,14 +13,15 @@ import Cookies from "universal-cookie";
 import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
 //import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
 import {concertsRaw} from "../../data/concertList"
+import {defaultLang,getTranslation} from "../../helper/translation";
 
 
 const cookies=new Cookies();
 export default function Tour(){
     const [coordinates,setCoordinates]=useState({lat:0,lng:0})
     const gpsLocation=useRef(false)
+    const [sortByLocation,setSortByLocation]=useState(false)
 
-    /** has to have visible=true and date in the future/present **/
     function visibleCount():boolean{
         let count=0
         concertsRaw.forEach((item)=>{
@@ -55,8 +56,8 @@ export default function Tour(){
         distanceKm:getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng),
         daysToEvent:daysToEvent(item.numericDate),
     }))
-    concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent) //sort by days to event
-    //concerts.sort((a,b)=>a.distanceKm-b.distanceKm) distance
+    if(sortByLocation)  concerts.sort((a,b)=>a.distanceKm-b.distanceKm)
+    else concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent)
 
     return <div>
         <div className={"page"}>
@@ -65,7 +66,17 @@ export default function Tour(){
                 <Navbar/>
             </div>
             <PageInMaking/>
-            <p className={"pageTitle"}>Tour</p>
+            <div className={"concertPageHeader"}>
+                <div className={"flex1"}/>
+                <p className={"pageTitle"}>Tour</p>
+                <div id={"buttonSortByContainer"}>
+                    <button
+                        id={"buttonSortBy"}
+                        onClick={()=>setSortByLocation(!sortByLocation)}>{
+                        sortByLocation? getTranslation(defaultLang,"sortByDate"): getTranslation(defaultLang,"sortByLocation")}
+                    </button>
+                </div>
+            </div>
             <div className={"concertItemsWrapper"}>
                 {visibleCount()&&
                     <div className={"concertItems"}>
