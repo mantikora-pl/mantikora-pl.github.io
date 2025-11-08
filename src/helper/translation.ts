@@ -55,6 +55,14 @@ export const translations={
         "en":"Honorable mentions: ",
         "pl":"Podziękowania dla: "
     },
+    "sortByLocation":{
+        "en":"Sort concerts by location",
+        "pl":"Sortuj koncerty po odległości"
+    },
+    "sortByDate":{
+        "en":"Sort concerts by date",
+        "pl":"Sortuj koncerty po dacie"
+    },
 
     "timelineDesc-1":{
         "en":"We've started to work on our first song - Devil's Mouth",

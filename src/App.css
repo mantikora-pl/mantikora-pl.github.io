@@ -160,3 +160,30 @@ p{
     font-weight:bold;
     text-transform:uppercase;
 }
+
+
+.concertPageHeader{
+    margin-top:var(--spaceBig);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#buttonSortByContainer{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+#buttonSortBy{
+    width:140px;
+    min-height:40px;
+    padding:var(--spaceSmall);
+    background-color:var(--blueAccentColor);
+    color:var(--textColorMain);
+    font-size:var(--fontM);
+    border:0;
+    border-radius:var(--roundedCornersSmall);
+}
+.flex1{
+    flex:1;
+}
