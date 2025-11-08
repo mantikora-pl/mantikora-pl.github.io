@@ -6,10 +6,11 @@ import MyFooter from "../../components/MyFooter";
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
 import PageInMaking from "../../components/PageInMaking";
-import HonorableMentionsItem from "../../components/HonorableMentionsItem";
-import {defaultLang,getTranslation} from "../../helper/translation";
-import {bandMembers} from "../../data/bandMembers";
+/*import HonorableMentionsItem from "../../components/HonorableMentionsItem";
 import {honorableMentions} from "../../data/honorableMentions";
+import {defaultLang,getTranslation} from "../../helper/translation";*/
+import {bandMembers} from "../../data/bandMembers";
+
 
 
 const lorem=new LoremIpsum()
@@ -33,14 +34,14 @@ export default function AboutUs(){
                 </div>
             </div>
 
-            <div>
+            {/*<div>
                 <p className={"smallHeader centerText"}>{getTranslation(defaultLang,"honorableMentions")}</p>
                 <div id={"honorableMentionsWrapper"}>
                 {honorableMentions.map((item)=>(
                     <HonorableMentionsItem item={item}/>
                 ))}
                 </div>
-            </div>
+            </div>*/}
 
 
         </div>
