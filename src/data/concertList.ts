@@ -7,11 +7,111 @@ export const concertsRaw:ConcertRaw[]=[
         id:1,
         date:translateDate(2026,4,2,defaultLang),
         numericDate:{year:2026,month:4,day:2},
-        name:"A sample concert that's not hidden",
+        name:"Przykładowy koncert",
         country:"PL",
         state:undefined,
         city:"Wadowice",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
+    },
+    {
+        id:2,
+        date:translateDate(2026,5,3,defaultLang),
+        numericDate:{year:2026,month:5,day:3},
+        name:"Example concert",
+        country:"US",
+        state:"NY",
+        city:"New York",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:3,
+        date:translateDate(2026,6,4,defaultLang),
+        numericDate:{year:2026,month:6,day:4},
+        name:"Example event",
+        country:"PL",
+        state:undefined,
+        city:"Gdańsk",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:4,
+        date:translateDate(2026,9,12,defaultLang),
+        numericDate:{year:2026,month:9,day:12},
+        name:"Przykładowe wydarzenie",
+        country:"CZ",
+        state:undefined,
+        city:"Prague",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:5,
+        date:translateDate(2026,12,12,defaultLang),
+        numericDate:{year:2026,month:12,day:12},
+        name:"Example festival",
+        country:"GB",
+        state:undefined,
+        city:"Liverpool",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:6,
+        date:translateDate(2026,11,4,defaultLang),
+        numericDate:{year:2026,month:11,day:4},
+        name:"Przykładowy festival",
+        country:"BR",
+        state:undefined,
+        city:"Sao Paulo",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:7,
+        date:translateDate(2026,8,6,defaultLang),
+        numericDate:{year:2026,month:8,day:6},
+        name:"hehe bo wiecie",
+        country:"JP",
+        state:undefined,
+        city:"Hiroshima",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:8,
+        date:translateDate(2026,8,9,defaultLang),
+        numericDate:{year:2026,month:8,day:9},
+        name:"-||-",
+        country:"JP",
+        state:undefined,
+        city:"Nagasaki",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:8,
+        date:translateDate(2026,10,1,defaultLang),
+        numericDate:{year:2026,month:10,day:1},
+        name:"Nie chce mi się tego pisać",
+        country:"KR",
+        state:undefined,
+        city:"Seoul",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:9,
+        date:translateDate(2026,4,20,defaultLang),
+        numericDate:{year:2026,month:4,day:20},
+        name:"These jokes are getting worse",
+        country:"NL",
+        state:undefined,
+        city:"Amsterdam",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
     }
+
 ]
