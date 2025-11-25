@@ -33,13 +33,6 @@ p{
     font-size:var(--fontM);
 }
 
-
-
-#contactSubHeader{
-    font-size:var(--fontMl);
-    text-align:center;
-}
-
 .socialsWrapper{
     margin:var(--spaceBig);
 }

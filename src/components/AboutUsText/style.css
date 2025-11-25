@@ -1,0 +1,5 @@
+.aboutUsTextWrapper{
+    font-size:var(--fontMl);
+    text-align:center;
+    color:var(--textColorMain)
+}
