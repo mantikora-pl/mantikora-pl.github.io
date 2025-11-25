@@ -1,11 +1,11 @@
 import {ConcertRaw} from "../helper/concertRaw";
 import {translateDate} from "../helper/date";
-import {defaultLang} from "../helper/translation";
+import {getLanguage} from "../helper/translation";
 
 export const concertsRaw:ConcertRaw[]=[
     {
         id:1,
-        date:translateDate(2026,4,2,defaultLang),
+        date:translateDate(2026,4,2,getLanguage()),
         numericDate:{year:2026,month:4,day:2},
         name:"Przykładowy koncert",
         country:"PL",
@@ -16,7 +16,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:2,
-        date:translateDate(2026,5,3,defaultLang),
+        date:translateDate(2026,5,3,getLanguage()),
         numericDate:{year:2026,month:5,day:3},
         name:"Example concert",
         country:"US",
@@ -27,7 +27,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:3,
-        date:translateDate(2026,6,4,defaultLang),
+        date:translateDate(2026,6,4,getLanguage()),
         numericDate:{year:2026,month:6,day:4},
         name:"Example event",
         country:"PL",
@@ -38,7 +38,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:4,
-        date:translateDate(2026,9,12,defaultLang),
+        date:translateDate(2026,9,12,getLanguage()),
         numericDate:{year:2026,month:9,day:12},
         name:"Przykładowe wydarzenie",
         country:"CZ",
@@ -49,7 +49,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:5,
-        date:translateDate(2026,12,12,defaultLang),
+        date:translateDate(2026,12,12,getLanguage()),
         numericDate:{year:2026,month:12,day:12},
         name:"Example festival",
         country:"GB",
@@ -60,7 +60,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:6,
-        date:translateDate(2026,11,4,defaultLang),
+        date:translateDate(2026,11,4,getLanguage()),
         numericDate:{year:2026,month:11,day:4},
         name:"Przykładowy festival",
         country:"BR",
@@ -71,7 +71,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:7,
-        date:translateDate(2026,8,6,defaultLang),
+        date:translateDate(2026,8,6,getLanguage()),
         numericDate:{year:2026,month:8,day:6},
         name:"hehe bo wiecie",
         country:"JP",
@@ -82,7 +82,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:8,
-        date:translateDate(2026,8,9,defaultLang),
+        date:translateDate(2026,8,9,getLanguage()),
         numericDate:{year:2026,month:8,day:9},
         name:"-||-",
         country:"JP",
@@ -93,7 +93,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:8,
-        date:translateDate(2026,10,1,defaultLang),
+        date:translateDate(2026,10,1,getLanguage()),
         numericDate:{year:2026,month:10,day:1},
         name:"Nie chce mi się tego pisać",
         country:"KR",
@@ -104,7 +104,7 @@ export const concertsRaw:ConcertRaw[]=[
     },
     {
         id:9,
-        date:translateDate(2026,4,20,defaultLang),
+        date:translateDate(2026,4,20,getLanguage()),
         numericDate:{year:2026,month:4,day:20},
         name:"These jokes are getting worse",
         country:"NL",

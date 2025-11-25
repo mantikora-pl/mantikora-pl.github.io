@@ -1,3 +1,5 @@
+import Cookies from "universal-cookie";
+
 export const translations={
     "main":{
         "en":"Main",
@@ -114,7 +116,35 @@ export function getTranslation(locale:string,key:string):string{
     const translation=translations[key as keyof typeof translations]
     return translation?.[locale as keyof typeof translation]||""
 }
-const validLanguages=["en","pl"]
-const code=navigator.language.substring(0,2)
 
-export const defaultLang=validLanguages.includes(code)?code:"en"
+
+interface ILanguage{
+    nameInSelf: string,
+    icon: string,
+    code: string
+}
+export const languagesData:ILanguage[]=[
+    {
+        nameInSelf:"english",
+        icon:"🇺🇸",
+        code:"en"
+    },
+    {
+        nameInSelf:"polski",
+        icon:"🇵🇱",
+        code:"pl"
+    }
+]
+
+export const cookies=new Cookies()
+export function getLanguage(){
+    console.log("getlanguage function",cookies.get('language'))
+    if(!Boolean(cookies.get('language'))){
+        const codeFromBrowser=navigator.language.substring(0,2)
+        if(languagesData.some(lang => lang.code === codeFromBrowser))
+            cookies.set('language',codeFromBrowser,{path:"/"})
+        else
+            cookies.set('language',"en",{path:"/"})
+    }
+    return cookies.get("language")
+}

@@ -3,6 +3,7 @@ import './style.css'
 import { BrowserView, MobileView } from 'react-device-detect'
 import {Link} from "react-router-dom";
 import {navElements} from "../Navbar";
+import {cookies,getLanguage,languagesData} from "../../helper/translation";
 
 
 
@@ -12,6 +13,10 @@ function Header(){
     function toggleSideMenu(){
         setSideMenu(!sideMenu)
         console.log("switching")
+    }
+    function handleLanguageChange(event: React.ChangeEvent<HTMLSelectElement>){
+        cookies.set("language",event.target.value)
+        window.location.reload();
     }
 
     return(
@@ -37,23 +42,25 @@ function Header(){
                 </div>
             </MobileView>
 
-            <BrowserView>
-                <svg id={"hamburgerW"} className={"svg"} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 16">
+            <BrowserView className={"hamburgerW"}>
+                <svg id={"hamburgerWIcon"} className={"svg"} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 16">
                     <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor"/>
                 </svg>
             </BrowserView>
 
-            <BrowserView>
-                <a href={'/'}>
-                    <img src="/mantikoraLogo1.png" alt={"logo"} id={"headerLogo"}/>
-                </a>
-            </BrowserView>
+            <select
+                name={"language"}
+                value={getLanguage()}
+                onChange={handleLanguageChange}
+            >
+                {languagesData.map((lang,id)=>(
+                    <option key={id} value={lang.code}>{lang.icon} {lang.code}</option>
+                ))}
+            </select>
 
-            <MobileView>
-                <a href={'/'}>
-                    <img src="/mantikoraLogo1.png" alt={"logo"} id={"headerLogoM"}/>
-                </a>
-            </MobileView>
+            <a href={'/'}>
+                <img src="/mantikoraLogo1.png" alt={"logo"} id={"headerLogo"}/>
+            </a>
 
             <BrowserView>
                 <svg id={"shoppingCartW"} className={"svg"} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
-import {defaultLang,getTranslation} from "../../helper/translation";
+import {getLanguage,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
 import {lyricsConst} from "../../data/lyrics";
@@ -70,7 +70,7 @@ export default function Lyrics(){
                 <Navbar/>
             </div>
         <div id={"lyricsImageBG"}>
-            <p className={"pageTitle"}>{getTranslation(defaultLang,"lyrics")}</p>
+            <p className={"pageTitle"}>{getTranslation(getLanguage(),"lyrics")}</p>
             <main id={"lyricsPageIn"}>
                 <aside id={"songListAside"}>
                     <ul id={"songList"}>

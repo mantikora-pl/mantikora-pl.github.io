@@ -13,7 +13,7 @@ import Cookies from "universal-cookie";
 import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
 //import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
 import {concertsRaw} from "../../data/concertList"
-import {defaultLang,getTranslation} from "../../helper/translation";
+import {getLanguage,getTranslation} from "../../helper/translation";
 
 
 const cookies=new Cookies();
@@ -73,7 +73,7 @@ export default function Tour(){
                     <button
                         id={"buttonSortBy"}
                         onClick={()=>setSortByLocation(!sortByLocation)}>{
-                        sortByLocation? getTranslation(defaultLang,"sortByDate"): getTranslation(defaultLang,"sortByLocation")}
+                        sortByLocation? getTranslation(getLanguage(),"sortByDate"): getTranslation(getLanguage(),"sortByLocation")}
                     </button>
                 </div>
             </div>

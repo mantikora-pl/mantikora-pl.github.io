@@ -1,24 +1,23 @@
 import React from "react"
 import './style.css'
-import {defaultLang,getTranslation} from "../../helper/translation"
+import {getLanguage,getTranslation} from "../../helper/translation"
 import {Link} from "react-router-dom";
 import { BrowserView } from 'react-device-detect'
 
-const lang=defaultLang
 
 export const navElements=[
-    {name:getTranslation(lang,"main"), href:"/"},
-    {name:getTranslation(lang,"news"), href:"/news"},
-    {name:getTranslation(lang,"tour"), href:"/tour"},
+    {name:getTranslation(getLanguage(),"main"), href:"/"},
+    {name:getTranslation(getLanguage(),"news"), href:"/news"},
+    {name:getTranslation(getLanguage(),"tour"), href:"/tour"},
 
-    {name:getTranslation(lang,"discography"), href:"/discography"},
-    {name:getTranslation(lang,"lyrics"), href:"/lyrics"},
-    {name:getTranslation(lang,"history"), href:"/history"},
+    {name:getTranslation(getLanguage(),"discography"), href:"/discography"},
+    {name:getTranslation(getLanguage(),"lyrics"), href:"/lyrics"},
+    {name:getTranslation(getLanguage(),"history"), href:"/history"},
 
-    //{name:getTranslation(lang,"gallery"), href:"/gallery"},
-    {name:getTranslation(lang,"band"), href:"/contact"},
+    //{name:getTranslation(getLanguage(),"gallery"), href:"/gallery"},
+    {name:getTranslation(getLanguage(),"band"), href:"/contact"},
 
-    {name:getTranslation(lang,"merch"), href:"https://www.mantikora-shop.pl"}
+    {name:getTranslation(getLanguage(),"merch"), href:"https://www.mantikora-shop.pl"}
 
 ]
 
