@@ -33,8 +33,8 @@ export default function Tour(){
     useEffect(()=>{
         if(!Boolean(cookies.get('lat'))){
             getCoordinates(setCoordinates,gpsLocation)
-            cookies.set('lat', coordinates.lat, { path: '/' })
-            cookies.set('lng', coordinates.lng, { path: '/' })
+            cookies.set('lat', coordinates.lat, { path: '/', maxAge: 60*60*3 })
+            cookies.set('lng', coordinates.lng, { path: '/', maxAge: 60*60*3 })
         }
         else
             setCoordinates({lat:Number(cookies.get('lat')),lng:Number(cookies.get('lng'))})
