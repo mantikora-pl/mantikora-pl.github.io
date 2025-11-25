@@ -1,19 +1,15 @@
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import ContactEntity from "../../components/ContactEntity";
-import NewLineToBr from "../../components/NewLineToBr";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
 import PageInMaking from "../../components/PageInMaking";
 /*import HonorableMentionsItem from "../../components/HonorableMentionsItem";
 import {honorableMentions} from "../../data/honorableMentions";
 import {getTranslation} from "../../helper/translation";*/
 import {bandMembers} from "../../data/bandMembers";
+import {AboutUsText} from "../../components/AboutUsText";
 
-
-
-const lorem=new LoremIpsum()
 
 export default function AboutUs(){
     return <div>
@@ -24,7 +20,7 @@ export default function AboutUs(){
             </div>
             <div id={"aboutUsWrapper"}>
                 <PageInMaking/>
-                <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
+                <AboutUsText/>
                 <div id={"socialEntitiesWrapper"}>
                     <section id={"socialEntityItemWrapper"}>
                         {bandMembers.map((item,id)=>(

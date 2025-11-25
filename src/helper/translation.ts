@@ -46,8 +46,14 @@ export const translations={
         "pl":"STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE"
     },
     "aboutUsText":{
-        "en":"to do later",
-        "pl":"tu będzie o nas"
+        "en":"We're a thrash metal band from Poznan, Poland.\n"+
+            "We've been going since April 2025, we have a few of our own songs, and we're working on our demo.\n"+
+            "We're aiming to drop our first album and hit the stage in 2026, so stay tuned! \n"+
+            "Meanwhile, we invite you to follow us on our social media profiles.",
+        "pl":"Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
+            "Powstaliśmy w kwietniu 2025 roku, obecnie mamy kilka autorskich utworów i pracujemy nad demo.\n"+
+            "Planujemy wydać pierwszy album i zacząć koncertować w 2026, także czekajcie na nas! \n"+
+            "a w międzyczasie zapraszamy do odwiedzenia naszych profili na mediach społecznościowych."
     },
     "writtenByEveryone":{
         "en":"Written by the whole band",
