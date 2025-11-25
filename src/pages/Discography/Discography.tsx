@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import DiscList,{Disc} from "../../components/DiscList";
 import DiscListM from "../../components/DiscListM";
-import {defaultLang,getTranslation} from "../../helper/translation";
+import {getLanguage,getTranslation} from "../../helper/translation";
 import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {BrowserView,MobileView} from "react-device-detect";
@@ -18,7 +18,7 @@ export default function Discography(){
                 <Navbar/>
             </div>
             <PageInMaking/>
-            <p className={"pageTitle"}>{getTranslation(defaultLang,"our-cds")}</p>
+            <p className={"pageTitle"}>{getTranslation(getLanguage(),"our-cds")}</p>
             <MobileView>
                 <DiscListM items={discsData}/>
             </MobileView>

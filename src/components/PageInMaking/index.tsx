@@ -1,10 +1,10 @@
 import React from 'react'
 import './style.css'
-import {defaultLang,getTranslation} from "../../helper/translation";
+import {getLanguage,getTranslation} from "../../helper/translation";
 
 function PageInMaking(){
     return(
-        <p className={"pageInMaking"}>{getTranslation(defaultLang,"page-in-making")}</p>
+        <p className={"pageInMaking"}>{getTranslation(getLanguage(),"page-in-making")}</p>
     )
 }
 

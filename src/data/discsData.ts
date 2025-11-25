@@ -1,7 +1,7 @@
 import {Disc} from "../components/DiscList";
-import {defaultLang,getTranslation} from "../helper/translation";
+import {getLanguage,getTranslation} from "../helper/translation";
 
-export const single=" ("+getTranslation(defaultLang,"single")+")"
+export const single=" ("+getTranslation(getLanguage(),"single")+")"
 
 
 export const discsData:Disc[]=[
@@ -20,7 +20,7 @@ export const discsData:Disc[]=[
             "TBA",
             "TBA"
         ],
-        credits:getTranslation(defaultLang,"writtenByEveryone")
+        credits:getTranslation(getLanguage(),"writtenByEveryone")
     },
     {
         title:"Devil's Mouth - demo",
@@ -32,6 +32,6 @@ export const discsData:Disc[]=[
             "Davy Jones's Locker",
             "MIND",
         ],
-        credits:getTranslation(defaultLang,"writtenByEveryone")
+        credits:getTranslation(getLanguage(),"writtenByEveryone")
     },
 ]

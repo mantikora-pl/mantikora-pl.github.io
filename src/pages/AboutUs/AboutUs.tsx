@@ -8,7 +8,7 @@ import { LoremIpsum } from "lorem-ipsum";
 import PageInMaking from "../../components/PageInMaking";
 /*import HonorableMentionsItem from "../../components/HonorableMentionsItem";
 import {honorableMentions} from "../../data/honorableMentions";
-import {defaultLang,getTranslation} from "../../helper/translation";*/
+import {getTranslation} from "../../helper/translation";*/
 import {bandMembers} from "../../data/bandMembers";
 
 
@@ -35,7 +35,7 @@ export default function AboutUs(){
             </div>
 
             {/*<div>
-                <p className={"smallHeader centerText"}>{getTranslation(defaultLang,"honorableMentions")}</p>
+                <p className={"smallHeader centerText"}>{getTranslation(getLanguage(),"honorableMentions")}</p>
                 <div id={"honorableMentionsWrapper"}>
                 {honorableMentions.map((item)=>(
                     <HonorableMentionsItem item={item}/>
