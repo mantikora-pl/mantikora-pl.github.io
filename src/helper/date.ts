@@ -1,3 +1,5 @@
+import {getLanguage} from "./translation";
+
 export interface EventDate{
     year:number
     month:string
@@ -80,4 +82,14 @@ export function daysToEvent(eventDate:{year:number,month:number,day:number}):num
     const end=new Date(eventDate.year,eventDate.month-1,eventDate.day)
     const timeDifference=end.getTime()-start.getTime()
     return Math.ceil(timeDifference/(1000*3600*24))
+}
+
+export function localizeDate(year:number,month:number,day:number){
+    switch (getLanguage()){
+        case "en":
+            return getMonthTranslation(getLanguage(),month)+" "+day+", "+year;
+        case "pl":
+            return day+" "+getMonthTranslation(getLanguage(),month)+" "+year;
+    }
+
 }
