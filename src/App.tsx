@@ -12,6 +12,11 @@ import BandTimeline from "./pages/BandTimeline/BandTimeline";
 import AboutUs from "./pages/AboutUs/AboutUs";
 //import Person,{PersonalData} from "./components/Person";
 import NotFound from "./pages/404/404";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import PageInMaking from "./components/PageInMaking";
+import {AboutUsText} from "./components/AboutUsText";
+import MyFooter from "./components/MyFooter";
 
 /*
 const sample:PersonalData={
@@ -88,12 +93,22 @@ function App(){
     return (
         <HashRouter>
             <div>
-                <Routes>
-                    {routes.map(({path,element})=>(
-                        <Route key={path} path={path} element={element}/>
-                    ))}
-                </Routes>
+                <div className={"page"}>
+                    <div className={"stickyTop"}>
+                        <Header/>
+                        <Navbar/>
+                    </div>
+                    <PageInMaking/>
+                    <AboutUsText/>
+                    <Routes>
+                        {routes.map(({path,element})=>(
+                            <Route key={path} path={path} element={element}/>
+                        ))}
+                    </Routes>
+                </div>
+                <MyFooter/>
             </div>
+
         </HashRouter>
     )
 }
