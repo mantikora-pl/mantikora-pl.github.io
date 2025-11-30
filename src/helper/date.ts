@@ -9,51 +9,51 @@ export interface EventDate{
 const dateTranslations={
     1:{
         "en":"January",
-        "pl":"Styczeń"
+        "pl":"Stycznia"
     },
     2:{
         "en":"February",
-        "pl":"Luty"
+        "pl":"Lutego"
     },
     3:{
         "en":"March",
-        "pl":"Marzec"
+        "pl":"Marca"
     },
     4:{
         "en":"April",
-        "pl":"Kwiecień"
+        "pl":"Kwietnia"
     },
     5:{
         "en":"May",
-        "pl":"Maj"
+        "pl":"Maja"
     },
     6:{
         "en":"June",
-        "pl":"Czerwiec"
+        "pl":"Czerwca"
     },
     7:{
         "en":"July",
-        "pl":"Lipiec"
+        "pl":"Lipca"
     },
     8:{
         "en":"August",
-        "pl":"Sierpień"
+        "pl":"Sierpnia"
     },
     9:{
         "en":"September",
-        "pl":"Wrzesień"
+        "pl":"Września"
     },
     10:{
         "en":"October",
-        "pl":"Październik"
+        "pl":"Października"
     },
     11:{
         "en":"November",
-        "pl":"Listopad"
+        "pl":"Listopada"
     },
     12:{
         "en":"December",
-        "pl":"Grudzień"
+        "pl":"Grudnia"
     }
 }
 

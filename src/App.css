@@ -169,7 +169,17 @@ p{
 }
 #buttonSortBy{
     width:140px;
-    min-height:40px;
+    height:60px;
+    padding:var(--spaceStandard);
+    background-color:var(--blueAccentColor);
+    color:var(--textColorMain);
+    font-size:var(--fontM);
+    border:0;
+    border-radius:var(--roundedCornersSmall);
+}
+#buttonSortByM{
+    width:100px;
+    min-height:20px;
     padding:var(--spaceSmall);
     background-color:var(--blueAccentColor);
     color:var(--textColorMain);
@@ -179,4 +189,9 @@ p{
 }
 .flex1{
     flex:1;
+}
+
+.instaFeedWrapper{
+    display:flex;
+    justify-content:center;
 }

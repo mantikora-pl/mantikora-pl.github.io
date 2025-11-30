@@ -14,7 +14,7 @@ export default function Home(){
             </div>
             <PageInMaking/>
             <AboutUsText/>
-            <div style={{ display:'flex',justifyContent:'center' }}>
+            <div className={"instaFeedWrapper"}>
                 <iframe src="https://app.mirror-app.com/feed-instagram/1b46c940-6f7b-48ed-ac53-7599deed245f/preview"
                         style={{width:"100%",height:"800px",border:"none"}}
                         title={"ig"}
