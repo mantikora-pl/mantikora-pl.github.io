@@ -70,11 +70,20 @@ export default function Tour(){
                 <div className={"flex1"}/>
                 <p className={"pageTitle"}>Tour</p>
                 <div id={"buttonSortByContainer"}>
-                    <button
-                        id={"buttonSortBy"}
-                        onClick={()=>setSortByLocation(!sortByLocation)}>{
-                        sortByLocation? getTranslation(getLanguage(),"sortByDate"): getTranslation(getLanguage(),"sortByLocation")}
-                    </button>
+                    <BrowserView>
+                        <button
+                            id={"buttonSortBy"}
+                            onClick={()=>setSortByLocation(!sortByLocation)}>{
+                            sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                        </button>
+                    </BrowserView>
+                    <MobileView>
+                        <button
+                            id={"buttonSortByM"}
+                            onClick={()=>setSortByLocation(!sortByLocation)}>{
+                            sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                        </button>
+                    </MobileView>
                 </div>
             </div>
             <div className={"concertItemsWrapper"}>
@@ -93,7 +102,7 @@ export default function Tour(){
                             {concerts.map((item,i)=>(
                                 <>
                                     {shouldBeVisible(item)&&
-                                        <ConcertItemM items={concerts[i]} key={i}/>
+                                        <ConcertItemM item={concerts[i]} key={i}/>
                                     }
                                 </>
                             ))}

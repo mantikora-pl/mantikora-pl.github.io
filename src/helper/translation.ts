@@ -64,12 +64,12 @@ export const translations={
         "pl":"Podziękowania dla: "
     },
     "sortByLocation":{
-        "en":"Sort concerts by location",
-        "pl":"Sortuj koncerty po odległości"
+        "en":"Order by distance",
+        "pl":"Sortuj po odległości"
     },
     "sortByDate":{
-        "en":"Sort concerts by date",
-        "pl":"Sortuj koncerty po dacie"
+        "en":"Order by date",
+        "pl":"Sortuj po dacie"
     },
 
     "timelineDesc-1":{
