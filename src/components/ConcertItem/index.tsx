@@ -1,7 +1,10 @@
 import './style.css'
-import {EventDate} from "../../helper/date";
+import {dayOfTheWeek,EventDate,localDayOfTheWeek} from "../../helper/date";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-
+import ScrollReveal from 'scrollreveal'
+import {getLanguage,getTranslation} from "../../helper/translation";
+import {getColor} from "../../helper/getColor";
+import Tooltip from '@mui/material/Tooltip';
 export interface Concert{
     id:number
     date:EventDate,
@@ -15,6 +18,7 @@ export interface Concert{
     lat:number
     lng:number
     distanceKm:number
+    distanceMi:number
     daysToEvent:number
 }
 
@@ -22,23 +26,36 @@ export interface Concert{
 export function generateFlagClassName(code:string):string{
     return "concertDate fi fi-"+code.toLowerCase()
 }
+ScrollReveal().reveal('.concertRow')
+function ConcertItem({item, showDistance=false}:{item:Concert, showDistance?:boolean}){
+    const distance=(getLanguage()==="en"&&navigator.language==="en-US")?item.distanceMi+" mi":item.distanceKm+" km";
+    const color=getColor(item.distanceKm)
 
-function ConcertItem({item}:{item:Concert}){
+    const dayOfTheWeekNumber=dayOfTheWeek(item.numericDate.year,item.numericDate.month,item.numericDate.day)
 
     return (
-        <div className={"concertRow"}>
-            <div className={generateFlagClassName(item.country??"us")}>
-                <div className={"concertMonth"}>{item.date.month}</div>
-                <div className={"concertDay"}>{item.date.day}</div>
-                <div className={"concertYear"}>{item.date.year}</div>
-            </div>
+        <tr className={"concertRow"}>
+            {showDistance && <td className={"distanceDaysCell"} style={{color}}>{distance}</td>}
+            {!(showDistance) && <td className={"distanceDaysCell"}>{item.daysToEvent + getTranslation(getLanguage(),"daysLeft")}</td>}
 
-            <p className={"concertName"}>{item.name}</p>
-            <p className={"concertLocation"}>{item.city}</p>
-            <a href={item.buyLink}>
+            <td>
+                <Tooltip title={localDayOfTheWeek(getLanguage(),dayOfTheWeekNumber)} placement={"top"} className={"dayTooltip"}>
+                    <div className={generateFlagClassName(item.country??"us")}>
+                        <div className={"concertDay"}>{item.date.day}</div>
+                        <div className={"concertMonth"}>{item.date.month}</div>
+                        <div className={"concertYear"}>{item.date.year}</div>
+                    </div>
+                </Tooltip>
+            </td>
+
+            <td><p className={"concertName"}>{item.name}</p></td>
+            <td><p className={"concertLocation"}>{item.city}</p></td>
+            <td>
+                <a href={item.buyLink}>
                 <button className={"ticketsButton"}>Tickets</button>
-            </a>
-        </div>
+                </a>
+            </td>
+        </tr>
     )
 }
 

@@ -2,7 +2,7 @@ import {Socials} from "../components/ContactEntity";
 
 export const bandMembers:Socials[]=[
     {entityName: "Mantikora",
-        mainImage: "/mantikoraLogo1.png",
+        mainImage: "/mantikoraLogoGradient.png",
         items1:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/@Mantikora-band",name:"youtube"},
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/mantikora_band/",name:"instagram"},

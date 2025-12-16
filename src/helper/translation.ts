@@ -115,6 +115,14 @@ export const translations={
         "en":"",
         "pl":""
     },
+    "daysLeft":{
+        "en":" days left",
+        "pl":" dni"
+    },
+    "unknown":{
+        "en":"Unknown",
+        "pl":"nieznany"
+    }
 
 } as const
 
@@ -144,7 +152,6 @@ export const languagesData:ILanguage[]=[
 
 export const cookies=new Cookies()
 export function getLanguage(){
-    console.log("getlanguage function",cookies.get('language'))
     if(!Boolean(cookies.get('language'))){
         const codeFromBrowser=navigator.language.substring(0,2)
         if(languagesData.some(lang => lang.code === codeFromBrowser))

@@ -12,7 +12,23 @@
     justify-content:space-between;
     margin-top:40px; {/*change because wtf*/}
     max-width:800px;
+    opacity:1;
+    animation-name:fadeInOpacity;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.8s;
+    transition:transform .25s
 }
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
 .discWrapperLeft{
     flex-direction:row;
 }
@@ -25,6 +41,7 @@
 }
 .coverArt{
     aspect-ratio:1!important;
+    border-radius:var(--roundedCornersSmall);
 }
 
 .albumTitle{
@@ -41,6 +58,69 @@
     margin:var(--spaceSmall);
     font-size:var(--fontMl);
 }
+.flyInLeftAnimation,.flyInRightAnimation{
+    animation-iteration-count:1, 1;
+    animation-timing-function:ease-in, ease-out;
+    animation-duration:0.8s, 0.2s;
+    animation-fill-mode:forwards;
+    animation-delay: 0s, 0.8s;
+}
+
+.flyInLeftAnimation{
+    animation-name:flyInFromLeft, adjustPositionLeft;
+}
+
+.flyInRightAnimation{
+    animation-name:flyInFromRight, adjustPositionRight;
+}
+
+@keyframes flyInFromLeft{
+    from{
+        opacity:0.5;
+        transform: translateX(-60%);
+    }
+    to{
+        opacity:0.8;
+        transform: translateX(10px);
+    }
+}
+
+@keyframes flyInFromRight{
+    from{
+        opacity:0.5;
+        transform: translateX(60%);
+    }
+    to{
+        opacity:0.8;
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes adjustPositionLeft {
+    0% {
+        opacity: 0.8;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes adjustPositionRight {
+    0% {
+        opacity: 0.8;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+
 .albumCredits{
     margin-top:var(--spaceBig);
     font-size:var(--fontM);

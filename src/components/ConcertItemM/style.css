@@ -7,6 +7,14 @@
     margin:var(--spaceStandard) 0;
 }
 
+.concertItemM:first-of-type{
+    border-top:1px solid white;
+}
+
+.concertItemM:last-of-type{
+    border-bottom:1px solid white;
+}
+
 .concertRowM{
     display:flex;
 }
@@ -19,14 +27,6 @@
     text-align:center;
     display:flex !important;
     margin:var(--spaceStandard) 0;
-}
-
-.concertItemM:first-of-type{
-    border-top:2px solid white;
-}
-
-.concertItemM:last-of-type{
-    border-bottom:2px solid white;
 }
 
 .concertLeftM,.concertRightM{

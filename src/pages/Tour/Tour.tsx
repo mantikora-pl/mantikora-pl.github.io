@@ -18,12 +18,30 @@ export default function Tour(){
     const gpsLocation=useRef(false)
     const [sortByLocation,setSortByLocation]=useState(false)
 
+    function handleSortTypeChange(state:boolean){
+        const concertElements=document.querySelectorAll('.concertRow');
+        const buttonElement=document.querySelector('#buttonSortBy p');
+        concertElements.forEach((element,index)=>{
+            setTimeout(()=>element.classList.add('fadeInAnimation'),index*70);
+        });
+        buttonElement?.classList.add('fadeInAnimation');
+        setSortByLocation(state);
+        setTimeout(()=>{
+            concertElements.forEach((element)=>element.classList.remove('fadeInAnimation'));
+            buttonElement?.classList.remove('fadeInAnimation');
+        },500+concertElements.length*70);
+    }
+
     function visibleCount():boolean{
         let count=0
         concertsRaw.forEach((item)=>{
             if(shouldBeVisible(item)) count++
         })
         return count>0
+    }
+
+    function doesConcertMatchFilter(concert:Concert):boolean{
+        return (concert.name.toLowerCase().includes(filter.toLowerCase()) || concert.city.toLowerCase().includes(filter.toLowerCase())) && shouldBeVisible(concert)
     }
 
     useEffect(()=>{
@@ -50,27 +68,40 @@ export default function Tour(){
         lat:getConcertLocation(item).lat,
         lng:getConcertLocation(item).lng,
         distanceKm:getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng),
+        distanceMi:Math.floor(getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng)/1.609344),
         daysToEvent:daysToEvent(item.numericDate),
     }))
     if(sortByLocation) concerts.sort((a,b)=>a.distanceKm-b.distanceKm)
     else concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent)
+    const [filter, setFilter] = useState("");
+    function handleFilterConcerts(filterText:string) {
+        setFilter(filterText)
+    }
 
-    return <div>
+    return <div className={"innerPage"}>
         <div className={"concertPageHeader"}>
             <div className={"flex1"}/>
             <p className={"pageTitle"}>Tour</p>
             <div id={"buttonSortByContainer"}>
+                {/*<input
+                    type="text"
+                    id="concertSearch"
+                    onChange={e => handleFilterConcerts(e.target.value)}
+                    placeholder="translate this"
+                />*/}
                 <BrowserView>
                     <button
                         id={"buttonSortBy"}
-                        onClick={()=>setSortByLocation(!sortByLocation)}>{
-                        sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                        onClick={()=>handleSortTypeChange(!sortByLocation)}>
+                        <p>{
+                            sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")
+                        }</p>
                     </button>
                 </BrowserView>
                 <MobileView>
                     <button
                         id={"buttonSortByM"}
-                        onClick={()=>setSortByLocation(!sortByLocation)}>{
+                        onClick={()=>handleSortTypeChange(!sortByLocation)}>{
                         sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
                     </button>
                 </MobileView>
@@ -80,13 +111,15 @@ export default function Tour(){
             {visibleCount()&&
                 <div className={"concertItems"}>
                     <BrowserView>
-                        {concerts.map((item,i)=>(
-                            <>
-                                {shouldBeVisible(item)&&
-                                    <ConcertItem item={concerts[i]} key={i}/>
-                                }
-                            </>
-                        ))}
+                        <table>
+                            {concerts
+                                .filter(item=>doesConcertMatchFilter(item))
+                                .map((item,i)=>(
+                                <>
+                                    <ConcertItem item={concerts[i]} key={i} showDistance={sortByLocation}/>
+                                </>
+                            ))}
+                        </table>
                     </BrowserView>
                     <MobileView>
                         {concerts.map((item,i)=>(

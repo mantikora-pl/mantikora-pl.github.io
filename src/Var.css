@@ -1,13 +1,14 @@
 :root{
-    --backgroundColorDarker: #111315;
-    --backgroundColorMain:#181b1c;
-    --backgroundColorLighter:#282c34;
+    --backgroundColorDarker: #090909;
+    --backgroundColorMain: #141414;
+    --backgroundColorLighter:#1b1b1b;
+    --backgroundColorLight:#272727;
     --itemBackgroundColor:#383737;
 
     --bwSkullsBackground:url("../public/bwSkullsBg.png");
 
     --redAccentColor: #c42424;
-    --blueAccentColor: #044b98;
+    --blueAccentColor: #00234d;
     --mantikoraRed:#690024;
     --mantikoraPurple:#401378;
     --textColorMain: #d3e3e3;
@@ -18,6 +19,8 @@
     --testColor3:goldenrod;
     --testColor4:plum;
     --testColor5:slateblue;
+
+    --borderColorDarkPurple: #200346;
 
     --fontXXl:36px;
     --fontXl:32px;

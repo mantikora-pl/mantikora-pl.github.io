@@ -26,7 +26,9 @@ function getLocalisedTimelineDate(year:number,month?:number,day?:number){
 export default function Timeline({items}:{items: TimelineElement[]}){
     return <VerticalTimeline>
         {items.map((item,i)=>(
-            <VerticalTimelineElement key={i} className="vertical-timeline-element" contentStyle={{background:'#383737'}}>
+            <VerticalTimelineElement key={i} className="vertical-timeline-element"
+                contentStyle={{background: 'linear-gradient(to bottom, var(--itemBackgroundColor), var(--backgroundColorMain))'
+            ,border:'1px solid var(--borderColorDarkPurple)'}}>
                     <h2 className={"timeline-item-title"} style={{color:"white", fontSize:28}}>
                         {getLocalisedTimelineDate(item.year,item.month,item.day)}
                     </h2>

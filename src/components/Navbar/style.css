@@ -3,7 +3,7 @@
     justify-content:center;
     height:6.5vh;
     min-width:100%;
-    background-color:var(--backgroundColorMain);
+    background-color:var(--backgroundColorLighter);
     align-items:center;
     color:var(--textColorMain);
 }
@@ -24,6 +24,9 @@
     margin:var(--spaceStandard);
     /*padding:10px;*/
     /*background-color:#282c34;*/
+}
+.navbarItem:hover{
+    text-decoration:underline;
 }
 
 .navbarItem > .a{
