@@ -1,7 +1,4 @@
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
 import LyricsItem,{LyricsItems} from "../../components/LyricsItem";
-import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {getLanguage,getTranslation} from "../../helper/translation";
 import {HashLink as Link} from 'react-router-hash-link';
@@ -64,11 +61,6 @@ const lyricsR=lyrics.reverse()
 export default function Lyrics(){
 
     return <div id={"lyricsPage"}>
-        <div className={"page"}>
-            <div className={"stickyTop"}>
-                <Header/>
-                <Navbar/>
-            </div>
         <div id={"lyricsImageBG"}>
             <p className={"pageTitle"}>{getTranslation(getLanguage(),"lyrics")}</p>
             <main id={"lyricsPageIn"}>
@@ -93,8 +85,6 @@ export default function Lyrics(){
 
             </main>
             <ScrollToTop/>
-        </div>
-        <MyFooter/>
         </div>
     </div>
 }

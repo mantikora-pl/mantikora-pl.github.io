@@ -1,11 +1,7 @@
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
 import 'react-vertical-timeline-component/style.min.css';
 import Timeline,{TimelineElement} from "../../components/Timeline";
-import MyFooter from "../../components/MyFooter";
 import React from "react";
 import {getLanguage,getTranslation} from "../../helper/translation";
-import PageInMaking from "../../components/PageInMaking";
 
 const timeLineItems:TimelineElement[]=[
     {
@@ -15,13 +11,13 @@ const timeLineItems:TimelineElement[]=[
         description:getTranslation(getLanguage(),"timelineDesc-5"),
         photo:""
     },
- /*   {
-        id:4,
-        date:"2025 August",
-        subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
-        description:getTranslation(getLanguage(),"timelineDesc-4"),
-        photo:""
-    },*/
+    /*   {
+           id:4,
+           date:"2025 August",
+           subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
+           description:getTranslation(getLanguage(),"timelineDesc-4"),
+           photo:""
+       },*/
     {
         id:3,
         year:2025,
@@ -53,14 +49,6 @@ const timeLineItems:TimelineElement[]=[
 
 export default function BandTimeline(){
     return <div>
-        <div className={"page"}>
-            <div className={"stickyTop"}>
-                <Header/>
-                <Navbar/>
-            </div>
-            <PageInMaking/>
-            <Timeline items={timeLineItems}/>
-        </div>
-        <MyFooter/>
+        <Timeline items={timeLineItems}/>
     </div>
 }

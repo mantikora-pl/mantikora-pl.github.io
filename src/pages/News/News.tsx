@@ -1,10 +1,6 @@
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import BigNewsItem, {NewsI} from "../../components/BigNewsItem";
+import BigNewsItem,{NewsI} from "../../components/BigNewsItem";
 import SmallNewsItem from "../../components/SmallNewsItem";
 import React from "react";
-import MyFooter from "../../components/MyFooter";
-import PageInMaking from "../../components/PageInMaking";
 
 const news:NewsI[]=[
     {
@@ -72,12 +68,6 @@ const news:NewsI[]=[
 export default function News(){
     // @ts-ignore
     return <div>
-        <div className={"page"}>
-            <div className={"stickyTop"}>
-                <Header/>
-                <Navbar/>
-            </div>
-            <PageInMaking/>
         {/*<div>
             {news.map((item,i)=>(
                 <div>
@@ -89,22 +79,18 @@ export default function News(){
             ))}
         </div>*/}
         <div>
-            <div>
-                {Array.from({length:3},(_,i)=>
-                        <span key={i}>
+            {Array.from({length:3},(_,i)=>
+                <span key={i}>
                     <BigNewsItem item={news[i]}/>
                 </span>
-                )}
-            </div>
-            <div id={"smallNewsWrapper"}>
-                {Array.from({length:news.length-3},(_,i)=>
-                    <span key={i}>
+            )}
+        </div>
+        <div id={"smallNewsWrapper"}>
+            {Array.from({length:news.length-3},(_,i)=>
+                <span key={i}>
                         <SmallNewsItem item={news[i+3]}/>
                     </span>
-                )}
-            </div>
+            )}
         </div>
-    </div>
-        <MyFooter/>
     </div>
 }
