@@ -7,7 +7,7 @@ export const concertsRaw:ConcertRaw[]=[
         id:1,
         date:translateDate(2026,4,2,getLanguage()),
         numericDate:{year:2026,month:4,day:2},
-        name:"Przykładowy koncert",
+        name:"Festiwal kremówki",
         country:"PL",
         state:undefined,
         city:"Wadowice",
@@ -109,7 +109,18 @@ export const concertsRaw:ConcertRaw[]=[
         name:"These jokes are getting worse",
         country:"NL",
         state:undefined,
-        city:"Amsterdam",
+        city:"Eindhoven",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:10,
+        date:translateDate(2026,8,23,getLanguage()),
+        numericDate:{year:2026,month:8,day:23},
+        name:"koncert na wsi",
+        country:"PL",
+        state:undefined,
+        city:"Kalisz",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
     }

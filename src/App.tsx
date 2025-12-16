@@ -15,7 +15,6 @@ import NotFound from "./pages/404/404";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import PageInMaking from "./components/PageInMaking";
-import {AboutUsText} from "./components/AboutUsText";
 import MyFooter from "./components/MyFooter";
 
 /*
@@ -93,13 +92,12 @@ function App(){
     return (
         <HashRouter>
             <div>
-                <div className={"page"}>
+                <div className={"page"} style={{cursor: "url('cursor.cur'), auto"}}>
                     <div className={"stickyTop"}>
                         <Header/>
                         <Navbar/>
                     </div>
                     <PageInMaking/>
-                    <AboutUsText/>
                     <Routes>
                         {routes.map(({path,element})=>(
                             <Route key={path} path={path} element={element}/>

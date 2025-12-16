@@ -1,12 +1,14 @@
 html, body{
     margin:0 auto;
     box-sizing:border-box;
-    background-color:var(--backgroundColorMain);
+    background-color:var(--backgroundColorLighter);
     color:var(--textColorMain);
 }
+
 *{
     margin:0;
 }
+
 .page{
     min-height:88vh;
 }
@@ -25,10 +27,12 @@ html, body{
     margin-top:var(--spaceSmall);
     padding-top:var(--spaceBig);
 }
+
 a{
     text-decoration:none;
     color:var(--textColorMain);
 }
+
 p{
     font-size:var(--fontM);
 }
@@ -36,6 +40,7 @@ p{
 .socialsWrapper{
     margin:var(--spaceBig);
 }
+
 #socialEntityItemWrapper{
     max-width:75vw;
     align-items:center;
@@ -44,11 +49,11 @@ p{
     flex-direction:row;
     flex-wrap:wrap;
 }
+
 #socialEntitiesWrapper{
     display:flex;
     justify-content:center;
 }
-
 
 
 #lyricsPage{
@@ -56,11 +61,35 @@ p{
     overflow:visible;
 }
 
+#lyricsPage:before, #lyricsPage:after{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    height:50px;
+}
+#lyricsPage:before{
+    top:0;
+    background-image:linear-gradient(to bottom, var(--backgroundColorLighter), rgba(255,255,255,0));
+}
+#lyricsPage:after{
+    bottom:0;
+    background-image:linear-gradient(to top, var(--backgroundColorDarker), rgba(255,255,255,0));
+}
+
 #songList{
     list-style-type:none;
     /*margin-left:20px;*/
 }
 
+.stolenFromMegadeth{
+    font-weight:700;
+    color:#ffffff !important;
+    margin:0;
+    position:relative;
+    display:inline-block;
+    text-shadow:0 0 20px #c77a05, 0 0 40px #c77a05, 0 0 60px #c77a05;
+}
 
 #songList li{
     font-weight:var(--boldy);
@@ -75,6 +104,15 @@ p{
     display:flex;
     flex-direction:column;
 }
+
+.fadeInAnimation{
+    opacity:1;
+    animation-name:fadeInOpacity;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.5s;
+}
+
 #smallNewsWrapper{
     display:flex;
 }
@@ -86,10 +124,11 @@ p{
     height:100vh;
     width:20%;
     z-index:var(--zNearest);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
 
 #lyricsContainer{
     width:60%;
@@ -107,6 +146,8 @@ p{
     background-image:var(--bwSkullsBackground);
     background-size:100% auto;
     background-position:top;
+    overflow:auto;
+    border-width:20px 0;
 }
 
 @media screen and (max-width:var(--mediumScreen)){
@@ -114,9 +155,11 @@ p{
         visibility:hidden;
         width:0;
     }
+
     #lyricsContainer{
         width:100%;
     }
+
     #songList{
         margin:0;
     }
@@ -134,6 +177,7 @@ p{
     flex-direction:column;
     align-items:center;
 }
+
 #honorableMentionsWrapper{
     justify-content:space-evenly;
     flex-wrap:wrap;
@@ -157,9 +201,9 @@ p{
 
 .concertPageHeader{
     margin-top:var(--spaceBig);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 #buttonSortByContainer{
@@ -167,6 +211,7 @@ p{
     display:flex;
     justify-content:center;
 }
+
 #buttonSortBy{
     width:140px;
     height:60px;
@@ -177,6 +222,7 @@ p{
     border:0;
     border-radius:var(--roundedCornersSmall);
 }
+
 #buttonSortByM{
     width:100px;
     min-height:20px;
@@ -187,6 +233,7 @@ p{
     border:0;
     border-radius:var(--roundedCornersSmall);
 }
+
 .flex1{
     flex:1;
 }
@@ -194,4 +241,24 @@ p{
 .instaFeedWrapper{
     display:flex;
     justify-content:center;
+}
+
+.innerPage{
+    background:linear-gradient(to bottom,var(--backgroundColorLighter) 0%, var(--backgroundColorDarker) 100%);
+    opacity:1;
+    animation-name:fadeInOpacity;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.8s;
+    padding-bottom:var(--spaceBig);
+    position:relative;
+}
+
+@keyframes fadeInOpacity{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
 }

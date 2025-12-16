@@ -67,7 +67,7 @@ const news:NewsI[]=[
 
 export default function News(){
     // @ts-ignore
-    return <div>
+    return <div className={"innerPage"} >
         {/*<div>
             {news.map((item,i)=>(
                 <div>

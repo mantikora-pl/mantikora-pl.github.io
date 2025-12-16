@@ -3,23 +3,54 @@
     flex-direction:row;
     min-height:100px;
     vertical-align:middle;
-    border-bottom:1px solid white;
-    border-top:1px solid white;
+    border-bottom:1px solid var(--backgroundColorLight);
     justify-content:space-between;
     align-items:center;
     min-width:60vw;
     border-collapse:collapse;
     padding:var(--spaceStandard);
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .concertRow:first-of-type{
-    border-top:2px solid white;
+    border-top:1px solid var(--backgroundColorLight);
+}
+
+.distanceDaysCell{
+    font-size:var(--fontM);
+    max-width:60px!important;
+    white-space: nowrap;
+}
+
+.dayTooltip{
+    font-size:var(--fontM)!important;
+}
+
+td{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
 }
 
 .concertRow:last-of-type{
-    border-bottom:2px solid white;
+    border-bottom:1px solid var(--backgroundColorLight);
 }
 
+.concertRow:hover{
+    transform: scale(1.03);
+    background-color:var(--backgroundColorLighter);
+    .concertName,.concertLocation{
+        font-weight:600;
+    }
+    .concertName{
+        font-size:var(--fontM);
+    }
+}
 
 .concertDate{
     min-width:140px;
@@ -55,18 +86,14 @@
     font-size:var(--fontL) !important;
 }
 
-
 .concertName{
+    font-size:var(--fontSM);
     text-transform:uppercase;
-    text-align:center;
     text-overflow:ellipsis;
-    width:30%;
 }
 
 .concertLocation{
     text-transform:uppercase;
-    text-align:center;
-    width:auto;
 }
 
 .ticketsButton{

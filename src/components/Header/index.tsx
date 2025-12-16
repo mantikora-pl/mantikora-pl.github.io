@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect,useState} from 'react'
 import './style.css'
 import { BrowserView, MobileView } from 'react-device-detect'
 import {Link} from "react-router-dom";
@@ -19,8 +19,30 @@ function Header(){
         window.location.reload();
     }
 
+    useEffect(() => {
+        function handleScroll() {
+            const elements = document.querySelectorAll('.minimizeOnScroll')
+            const elementsVertical = document.querySelectorAll('.minimizeOnScrollVertical')
+            if (window.scrollY > 65){
+                elements.forEach(element => element.classList.add('smallOnScroll'));
+                elementsVertical.forEach(element => element.classList.add('smallOnScrollVerticalOnly'));
+            }
+            else if (window.scrollY < 40){
+                elements.forEach(element => element.classList.remove('smallOnScroll'));
+                elementsVertical.forEach(element => element.classList.remove('smallOnScrollVerticalOnly'));
+            }
+
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return function() {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+
     return(
-        <header className={"pageHeader"} >
+        <header className={"pageHeader minimizeOnScrollVertical"} >
             <MobileView>
                 <div id={"sideMenuWrapper"}>
                     <div>
@@ -52,15 +74,15 @@ function Header(){
                 name={"language"}
                 value={getLanguage()}
                 onChange={handleLanguageChange}
-            >
+                className={"minimizeOnScroll"}>
                 {languagesData.map((lang,id)=>(
                     <option key={id} value={lang.code}>{lang.icon} {lang.code}</option>
                 ))}
             </select>
 
-            <a href={'/'}>
-                <img src="/mantikoraLogo1.png" alt={"logo"} id={"headerLogo"}/>
-            </a>
+                <Link to={"/"} className={"logoLink"}>
+                    <img src="/mantikoraLogo1.png" alt={"logo"} className={"minimizeOnScroll headerLogo"}/>
+                </Link>
 
             <BrowserView>
                 <svg id={"shoppingCartW"} className={"svg"} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

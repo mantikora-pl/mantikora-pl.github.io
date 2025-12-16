@@ -7,7 +7,7 @@ import {discsData} from "../../data/discsData";
 
 
 export default function Discography(){
-    return <div>
+    return <div className={"innerPage"}>
             <p className={"pageTitle"}>{getTranslation(getLanguage(),"our-cds")}</p>
             <MobileView>
                 <DiscListM items={discsData}/>
