@@ -86,7 +86,7 @@ const timeLineItems1: TimelineElement[] = [
 
 
 export default function BandTimeline(){
-    return <div className={"innerPage"}>
-        <Timeline items={timeLineItems}/>
+    return <div className={"innerPage gradientBackground"}>
+        <Timeline items={timeLineItems1}/>
     </div>
 }

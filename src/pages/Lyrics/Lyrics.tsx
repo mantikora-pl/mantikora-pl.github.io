@@ -60,8 +60,8 @@ const lyricsR=lyrics.reverse()
 //const length=lyricsR.length
 export default function Lyrics(){
 
-    return <div id={"lyricsPage"} className={"innerPage"}>
-        <div id={"lyricsImageBG"}>
+    return <div id={"lyricsPage"} className={"innerPage gradientBackground"}>
+        <div id={"lyricsImageBG"} className={"skullBackground"}>
             <p className={"pageTitle"}>{getTranslation(getLanguage(),"lyrics")}</p>
             <main id={"lyricsPageIn"}>
                 <aside id={"songListAside"}>

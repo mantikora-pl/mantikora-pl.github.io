@@ -143,9 +143,6 @@ p{
 }
 
 #lyricsImageBG{
-    background-image:var(--bwSkullsBackground);
-    background-size:100% auto;
-    background-position:top;
     overflow:auto;
     border-width:20px 0;
 }
@@ -244,14 +241,21 @@ p{
 }
 
 .innerPage{
-    background:linear-gradient(to bottom,var(--backgroundColorLighter) 0%, var(--backgroundColorDarker) 100%);
     opacity:1;
     animation-name:fadeInOpacity;
     animation-iteration-count:1;
     animation-timing-function:ease-in;
     animation-duration:0.8s;
-    padding-bottom:var(--spaceBig);
+    padding:var(--spaceBig) 0;
     position:relative;
+}
+.gradientBackground{
+    background:linear-gradient(to bottom,var(--backgroundColorLighter) 0%, var(--backgroundColorDarker) 100%);
+}
+.skullBackground{
+    background-image:var(--bwSkullsBackground);
+    background-size:100% auto;
+    background-position:top;
 }
 
 @keyframes fadeInOpacity{
@@ -261,4 +265,11 @@ p{
     100%{
         opacity:1;
     }
+}
+
+.bigNewsList{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    align-items:center;
 }

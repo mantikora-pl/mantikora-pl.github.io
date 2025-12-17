@@ -8,7 +8,7 @@ import {AboutUsText} from "../../components/AboutUsText";
 
 
 export default function AboutUs({honorableMentionsOn=false}:{honorableMentionsOn?:boolean}){
-    return <div className={"innerPage"}>
+    return <div className={"innerPage gradientBackground"}>
         <AboutUsText/>
         <div id={"aboutUsWrapper"}>
             <div id={"socialEntitiesWrapper"}>
