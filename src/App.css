@@ -115,6 +115,9 @@ p{
 
 #smallNewsWrapper{
     display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
 #songListAside{
@@ -143,9 +146,6 @@ p{
 }
 
 #lyricsImageBG{
-    background-image:var(--bwSkullsBackground);
-    background-size:100% auto;
-    background-position:top;
     overflow:auto;
     border-width:20px 0;
 }
@@ -244,14 +244,21 @@ p{
 }
 
 .innerPage{
-    background:linear-gradient(to bottom,var(--backgroundColorLighter) 0%, var(--backgroundColorDarker) 100%);
     opacity:1;
     animation-name:fadeInOpacity;
     animation-iteration-count:1;
     animation-timing-function:ease-in;
     animation-duration:0.8s;
-    padding-bottom:var(--spaceBig);
+    padding:var(--spaceBig) 0;
     position:relative;
+}
+.gradientBackground{
+    background:linear-gradient(to bottom,var(--backgroundColorLighter) 0%, var(--backgroundColorDarker) 100%);
+}
+.skullBackground{
+    background-image:var(--bwSkullsBackground);
+    background-size:100% auto;
+    background-position:top;
 }
 
 @keyframes fadeInOpacity{
@@ -261,4 +268,64 @@ p{
     100%{
         opacity:1;
     }
+}
+
+.bigNewsList{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    align-items:center;
+}
+
+#newsPage{
+    max-width:90vw;
+    margin:0 auto;
+}
+
+.pagination{
+    display:flex;
+    padding:0;
+    list-style:none;
+}
+
+.pageLink{
+    padding: 6px 12px;
+    display:block;
+    color:var(--textColorMain);
+    background-color:var(--backgroundColorDarker);
+    border:1px solid var(--textColorInactive);
+    transition:border-color 0.1s ease-in-out;
+}
+
+.pageLink:hover{
+    transform: scale(1.03);
+}
+
+.pageItem.active .pageLink{
+    background-color:var(--itemBackgroundColor);
+}
+
+.pageItem:not(:first-child) .pageLink{
+    margin-left:-1px;
+}
+
+.pageItem.disabled .pageLink{
+    color:var(--textColorInactive);
+    pointer-events:none;
+    border-color:var(--textColorInactive);
+}
+
+.pageItem:first-child .pageLink{
+    border-radius:var(--roundedCorners) 0 0 var(--roundedCorners);
+}
+
+.pageItem:last-child .pageLink{
+    border-radius:0 var(--roundedCorners) var(--roundedCorners) 0;
+}
+
+.paginationWrapper{
+    margin:var(--spaceBig) 0 var(--spaceSmall) 0;
+    transform: scale(1.1);
+    display:flex;
+    justify-content:center;
 }

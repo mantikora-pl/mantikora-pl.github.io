@@ -2,7 +2,7 @@ import React from "react";
 import {AboutUsText} from "../../components/AboutUsText";
 
 export default function Home(){
-    return <div className={"innerPage"}>
+    return <div className={"innerPage gradientBackground"}>
         <AboutUsText/>
         <div className={"instaFeedWrapper"}>
             <iframe src="https://app.mirror-app.com/feed-instagram/1b46c940-6f7b-48ed-ac53-7599deed245f/preview"

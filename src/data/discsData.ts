@@ -36,7 +36,7 @@ export const discsData:Disc[]=[
     }
 ]
 
-const discsData1:Disc[]=[
+export const discsData1:Disc[]=[
     {
         title: "Future Nostalgia",
         date: "15.12.2025",

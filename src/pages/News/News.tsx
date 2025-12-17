@@ -1,96 +1,68 @@
 import BigNewsItem,{NewsI} from "../../components/BigNewsItem";
 import SmallNewsItem from "../../components/SmallNewsItem";
-import React from "react";
+import React,{useEffect,useState} from "react";
+import ReactPaginate from "react-paginate";
+import {getLanguage,getTranslation} from "../../helper/translation";
+import {news} from "../../data/newsData";
 
-const news:NewsI[]=[
-    {
-        photoSrc:"https://picsum.photos/500?random=4",
-        date:"2025.07.01",
-        title:"Koncert gdzieśtam",
-        content:"dfhrt fuyfhd z ntuytkuikuytyd xcc cnhyjturtaes bkiulkyg",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=5",
-        date:"2025.07.02",
-        title:"Koncert gdzieś indziej",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=6",
-        date:"2025.07.04",
-        title:"Koncert gdzieśtam",
-        content:"dfhrt fuyfhd z ntuytkuikuytyd xcc cnhyjturtaes bkiulkyg",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=7",
-        date:"2025.07.06",
-        title:"Koncert gdzieś indziej",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=8",
-        date:"2025.07.08",
-        title:"Koncert gdzieśtam",
-        content:"dfhrt fuyfhd z ntuytkuikuytyd xcc cnhyjturtaes bkiulkyg",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=9",
-        date:"2025.07.10",
-        title:"Koncert gdzieś indziej",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=81",
-        date:"2025.07.15",
-        title:"Koncert gdzieśtam",
-        content:"dfhrt fuyfhd z ntuytkuikuytyd xcc cnhyjturtaes bkiulkyg",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=91",
-        date:"2025.07.19",
-        title:"Koncert gdzieś indziej",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=94",
-        date:"2026.02.31",
-        title:"Koncert gdzieś indziej",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-    {
-        photoSrc:"https://picsum.photos/500?random=96",
-        date:"2026.02.30",
-        title:"AAAAA",
-        content:"dsfsdfsdfdsfdsfdsfdscsf gdf gdfsrwet ger xcxc dsferhrttsdf ted",
-    },
-]
+export default function News({maxItemsPerPage=12}:{maxItemsPerPage?:number}){
+    const itemsPerRow=4;
+    const [currentItems,setCurrentItems]=useState<NewsI[]>([]);
+    const [pageCount,setPageCount]=useState(Math.ceil(news.length/maxItemsPerPage));
+    const [itemOffset,setItemOffset]=useState(0);
 
-export default function News(){
-    // @ts-ignore
-    return <div className={"innerPage"} >
-        {/*<div>
-            {news.map((item,i)=>(
-                <div>
-                    {i<4&&
-                        <BigNewsItem item={item}/>}
-                    {i>=4&&
-                        <SmallNewsItem item={item}/>}
-                </div>
-            ))}
-        </div>*/}
-        <div>
-            {Array.from({length:3},(_,i)=>
-                <span key={i}>
-                    <BigNewsItem item={news[i]}/>
-                </span>
-            )}
+    useEffect(()=>{
+        const endOffset=itemOffset+maxItemsPerPage;
+        setCurrentItems(news.slice(itemOffset,endOffset));
+        setPageCount(Math.ceil(news.length/maxItemsPerPage));
+    },[itemOffset, maxItemsPerPage]);
+
+
+    const handlePageClick=(event:{selected:number;})=>{
+        const newOffset=event.selected*maxItemsPerPage;
+        setItemOffset(newOffset);
+        document.getElementById('top')?.scrollIntoView();
+    };
+
+    const bigNewsItems=currentItems.slice(0,itemsPerRow);
+    const smallNewsItems=currentItems.slice(itemsPerRow);
+
+    return <div className={"innerPage skullBackground"}>
+        <div id={"newsPage"}>
+            <div id={"bigNewsList"}>
+                {bigNewsItems.map((item,index)=>(
+                    <BigNewsItem item={item} key={index}/>
+                ))}
+            </div>
+            <div id={"smallNewsWrapper"}>
+                {smallNewsItems.map((item,index)=>(
+                    <SmallNewsItem item={item} key={index} cssClass={`${index%4===0?' noLeftMargin':''} ${index%4===3?'noRightMargin':''}`}/>
+                ))}
+            </div>
+            <div className={"paginationWrapper"}>
+                <ReactPaginate
+                    nextLabel={`${getTranslation(getLanguage(),"next")} >`}
+                    onPageChange={handlePageClick}
+                    pageCount={pageCount}
+                    previousLabel={`< ${getTranslation(getLanguage(),"previous")}`}
+                    containerClassName="pagination"
+                    pageRangeDisplayed={3}
+                    activeClassName="active"
+                    marginPagesDisplayed={2}
+                    pageClassName="pageItem"
+                    pageLinkClassName="pageLink"
+                    previousClassName="pageItem"
+                    previousLinkClassName="pageLink"
+                    nextClassName="pageItem"
+                    nextLinkClassName="pageLink"
+                    breakLabel="..."
+                    breakClassName="pageItem"
+                    breakLinkClassName="pageLink"
+                    renderOnZeroPageCount={null}
+                />
+            </div>
+
         </div>
-        <div id={"smallNewsWrapper"}>
-            {Array.from({length:news.length-3},(_,i)=>
-                <span key={i}>
-                        <SmallNewsItem item={news[i+3]}/>
-                    </span>
-            )}
-        </div>
+
     </div>
 }

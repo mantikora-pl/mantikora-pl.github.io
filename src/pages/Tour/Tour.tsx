@@ -78,7 +78,7 @@ export default function Tour(){
         setFilter(filterText)
     }
 
-    return <div className={"innerPage"}>
+    return <div className={"innerPage gradientBackground"}>
         <div className={"concertPageHeader"}>
             <div className={"flex1"}/>
             <p className={"pageTitle"}>Tour</p>
