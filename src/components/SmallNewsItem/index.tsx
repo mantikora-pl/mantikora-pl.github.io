@@ -4,9 +4,9 @@ import NewLineToBr from "../NewLineToBr";
 import {NewsI} from "../BigNewsItem"; //todo: move
 
 
-function SmallNewsItem({item}:{item: NewsI}){
+function SmallNewsItem({item,cssClass}:{item:NewsI,cssClass?:string}){
     return(
-        <div className={"smallNewsContainer"}>
+        <div className={"smallNewsContainer" + (cssClass?cssClass:"")}>
             <div className={"smallNewsItemWrapper"}>
                 <div className={"smallNewsImageWrapper"}>
                     <img className={"smallNewsImage"} src={item.photoSrc} alt={item.title+" image"}/>

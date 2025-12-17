@@ -2,7 +2,15 @@
     .smallNewsContainer{
         display:flex;
         margin: var(--spaceStandard);
+        width:20vw;
     }
+    .noLeftMargin{
+        margin-left:0!important;
+    }
+    .noRightMargin{
+        margin-right:0!important;
+    }
+
     .smallNewsContainer:first-of-type{
         margin-left:0!important;
     }

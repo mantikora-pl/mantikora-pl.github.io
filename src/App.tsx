@@ -93,6 +93,7 @@ function App(){
         <HashRouter>
             <div>
                 <div className={"page"} style={{cursor: "url('cursor.cur'), auto"}}>
+                    <span id={"top"}/>
                     <div className={"stickyTop"}>
                         <Header/>
                         <Navbar/>

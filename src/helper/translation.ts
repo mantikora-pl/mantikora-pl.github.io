@@ -122,7 +122,16 @@ export const translations={
     "unknown":{
         "en":"Unknown",
         "pl":"nieznany"
-    }
+    },
+    "previous":{
+        "en":"previous",
+        "pl":"poprzednia"
+    },
+    "next":{
+        "en":"next",
+        "pl":"następna"
+    },
+
 
 } as const
 
