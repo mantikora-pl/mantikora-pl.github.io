@@ -115,6 +115,8 @@ p{
 
 #smallNewsWrapper{
     display:flex;
+    flex-direction:row;
+    justify-content:space-between;
 }
 
 #songListAside{
@@ -272,4 +274,9 @@ p{
     flex-direction:column;
     width:100%;
     align-items:center;
+}
+
+#newsPage{
+    max-width:90vw;
+    margin:0 auto;
 }

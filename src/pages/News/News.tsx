@@ -28,30 +28,30 @@ const news: NewsI[] = [
         content: "The community garden initiative is expanding, inviting more residents to participate in sustainable gardening practices and workshops.",
     },
     {
-        photoSrc: "https://picsum.photos/500?random=14",
+        photoSrc: "https://picsum.photos/500?random=1",
         date: "December 9, 2025",
         title: "Local Firm Wins Environmental Award",
         content: "A local firm has been recognized for its commitment to sustainability, winning a prestigious environmental award for its innovative practices.",
     },
     {
-        photoSrc: "https://picsum.photos/500?random=15",
+        photoSrc: "https://picsum.photos/500?random=2",
         date: "December 10, 2025",
         title: "New Library Opens Downtown",
         content: "A new public library has opened in downtown, offering community members greater access to books, resources, and educational programs.",
     },
     {
-        photoSrc: "https://picsum.photos/500?random=16",
+        photoSrc: "https://picsum.photos/500?random=3",
         date: "December 12, 2025",
         title: "Healthcare Initiative Launches in Community",
         content: "A new healthcare initiative is launching to provide free health screenings and wellness programs for underserved community members.",
     },
     {
-        photoSrc: "https://picsum.photos/500?random=17",
+        photoSrc: "https://picsum.photos/500?random=4",
         date: "December 14, 2025",
         title: "Local Business Expands to New Location",
         content: "A beloved local business is expanding to a new location, promising to bring even more of its popular products to the community.",
     },
-    {
+    /*{
         photoSrc: "https://picsum.photos/500?random=18",
         date: "December 16, 2025",
         title: "City Hosts Annual Winter Festival",
@@ -80,12 +80,13 @@ const news: NewsI[] = [
         date: "December 24, 2025",
         title: "Food Bank Drives Collect Record Donations",
         content: "Local food bank drives have collected a record number of donations this holiday season, ensuring families in need receive support.",
-    },
+    },*/
 ]
 
 export default function News(){
-    // @ts-ignore
-    return <div className={"innerPage skullBackground"} >
+
+
+    return <div className={"innerPage skullBackground"}>
         {/*<div>
             {news.map((item,i)=>(
                 <div>
@@ -96,17 +97,19 @@ export default function News(){
                 </div>
             ))}
         </div>*/}
-        <div id={"bigNewsList"}>
-            {Array.from({length:4},(_,i)=>
-                 <BigNewsItem item={news[i]} key={i}/>
-            )}
+        <div id={"newsPage"}>
+            <div id={"bigNewsList"}>
+                {Array.from({length:4},(_,i)=>
+                    <BigNewsItem item={news[i]} key={i}/>
+                )}
+            </div>
+            <div id={"smallNewsWrapper"}>
+                {Array.from({length:news.length-4},(_,i)=>
+                        /*rows of 4*/
+                    <SmallNewsItem item={news[i+4]} key={i+4}/>
+                )}
+            </div>
         </div>
-       {/* <div id={"smallNewsWrapper"}>
-            {Array.from({length:news.length-3},(_,i)=>
-                <span key={i}>
-                        <SmallNewsItem item={news[i+3]}/>
-                    </span>
-            )}
-        </div>*/}
+
     </div>
 }
