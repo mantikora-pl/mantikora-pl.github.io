@@ -174,12 +174,15 @@ p{
 .concertPageHeader{
     margin-top:var(--spaceBig);
     display:flex;
+    flex-direction:row;
     justify-content:space-between;
     align-items:center;
+    /*width:80vw;*/
+    min-width:60vw;
+    padding:var(--spaceStandard);
 }
 
 #concertsControlsContainer{
-    flex:1;
     display:flex;
     justify-content:center;
 }

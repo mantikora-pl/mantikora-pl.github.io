@@ -34,7 +34,7 @@ ScrollReveal().reveal('.concertRow')
 
 function LocationDisclaimer(){
     return <Tooltip title={getTranslation(getLanguage(),"approxLocation")} placement={"top"}>
-        <p> *</p>
+        <p>*</p>
     </Tooltip>
 }
 

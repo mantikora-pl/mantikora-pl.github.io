@@ -86,22 +86,31 @@ export default function Tour(){
     }
 
     return <div className={"innerPage gradientBackground"}>
-        <div className={"concertPageHeader"}>
-            <div className={"flex1 searchBarContainer"}>
-                <input
-                    type="text"
-                    id="concertSearch"
-                    onChange={e=>handleFilterConcerts(e.target.value)}
-                    placeholder="Concert name or location"
-                /></div>
-            <p className={"pageTitle"}>Tour</p>
-            <div id={"concertsControlsContainer"}>
-                <button
-                    id={isMobile?"buttonOrderByM":"buttonOrderBy"}
-                    onClick={()=>handleSortTypeChange(!sortByLocation)}>
-                    {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
-                </button>
-            </div>
+        <div className={"width100 centeredFlexColumnContainer"}>
+            <table>
+                <tr className={"concertPageHeader"}>
+                    <td className={"searchBarContainer"}>
+                        <input
+                            type="text"
+                            id="concertSearch"
+                            onChange={e=>handleFilterConcerts(e.target.value)}
+                            placeholder="Concert namelocation"
+                        />
+                    </td>
+                    <td></td>
+                    <td className={"pageTitle"}>Tour</td>
+                    <td></td>
+                    <td>
+                        <div id={"concertsControlsContainer"}>
+                            <button
+                                id={isMobile?"buttonOrderByM":"buttonOrderBy"}
+                                onClick={()=>handleSortTypeChange(!sortByLocation)}>
+                                {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div className={"width100 centeredFlexColumnContainer"}>
             {visibleCount()&&
@@ -121,7 +130,7 @@ export default function Tour(){
                         {concerts.map((item,i)=>(
                             <>
                                 {shouldBeVisible(item)&&
-                                    <ConcertItemM item={concerts[i]} key={i}/>
+                                    <ConcertItemM item={item} key={i}/>
                                 }
                             </>
                         ))}
