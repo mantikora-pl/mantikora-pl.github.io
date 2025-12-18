@@ -1,35 +1,35 @@
-import ConcertItem,{Concert} from "../../components/ConcertItem";
-import ConcertItemM from "../../components/ConcertItemM";
-import React,{useEffect,useRef,useState} from "react";
-import {BrowserView,MobileView} from "react-device-detect";
-import {daysToEvent} from "../../helper/date";
-import {getDistance} from "../../helper/findCity";
-import {getCoordinates} from "../../helper/CoordinateFetcher";
-import Cookies from "universal-cookie";
-import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
+import ConcertItem,{Concert} from "../../components/ConcertItem"
+import ConcertItemM from "../../components/ConcertItemM"
+import React,{useEffect,useRef,useState} from "react"
+import {BrowserView,MobileView} from "react-device-detect"
+import {daysToEvent} from "../../helper/date"
+import {getDistance} from "../../helper/findCity"
+import {getCoordinates} from "../../helper/CoordinateFetcher"
+import Cookies from "universal-cookie"
+import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw"
 //import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
 import {concertsRaw} from "../../data/concertList"
-import {getLanguage,getTranslation} from "../../helper/translation";
-import {isMobile} from 'react-device-detect';
+import {getLanguage,getTranslation} from "../../helper/translation"
+import {isMobile} from 'react-device-detect'
 
-const cookies=new Cookies();
+const cookies=new Cookies()
 export default function Tour(){
     const [coordinates,setCoordinates]=useState({lat:0,lng:0})
     const gpsLocation=useRef(false)
     const [sortByLocation,setSortByLocation]=useState(false)
 
     function handleSortTypeChange(state:boolean){
-        const concertElements=document.querySelectorAll('.concertRow');
-        const buttonElement=document.querySelector('#buttonSortBy p');
+        const concertElements=document.querySelectorAll('.concertRow')
+        const buttonElement=document.querySelector('#buttonSortBy p')
         concertElements.forEach((element,index)=>{
-            setTimeout(()=>element.classList.add('fadeInAnimation'),index*70);
-        });
-        buttonElement?.classList.add('fadeInAnimation');
-        setSortByLocation(state);
+            setTimeout(()=>element.classList.add('fadeInAnimation'),index*70)
+        })
+        buttonElement?.classList.add('fadeInAnimation')
+        setSortByLocation(state)
         setTimeout(()=>{
-            concertElements.forEach((element)=>element.classList.remove('fadeInAnimation'));
-            buttonElement?.classList.remove('fadeInAnimation');
-        },500+concertElements.length*70);
+            concertElements.forEach((element)=>element.classList.remove('fadeInAnimation'))
+            buttonElement?.classList.remove('fadeInAnimation')
+        },500+concertElements.length*70)
     }
 
     function visibleCount():boolean{
@@ -55,25 +55,29 @@ export default function Tour(){
 
     },[coordinates.lat,coordinates.lng])
 
-    const concerts:Concert[]=concertsRaw.map(item=>({
-        id:item.id,
-        date:item.date,
-        numericDate:item.numericDate,
-        name:item.name,
-        country:item.country,
-        state:item.state,
-        city:item.city,
-        buyLink:item.buyLink,
-        visible:item.visible,
-        lat:getConcertLocation(item).lat,
-        lng:getConcertLocation(item).lng,
-        distanceKm:getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng),
-        distanceMi:Math.floor(getDistance(cookies.get('lat'),cookies.get('lng'),getConcertLocation(item).lat,getConcertLocation(item).lng)/1.609344),
-        daysToEvent:daysToEvent(item.numericDate),
-    }))
+    const concerts:Concert[]=concertsRaw.map(item=>{
+        const concertLocation=getConcertLocation(item)
+        return {
+            id:item.id,
+            date:item.date,
+            numericDate:item.numericDate,
+            name:item.name,
+            country:item.country,
+            state:item.state,
+            city:item.city,
+            buyLink:item.buyLink,
+            visible:item.visible,
+            lat:concertLocation.lat,
+            lng:concertLocation.lng,
+            distanceKm:getDistance(cookies.get('lat'),cookies.get('lng'),concertLocation.lat,concertLocation.lng),
+            distanceMi:Math.floor(getDistance(cookies.get('lat'),cookies.get('lng'),concertLocation.lat,concertLocation.lng)/1.609344),
+            daysToEvent:daysToEvent(item.numericDate),
+            found:concertLocation.found
+        }
+    })
     if(sortByLocation) concerts.sort((a,b)=>a.distanceKm-b.distanceKm)
     else concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent)
-    const [filter,setFilter]=useState("");
+    const [filter,setFilter]=useState("")
 
     function handleFilterConcerts(filterText:string){
         setFilter(filterText)

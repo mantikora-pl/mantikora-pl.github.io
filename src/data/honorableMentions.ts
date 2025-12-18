@@ -1,4 +1,4 @@
-import {HonorableMentionsItemI} from "../components/HonorableMentionsItem";
+import {HonorableMentionsItemI} from "../components/HonorableMentionsItem"
 
 export const honorableMentions:HonorableMentionsItemI[]=[
            {

@@ -1,4 +1,4 @@
-import {Socials} from "../components/ContactEntity";
+import {Socials} from "../components/ContactEntity"
 
 export const bandMembers:Socials[]=[
     {entityName: "Mantikora",

@@ -1,4 +1,4 @@
-import {NewsI} from "../components/BigNewsItem";
+import {NewsI} from "../components/BigNewsItem"
 
 export const news:NewsI[]=[
     {

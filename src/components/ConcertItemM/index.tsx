@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
-import {Concert} from "../ConcertItem";
-import {localizeDate} from "../../helper/date";
+import {Concert} from "../ConcertItem"
+import {localizeDate} from "../../helper/date"
 
 function ConcertItemM({item}:{item:Concert}){
     function unifiedDate(){

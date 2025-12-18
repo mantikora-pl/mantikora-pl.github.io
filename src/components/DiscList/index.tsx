@@ -21,27 +21,27 @@ function DiscList({items}:{items:Disc[]}){
             entries.forEach((entry)=>{
                 if(entry.isIntersecting){
                     if(entry.target.classList.contains('discWrapperLeft')){
-                        entry.target.classList.add('flyInLeftAnimation');
+                        entry.target.classList.add('flyInLeftAnimation')
                     }
                     else if(entry.target.classList.contains('discWrapperRight')){
-                        entry.target.classList.add('flyInRightAnimation');
+                        entry.target.classList.add('flyInRightAnimation')
                     }
-                    observer.unobserve(entry.target);
+                    observer.unobserve(entry.target)
                 }
-            });
-        });
+            })
+        })
 
-        const elementsL=document.querySelectorAll('.discWrapperLeft');
-        const elementsR=document.querySelectorAll('.discWrapperRight');
+        const elementsL=document.querySelectorAll('.discWrapperLeft')
+        const elementsR=document.querySelectorAll('.discWrapperRight')
 
-        elementsL.forEach((element)=>observer.observe(element));
-        elementsR.forEach((element)=>observer.observe(element));
+        elementsL.forEach((element)=>observer.observe(element))
+        elementsR.forEach((element)=>observer.observe(element))
 
         return ()=>{
-            elementsL.forEach((element)=>observer.unobserve(element));
-            elementsR.forEach((element)=>observer.unobserve(element));
+            elementsL.forEach((element)=>observer.unobserve(element))
+            elementsR.forEach((element)=>observer.unobserve(element))
         }
-    },[]);
+    },[])
 
 
     return (

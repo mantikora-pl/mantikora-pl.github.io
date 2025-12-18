@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
-import NewLineToBr from "../NewLineToBr";
-import {getLanguage,getTranslation} from "../../helper/translation";
+import NewLineToBr from "../NewLineToBr"
+import {getLanguage,getTranslation} from "../../helper/translation"
 
 export function AboutUsText(){
     return(

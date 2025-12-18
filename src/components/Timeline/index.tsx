@@ -1,9 +1,9 @@
 import React from 'react'
-import {VerticalTimeline,VerticalTimelineElement} from "react-vertical-timeline-component";
-import 'react-vertical-timeline-component/style.min.css';
+import {VerticalTimeline,VerticalTimelineElement} from "react-vertical-timeline-component"
+import 'react-vertical-timeline-component/style.min.css'
 import './style.css'
-import {getMonthTranslation,localizeDate} from "../../helper/date";
-import {getLanguage} from "../../helper/translation";
+import {getMonthTranslation,localizeDate} from "../../helper/date"
+import {getLanguage} from "../../helper/translation"
 
 export interface TimelineElement{
     id:number,

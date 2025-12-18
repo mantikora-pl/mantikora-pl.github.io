@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
-import MyFooter from "../MyFooter";
-import Header from "../Header";
-import Navbar from "../Navbar";
-import NewLineTo2Br from "../NewLineTo2Br";
+import MyFooter from "../MyFooter"
+import Header from "../Header"
+import Navbar from "../Navbar"
+import NewLineTo2Br from "../NewLineTo2Br"
 
 export interface PersonalData{
     photo:string,

@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import NewLineToBr from "../NewLineToBr";
+import NewLineToBr from "../NewLineToBr"
 
 export interface NewsI{
     photoSrc:string,

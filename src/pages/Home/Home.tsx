@@ -1,5 +1,5 @@
-import React from "react";
-import {AboutUsText} from "../../components/AboutUsText";
+import React from "react"
+import {AboutUsText} from "../../components/AboutUsText"
 
 export default function Home(){
     return <div className={"innerPage gradientBackground"}>

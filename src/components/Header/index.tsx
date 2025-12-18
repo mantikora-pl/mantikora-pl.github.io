@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import './style.css'
 import {BrowserView,isMobile,MobileView} from 'react-device-detect'
-import {Link} from "react-router-dom";
-import {navElements} from "../Navbar";
-import {cookies,getLanguage,languagesData} from "../../helper/translation";
+import {Link} from "react-router-dom"
+import {navElements} from "../Navbar"
+import {cookies,getLanguage,languagesData} from "../../helper/translation"
 
 
 function Header(){
@@ -16,7 +16,7 @@ function Header(){
 
     function handleLanguageChange(event:React.ChangeEvent<HTMLSelectElement>){
         cookies.set("language",event.target.value)
-        window.location.reload();
+        window.location.reload()
     }
 
     useEffect(()=>{
@@ -24,12 +24,12 @@ function Header(){
             const elements=document.querySelectorAll('.minimizeOnScroll')
             const elementsVertical=document.querySelectorAll('.minimizeOnScrollVertical')
             if(window.scrollY>65){
-                elements.forEach(element=>element.classList.add('smallOnScroll'));
-                elementsVertical.forEach(element=>element.classList.add('smallOnScrollVerticalOnly'));
+                elements.forEach(element=>element.classList.add('smallOnScroll'))
+                elementsVertical.forEach(element=>element.classList.add('smallOnScrollVerticalOnly'))
             }
             else if(window.scrollY<40){
-                elements.forEach(element=>element.classList.remove('smallOnScroll'));
-                elementsVertical.forEach(element=>element.classList.remove('smallOnScrollVerticalOnly'));
+                elements.forEach(element=>element.classList.remove('smallOnScroll'))
+                elementsVertical.forEach(element=>element.classList.remove('smallOnScrollVerticalOnly'))
             }
 
         }

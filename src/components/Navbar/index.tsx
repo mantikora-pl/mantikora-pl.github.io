@@ -1,7 +1,7 @@
 import React from "react"
 import './style.css'
 import {getLanguage,getTranslation} from "../../helper/translation"
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"
 import {BrowserView} from 'react-device-detect'
 
 

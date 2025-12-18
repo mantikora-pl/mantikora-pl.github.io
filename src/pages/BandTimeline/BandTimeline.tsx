@@ -1,7 +1,7 @@
-import 'react-vertical-timeline-component/style.min.css';
-import Timeline from "../../components/Timeline";
-import React from "react";
-import {timeLineItems} from "../../data/timelineData";
+import 'react-vertical-timeline-component/style.min.css'
+import Timeline from "../../components/Timeline"
+import React from "react"
+import {timeLineItems} from "../../data/timelineData"
 
 
 export default function BandTimeline(){
