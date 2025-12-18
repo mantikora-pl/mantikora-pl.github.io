@@ -1,4 +1,4 @@
-import Cookies from "universal-cookie";
+import Cookies from "universal-cookie"
 
 export const translations={
     "main":{
@@ -134,6 +134,10 @@ export const translations={
     "tickets":{
         "en":"Tickets",
         "pl":"Bilety"
+    },
+    "approxLocation":{
+        "en":"approximate location based on country",
+        "pl":"lokalizacja bazowana na kraju, nie mieście"
     }
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import {getLanguage,getTranslation} from "../../helper/translation";
+import {getLanguage,getTranslation} from "../../helper/translation"
 
 function PageInMaking(){
     return (

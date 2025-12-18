@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
-import NewLineToBr from "../NewLineToBr";
-import {NewsI} from "../BigNewsItem"; //todo: move
+import NewLineToBr from "../NewLineToBr"
+import {NewsI} from "../BigNewsItem" //todo: move
 
 
 function SmallNewsItem({item,cssClass}:{item:NewsI,cssClass?:string}){

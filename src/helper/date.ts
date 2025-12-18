@@ -1,4 +1,4 @@
-import {getLanguage,getTranslation} from "./translation";
+import {getLanguage,getTranslation} from "./translation"
 
 export interface EventDate{
     year:number
@@ -122,9 +122,9 @@ export function daysToEvent(eventDate:{year:number,month:number,day:number}):num
 export function localizeDate(year:number,month:number,day:number){
     switch(getLanguage()){
         case "en":
-            return getMonthTranslation(getLanguage(),month)+" "+day+", "+year;
+            return getMonthTranslation(getLanguage(),month)+" "+day+", "+year
         case "pl":
-            return day+" "+getMonthTranslation(getLanguage(),month)+" "+year;
+            return day+" "+getMonthTranslation(getLanguage(),month)+" "+year
     }
 }
 

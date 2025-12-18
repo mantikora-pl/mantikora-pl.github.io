@@ -1,5 +1,5 @@
-import {Disc} from "../components/DiscList";
-import {getLanguage,getTranslation} from "../helper/translation";
+import {Disc} from "../components/DiscList"
+import {getLanguage,getTranslation} from "../helper/translation"
 
 export const single=" ("+getTranslation(getLanguage(),"single")+")"
 

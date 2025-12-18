@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './style.css'
-import NewLineToBr from "../NewLineToBr";
+import NewLineToBr from "../NewLineToBr"
 
 export interface LyricsItems{
     id:number,

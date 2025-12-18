@@ -1,10 +1,11 @@
 import './style.css'
-import {dayOfTheWeek,EventDate,localDayOfTheWeek} from "../../helper/date";
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+import {dayOfTheWeek,EventDate,localDayOfTheWeek} from "../../helper/date"
+import "/node_modules/flag-icons/css/flag-icons.min.css"
 import ScrollReveal from 'scrollreveal'
-import {getLanguage,getTranslation} from "../../helper/translation";
-import {getColor} from "../../helper/getColor";
-import Tooltip from '@mui/material/Tooltip';
+import {getLanguage,getTranslation} from "../../helper/translation"
+import {getColor} from "../../helper/getColor"
+import Tooltip from '@mui/material/Tooltip'
+import {FoundEnum} from "../../helper/findCity"
 
 export interface Concert{
     id:number
@@ -21,6 +22,7 @@ export interface Concert{
     distanceKm:number
     distanceMi:number
     daysToEvent:number
+    found:FoundEnum
 }
 
 /**name is also club! location is only city+country **/
@@ -30,38 +32,58 @@ export function generateFlagClassName(code:string):string{
 
 ScrollReveal().reveal('.concertRow')
 
+function LocationDisclaimer(){
+    return <Tooltip title={getTranslation(getLanguage(),"approxLocation")} placement={"top"}>
+        <p> *</p>
+    </Tooltip>
+}
+
 function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boolean}){
-    const distance=(getLanguage()==="en"&&navigator.language==="en-US")?item.distanceMi+" mi":item.distanceKm+" km";
+    const distance=(getLanguage()==="en"&&navigator.language==="en-US")?item.distanceMi+" mi":item.distanceKm+" km"
     const color=getColor(item.distanceKm)
+    if(item.found===FoundEnum.NOT_FOUND) showDistance=false
 
     const dayOfTheWeekNumber=dayOfTheWeek(item.numericDate.year,item.numericDate.month,item.numericDate.day)
+    const props={
+        found:item.found
+    }
 
     return (
-        <tr className={"concertRow"}>
-            {showDistance?
-                <td className={"distanceDaysCell"} style={{color}}>{distance}</td>:
-                <td className={"distanceDaysCell"}>{item.daysToEvent+getTranslation(getLanguage(),"daysLeft")}</td>
+        <>
+            {item.found!==FoundEnum.NOT_FOUND&&
+                <tr className={"concertRow"}>
+                    {showDistance?
+                        <>
+                            <td className={"distanceDaysCell"} style={{color}}>{distance}</td>
+                            {item.found!==FoundEnum.FOUND_CITY&&<LocationDisclaimer/>}
+                        </>:
+
+                        <td className={"distanceDaysCell"}>{item.daysToEvent+getTranslation(getLanguage(),"daysLeft")}</td>
+                    }
+
+                    <td>
+                        <Tooltip title={localDayOfTheWeek(getLanguage(),dayOfTheWeekNumber)} placement={"top"}
+                                 className={"dayTooltip"}>
+                            <div className={generateFlagClassName(item.country??"us")}>
+                                <div className={"concertDay"}>{item.date.day}</div>
+                                <div className={"concertMonth"}>{item.date.month}</div>
+                                <div className={"concertYear"}>{item.date.year}</div>
+                            </div>
+                        </Tooltip>
+                    </td>
+
+                    <td><p className={"concertName"}>{item.name}</p></td>
+                    <td><p className={"concertLocation"}>{item.city}</p></td>
+                    <td>
+                        <a href={item.buyLink}>
+                            <button className={"ticketsButton"}>{getTranslation(getLanguage(),"tickets")}</button>
+                        </a>
+                    </td>
+                </tr>
             }
+        </>
 
-            <td>
-                <Tooltip title={localDayOfTheWeek(getLanguage(),dayOfTheWeekNumber)} placement={"top"}
-                         className={"dayTooltip"}>
-                    <div className={generateFlagClassName(item.country??"us")}>
-                        <div className={"concertDay"}>{item.date.day}</div>
-                        <div className={"concertMonth"}>{item.date.month}</div>
-                        <div className={"concertYear"}>{item.date.year}</div>
-                    </div>
-                </Tooltip>
-            </td>
 
-            <td><p className={"concertName"}>{item.name}</p></td>
-            <td><p className={"concertLocation"}>{item.city}</p></td>
-            <td>
-                <a href={item.buyLink}>
-                    <button className={"ticketsButton"}>{getTranslation(getLanguage(),"tickets")}</button>
-                </a>
-            </td>
-        </tr>
     )
 }
 

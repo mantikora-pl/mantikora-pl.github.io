@@ -1,7 +1,7 @@
 
 export interface CodeName {
-    code: string;
-    name: string;
+    code: string
+    name: string
 }
 
 const COUNTRIES: CodeName[] = [
@@ -44,25 +44,25 @@ const COUNTRIES: CodeName[] = [
     { code: "KR", name: "South Korea" },
     { code: "US", name: "United States" },
     { code: "GB", name: "United Kingdom" }
-];
+]
 /**
  * @code is 2-letter code in ISO 3166-1 alpha-2
  * **/
 export function codeToCountry(code: string) {
-    return COUNTRIES.find(country => country.code.toUpperCase() === code.toUpperCase())?.name;
+    return COUNTRIES.find(country => country.code.toUpperCase() === code.toUpperCase())?.name
 }
 
 /**
  * returns 2-letter code in ISO 3166-1 alpha-2
  * **/
 export function countryToCode(forCountry: string) {
-    return COUNTRIES.find(country => country.name.toUpperCase() === forCountry.toUpperCase())?.code;
+    return COUNTRIES.find(country => country.name.toUpperCase() === forCountry.toUpperCase())?.code
 }
 
 export interface StateCodes {
-    code: string;
-    name: string;
-    countryCode?: string; //in case we'll need Brazil / Mexico state codes too
+    code: string
+    name: string
+    countryCode?: string //in case we'll need Brazil / Mexico state codes too
 }
 
 export const US_STATES: StateCodes[] = [
@@ -117,13 +117,13 @@ export const US_STATES: StateCodes[] = [
     { code: "WV", name: "West Virginia" },
     { code: "WI", name: "Wisconsin" },
     { code: "WY", name: "Wyoming" }
-];
+]
 
 export function stateCodeToName(stateCode: string) {
-    return US_STATES.find(state => state.code.toUpperCase() === stateCode.toUpperCase())?.name;
+    return US_STATES.find(state => state.code.toUpperCase() === stateCode.toUpperCase())?.name
 }
 
 export function stateNameToCode(stateName: string) {
-    return US_STATES.find(state => state.name.toUpperCase() === stateName.toUpperCase())?.code;
+    return US_STATES.find(state => state.name.toUpperCase() === stateName.toUpperCase())?.code
 }
 

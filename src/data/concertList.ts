@@ -1,6 +1,6 @@
-import {ConcertRaw} from "../helper/concertRaw";
-import {translateDate} from "../helper/date";
-import {getLanguage} from "../helper/translation";
+import {ConcertRaw} from "../helper/concertRaw"
+import {translateDate} from "../helper/date"
+import {getLanguage} from "../helper/translation"
 
 export const concertsRaw:ConcertRaw[]=[
     {
@@ -92,6 +92,17 @@ export const concertsRaw:ConcertRaw[]=[
         visible:true
     },
     {
+        id:21,
+        date:translateDate(2026,8,13,getLanguage()),
+        numericDate:{year:2026,month:8,day:13},
+        name:"does this country exist???",
+        country:"",
+        state:undefined,
+        city:"Lavender Town",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
         id:8,
         date:translateDate(2026,10,1,getLanguage()),
         numericDate:{year:2026,month:10,day:1},
@@ -109,7 +120,7 @@ export const concertsRaw:ConcertRaw[]=[
         name:"These jokes are getting worse",
         country:"NL",
         state:undefined,
-        city:"Eindhoven",
+        city:"Amsterdam",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
     },

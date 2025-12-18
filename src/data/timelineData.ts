@@ -1,5 +1,5 @@
-import {TimelineElement} from "../components/Timeline";
-import {getLanguage,getTranslation} from "../helper/translation";
+import {TimelineElement} from "../components/Timeline"
+import {getLanguage,getTranslation} from "../helper/translation"
 
 export const timeLineItems:TimelineElement[]=[
     {
