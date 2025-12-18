@@ -41,7 +41,9 @@ export default function Tour(){
     }
 
     function doesConcertMatchFilter(concert:Concert):boolean{
-        return (concert.name.toLowerCase().includes(filter.toLowerCase())||concert.city.toLowerCase().includes(filter.toLowerCase()))&&shouldBeVisible(concert)
+        return (concert.name.toLowerCase().includes(filter.toLowerCase())
+                ||concert.city.toLowerCase().includes(filter.toLowerCase()))
+            &&shouldBeVisible(concert)
     }
 
     useEffect(()=>{
@@ -85,15 +87,15 @@ export default function Tour(){
 
     return <div className={"innerPage gradientBackground"}>
         <div className={"concertPageHeader"}>
-            <div className={"flex1"}/>
-            <p className={"pageTitle"}>Tour</p>
-            <div id={"concertsControlsContainer"}>
-                {/*<input
+            <div className={"flex1 searchBarContainer"}>
+                <input
                     type="text"
                     id="concertSearch"
-                    onChange={e => handleFilterConcerts(e.target.value)}
-                    placeholder="translate this"
-                />*/}
+                    onChange={e=>handleFilterConcerts(e.target.value)}
+                    placeholder="Concert name or location"
+                /></div>
+            <p className={"pageTitle"}>Tour</p>
+            <div id={"concertsControlsContainer"}>
                 <button
                     id={isMobile?"buttonOrderByM":"buttonOrderBy"}
                     onClick={()=>handleSortTypeChange(!sortByLocation)}>
@@ -110,7 +112,7 @@ export default function Tour(){
                                 .filter(item=>doesConcertMatchFilter(item))
                                 .map((item,i)=>(
                                     <>
-                                        <ConcertItem item={concerts[i]} key={i} showDistance={sortByLocation}/>
+                                        <ConcertItem item={item} key={i} showDistance={sortByLocation}/>
                                     </>
                                 ))}
                         </table>

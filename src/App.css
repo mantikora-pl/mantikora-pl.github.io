@@ -115,6 +115,7 @@ p{
     justify-content:space-between;
     flex-wrap:wrap;
 }
+
 /*endregion*/
 
 /* region pagination */
@@ -207,6 +208,22 @@ p{
     font-size:var(--fontL);
     margin:var(--spaceBig);
     text-transform:uppercase;
+}
+
+.searchBarContainer{
+    display:flex;
+    justify-content:center;
+}
+
+#concertSearch{
+    border:3px solid var(--itemBackgroundColor);
+    padding:var(--spaceSmall);
+    height:20px;
+    border-radius:var(--roundedCornersSmall) 0 0 var(--roundedCornersSmall);
+    outline:none;
+    color:var(--textColorMain);
+    background-color:var(--backgroundColorLight);
+    min-width:150px;
 }
 
 /*endregion*/
