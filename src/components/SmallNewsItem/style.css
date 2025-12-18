@@ -68,12 +68,12 @@
     }
 
     .smallNewsTitle{
-        font-size:var(--fontMl);
+        font-size:var(--fontML);
         text-transform:uppercase;
     }
 
     .smallNewsDate{
-        font-size:var(--fontMl);
+        font-size:var(--fontML);
     }
 
     .smallNewsContent{

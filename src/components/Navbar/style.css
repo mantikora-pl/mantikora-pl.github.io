@@ -33,7 +33,7 @@
     font-family: var(--fontFamilyStandard), serif;
     text-transform:uppercase;
     font-weight:var(--boldy);
-    font-size:var(--fontXl);
+    font-size:var(--fontXL);
     text-decoration:none;
     color:var(--textColorMain);
 }

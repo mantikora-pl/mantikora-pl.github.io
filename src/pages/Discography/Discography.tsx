@@ -8,13 +8,13 @@ import {discsData} from "../../data/discsData";
 
 export default function Discography(){
     return <div className={"innerPage gradientBackground"}>
-            <p className={"pageTitle"}>{getTranslation(getLanguage(),"our-cds")}</p>
-            <MobileView>
-                <DiscListM items={discsData}/>
-            </MobileView>
-            <BrowserView>
-                <DiscList items={discsData}/>
-            </BrowserView>
+        <p className={"pageTitle"}>{getTranslation(getLanguage(),"our-cds")}</p>
+        <MobileView>
+            <DiscListM items={discsData}/>
+        </MobileView>
+        <BrowserView>
+            <DiscList items={discsData}/>
+        </BrowserView>
     </div>
 
 }

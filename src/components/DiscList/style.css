@@ -51,12 +51,12 @@
 }
 .albumDate{
     text-align:center;
-    font-size:var(--fontMl);
+    font-size:var(--fontML);
     font-weight:var(--boldy);
 }
 .songLi{
     margin:var(--spaceSmall);
-    font-size:var(--fontMl);
+    font-size:var(--fontML);
 }
 .flyInLeftAnimation,.flyInRightAnimation{
     animation-iteration-count:1, 1;

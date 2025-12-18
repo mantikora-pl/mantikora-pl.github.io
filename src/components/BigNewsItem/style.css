@@ -52,12 +52,12 @@
     }
 
     .bigNewsTitle{
-        font-size:var(--fontMl);
+        font-size:var(--fontML);
         text-transform:uppercase;
     }
 
     .bigNewsDate{
-        font-size:var(--fontMl);
+        font-size:var(--fontML);
     }
 
     .bigNewsContent{

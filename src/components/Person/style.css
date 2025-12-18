@@ -11,7 +11,7 @@
     font-family: var(--fontFamilyStandard), serif;
     text-transform:uppercase;
     font-weight:bold;
-    font-size:var(--fontXXl);
+    font-size:var(--fontXXL);
     color:var(--textColorMain);
     margin-top:35px;
     margin-bottom:35px;
@@ -41,7 +41,7 @@
 
 .smallHeader{
     color:var(--redAccentColor);
-    font-size:var(--fontMl);
+    font-size:var(--fontML);
     font-weight:bold;
     text-transform:uppercase;
 }

@@ -16,7 +16,7 @@
 }
 
 .socialsWrapper > p{
-    font-size:var(--fontMl);
+    font-size:var(--fontML);
     margin:var(--spaceSmall);
     padding:0;
 }
