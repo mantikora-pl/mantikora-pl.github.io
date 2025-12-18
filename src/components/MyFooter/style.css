@@ -1,10 +1,10 @@
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--backgroundColorDarker);
-    width: 100%;
-    font-size: var(--fontS);
-    min-height: 120px;
+footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-color:var(--backgroundColorDarker);
+    width:100%;
+    font-size:var(--fontS);
+    min-height:120px;
 }

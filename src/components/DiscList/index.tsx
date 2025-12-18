@@ -45,7 +45,7 @@ function DiscList({items}:{items:Disc[]}){
 
 
     return (
-        <div className={"listWrapper"}>
+        <div className={"listContainer"}>
             {items.map((item,i)=>(
                 <div className={getCssClass(i)} key={i}>
                     <img src={item.coverArtSrc} alt={"random pic"} className={"coverArt"}/>
@@ -54,7 +54,7 @@ function DiscList({items}:{items:Disc[]}){
                         <p className={"albumDate"}>{item.date}</p>
                         <ol>
                             {item.songs.map((song,j)=>(
-                                <li key={j} className={"songLi"}>{song}</li>
+                                <li key={j} className={"song"}>{song}</li>
                             ))}
                         </ol>
                         <p className={"albumCredits"}>{item.credits}</p>

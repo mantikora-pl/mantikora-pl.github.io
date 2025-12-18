@@ -3,9 +3,9 @@ import './style.css'
 
 
 function MyFooter(){
-    return(
+    return (
         <footer>
-        Ⓒ2025, MANTIKORA, ALL RIGHTS RESERVED <br/> Powered by Github pages
+            Ⓒ2025, MANTIKORA, ALL RIGHTS RESERVED <br/> Powered by Github pages
         </footer>
     )
 }

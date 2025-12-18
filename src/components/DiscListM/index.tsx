@@ -9,30 +9,31 @@ export interface Disc{
     songs:string[]
 }
 
-function DiscListM({items}:{items: Disc[]}){
-    return(
+function DiscListM({items}:{items:Disc[]}){
+    return (
         <div className={"listWrapperM"}>
             {items.map((item,i)=>(
                 <div>
-                <div className="discWrapperM" key={i}>
-                    <img src={item.coverArtSrc} alt={"random pic"} className={"coverArtM"}/>
+                    <div className="discWrapperM" key={i}>
+                        <img src={item.coverArtSrc} alt={"random pic"} className={"coverArtM"}/>
 
-                    <div className={"albumDetailsWrapperM"}>
-                        <p className={"albumTitleM"}>{item.title}</p>
-                        <p className={"albumDateM"}>{item.date}</p>
-                        <ol>
-                            {item.songs.map((song,j)=>(
-                                <li key={j} className={"songLiM"}>{song}</li>
-                            ))}
-                        </ol>
-                        <p className={"albumCreditsM"}>{item.credits}</p>
+                        <div className={"albumDetailsWrapperM"}>
+                            <p className={"albumTitleM"}>{item.title}</p>
+                            <p className={"albumDateM"}>{item.date}</p>
+                            <ol>
+                                {item.songs.map((song,j)=>(
+                                    <li key={j} className={"songM"}>{song}</li>
+                                ))}
+                            </ol>
+                            <p className={"albumCreditsM"}>{item.credits}</p>
+                        </div>
                     </div>
-                </div>
                     <hr/>
                 </div>
             ))}
         </div>
     )
 }
+
 //TODO: WHOLE NEW FUNCTION FOR MOBILE!!!
 export default DiscListM

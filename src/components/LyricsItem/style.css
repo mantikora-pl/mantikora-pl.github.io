@@ -1,20 +1,5 @@
-.lyricsTitleRow{
-    display:flex;
-    justify-content:center;
-    text-align:center;
-    align-items:center;
-}
-.lyricsClose{
-    height:30px;
-    width:30px;
-}
-
-
-
-.songLyricsHeader{
-    font-size:var(--fontL);
-    margin:var(--spaceSmall);
-    color:var(--redAccentColor)
+.songLyricsContainer{
+    margin:var(--spaceStandard) 0;
 }
 
 .anchor{
@@ -24,19 +9,35 @@
     visibility:hidden;
 }
 
-.songLyrics{
+.songLyricsHeader{
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+}
+
+.songTitle{
+    font-size:var(--fontL);
+    margin:var(--spaceSmall);
+    color:var(--redAccentColor)
+}
+
+.closeIcon{
+    height:30px;
+    width:30px;
+}
+
+.lyricsText{
     font-weight:var(--boldy);
     font-size:var(--fontM);
     width:auto;
     text-align:center;
-    white-space: pre-line;
-    text-shadow: -1px -1px 0 var(--mantikoraRed), 1px -1px 0 var(--mantikoraRed),
+    white-space:pre-line;
+    text-shadow:-1px -1px 0 var(--mantikoraRed), 1px -1px 0 var(--mantikoraRed),
     -1px 1px 0 var(--mantikoraRed), 1px 1px 0 var(--mantikoraRed);
 }
 
-.songLyricsCredits{
+.songCredits{
 
 }
-.lyricsItemWrapper{
-    margin:var(--spaceStandard) 0;
-}
+

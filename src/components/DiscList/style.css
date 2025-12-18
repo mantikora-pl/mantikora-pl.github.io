@@ -1,4 +1,4 @@
-.listWrapper{
+.listContainer{
     width:100%;
     display:flex;
     align-items:center;
@@ -7,10 +7,11 @@
     margin-left:auto;
     margin-right:auto;
 }
-.discWrapperLeft,.discWrapperRight{
+
+.discWrapperLeft, .discWrapperRight{
     display:flex;
     justify-content:space-between;
-    margin-top:40px; {/*change because wtf*/}
+    margin-top:40px; /*change because wtf*/
     max-width:800px;
     opacity:1;
     animation-name:fadeInOpacity;
@@ -20,11 +21,11 @@
     transition:transform .25s
 }
 
-@keyframes fadeInOpacity {
-    0% {
+@keyframes fadeInOpacity{
+    0%{
         opacity:0;
     }
-    100% {
+    100%{
         opacity:1;
     }
 }
@@ -32,15 +33,17 @@
 .discWrapperLeft{
     flex-direction:row;
 }
+
 .discWrapperRight{
     flex-direction:row-reverse;
 }
 
-.coverArt,.albumDetailsWrapper{
+.coverArt, .albumDetailsWrapper{
     width:var(--half);
 }
+
 .coverArt{
-    aspect-ratio:1!important;
+    aspect-ratio:1 !important;
     border-radius:var(--roundedCornersSmall);
 }
 
@@ -49,21 +52,24 @@
     font-size:var(--fontL);
     font-weight:bold;
 }
+
 .albumDate{
     text-align:center;
     font-size:var(--fontML);
     font-weight:var(--boldy);
 }
-.songLi{
+
+.song{
     margin:var(--spaceSmall);
     font-size:var(--fontML);
 }
-.flyInLeftAnimation,.flyInRightAnimation{
+
+.flyInLeftAnimation, .flyInRightAnimation{
     animation-iteration-count:1, 1;
     animation-timing-function:ease-in, ease-out;
     animation-duration:0.8s, 0.2s;
     animation-fill-mode:forwards;
-    animation-delay: 0s, 0.8s;
+    animation-delay:0s, 0.8s;
 }
 
 .flyInLeftAnimation{
@@ -77,48 +83,47 @@
 @keyframes flyInFromLeft{
     from{
         opacity:0.5;
-        transform: translateX(-60%);
+        transform:translateX(-60%);
     }
     to{
         opacity:0.8;
-        transform: translateX(10px);
+        transform:translateX(10px);
     }
 }
 
 @keyframes flyInFromRight{
     from{
         opacity:0.5;
-        transform: translateX(60%);
+        transform:translateX(60%);
     }
     to{
         opacity:0.8;
-        transform: translateX(-10px);
+        transform:translateX(-10px);
     }
 }
 
-@keyframes adjustPositionLeft {
-    0% {
-        opacity: 0.8;
-        transform: translateX(10px);
+@keyframes adjustPositionLeft{
+    0%{
+        opacity:0.8;
+        transform:translateX(10px);
     }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+    100%{
+        opacity:1;
+        transform:translateX(0);
     }
 }
 
-@keyframes adjustPositionRight {
-    0% {
-        opacity: 0.8;
-        transform: translateX(-10px);
+@keyframes adjustPositionRight{
+    0%{
+        opacity:0.8;
+        transform:translateX(-10px);
     }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+    100%{
+        opacity:1;
+        transform:translateX(0);
     }
 
 }
-
 
 
 .albumCredits{

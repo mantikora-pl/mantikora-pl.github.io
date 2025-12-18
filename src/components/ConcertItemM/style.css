@@ -29,18 +29,20 @@
     margin:var(--spaceStandard) 0;
 }
 
-.concertLeftM,.concertRightM{
+.concertLeftM, .concertRightM{
     width:var(--half);
 }
 
 .concertDateTextM{
     font-size:var(--fontM);
 }
+
 .concertNameM{
     text-transform:capitalize;
     color:var(--textColorInactive);
     margin:var(--spaceSmall) 0;
 }
+
 .concertLocationM{
     text-transform:uppercase;
     text-align:center;

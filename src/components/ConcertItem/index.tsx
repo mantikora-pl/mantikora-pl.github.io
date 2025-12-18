@@ -5,6 +5,7 @@ import ScrollReveal from 'scrollreveal'
 import {getLanguage,getTranslation} from "../../helper/translation";
 import {getColor} from "../../helper/getColor";
 import Tooltip from '@mui/material/Tooltip';
+
 export interface Concert{
     id:number
     date:EventDate,
@@ -26,8 +27,10 @@ export interface Concert{
 export function generateFlagClassName(code:string):string{
     return "concertDate fi fi-"+code.toLowerCase()
 }
+
 ScrollReveal().reveal('.concertRow')
-function ConcertItem({item, showDistance=false}:{item:Concert, showDistance?:boolean}){
+
+function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boolean}){
     const distance=(getLanguage()==="en"&&navigator.language==="en-US")?item.distanceMi+" mi":item.distanceKm+" km";
     const color=getColor(item.distanceKm)
 
@@ -35,11 +38,14 @@ function ConcertItem({item, showDistance=false}:{item:Concert, showDistance?:boo
 
     return (
         <tr className={"concertRow"}>
-            {showDistance && <td className={"distanceDaysCell"} style={{color}}>{distance}</td>}
-            {!(showDistance) && <td className={"distanceDaysCell"}>{item.daysToEvent + getTranslation(getLanguage(),"daysLeft")}</td>}
+            {showDistance?
+                <td className={"distanceDaysCell"} style={{color}}>{distance}</td>:
+                <td className={"distanceDaysCell"}>{item.daysToEvent+getTranslation(getLanguage(),"daysLeft")}</td>
+            }
 
             <td>
-                <Tooltip title={localDayOfTheWeek(getLanguage(),dayOfTheWeekNumber)} placement={"top"} className={"dayTooltip"}>
+                <Tooltip title={localDayOfTheWeek(getLanguage(),dayOfTheWeekNumber)} placement={"top"}
+                         className={"dayTooltip"}>
                     <div className={generateFlagClassName(item.country??"us")}>
                         <div className={"concertDay"}>{item.date.day}</div>
                         <div className={"concertMonth"}>{item.date.month}</div>
@@ -52,7 +58,7 @@ function ConcertItem({item, showDistance=false}:{item:Concert, showDistance?:boo
             <td><p className={"concertLocation"}>{item.city}</p></td>
             <td>
                 <a href={item.buyLink}>
-                <button className={"ticketsButton"}>Tickets</button>
+                    <button className={"ticketsButton"}>{getTranslation(getLanguage(),"tickets")}</button>
                 </a>
             </td>
         </tr>

@@ -25,12 +25,13 @@
     /*padding:10px;*/
     /*background-color:#282c34;*/
 }
+
 .navbarItem:hover{
     text-decoration:underline;
 }
 
 .navbarItem > .a{
-    font-family: var(--fontFamilyStandard), serif;
+    font-family:var(--fontFamilyStandard), serif;
     text-transform:uppercase;
     font-weight:var(--boldy);
     font-size:var(--fontXL);
