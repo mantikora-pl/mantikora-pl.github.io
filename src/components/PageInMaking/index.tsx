@@ -3,7 +3,7 @@ import './style.css'
 import {getLanguage,getTranslation} from "../../helper/translation";
 
 function PageInMaking(){
-    return(
+    return (
         <p className={"pageInMaking"}>{getTranslation(getLanguage(),"page-in-making")}</p>
     )
 }

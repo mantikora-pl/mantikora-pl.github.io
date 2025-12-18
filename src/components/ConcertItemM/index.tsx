@@ -3,7 +3,7 @@ import './style.css'
 import {Concert} from "../ConcertItem";
 import {localizeDate} from "../../helper/date";
 
-function ConcertItemM({item}:{item: Concert}){
+function ConcertItemM({item}:{item:Concert}){
     function unifiedDate(){
         return localizeDate(item.numericDate.year,item.numericDate.month,item.numericDate.day)
     }
@@ -12,7 +12,7 @@ function ConcertItemM({item}:{item: Concert}){
         return "concertDateM fi fi-"+code.toLowerCase()
     }
 
-    return(
+    return (
         <div className={"concertItemM"}>
             <div className={"concertRowM"}>
                 <div className={"concertLeftM"}>
@@ -25,7 +25,9 @@ function ConcertItemM({item}:{item: Concert}){
                 </div>
             </div>
 
-            <a href={item.buyLink}><button className={"ticketsButtonM"}>Tickets</button></a>
+            <a href={item.buyLink}>
+                <button className={"ticketsButtonM"}>Tickets</button>
+            </a>
         </div>
     )
 }

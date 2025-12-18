@@ -1,104 +1,92 @@
-.pageHeader {
-    background-color: var(--backgroundColorLighter);
-    min-height: 6vh;
+.pageHeader{
+    background-color:var(--backgroundColorLighter);
+    min-height:6vh;
     height:auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.headerLogo {
-    max-height: 6vh;
-    min-height: 80px;
-    margin:var(--spaceStandard) 0;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
 }
 
 .minimizeOnScroll, .minimizeOnScrollVertical{
-    transition: transform 0.5s;
+    transition:transform 0.5s;
+}
+
+.svg{
+    margin:0 30px;
+}
+
+.svgM{
+    margin:0 var(--spaceStandard);
+    height:100%;
 }
 
 .smallOnScroll{
-    transform: scale(0.8);
+    transform:scale(0.8);
 }
+
 .smallOnScrollVerticalOnly{
     height:80px;
 }
 
-.svg {
-    margin: 0 30px;
-{ /*isn't there a better way?*/
-}
-}
-
-
-#hamburgerM {
-    height: 25px;
+/*region hamburger/side*/
+#hamburgerM{
+    height:25px;
 }
 
 .hamburgerW{
-    display: none;
+    display:none;
 }
 
-#hamburgerWIcon {
-    display: none;
-    height: 25px;
+#hamburgerWIcon{
+    display:none;
+    height:25px;
 }
 
-#shoppingCartM {
-    height: 35px;
+#sideMenu{
+    font-size:var(--fontM);
+    font-family:var(--fontFamilyStandard), serif;
+    text-transform:uppercase;
+    font-weight:var(--boldy);
+    margin-top:calc(8.5vh - var(--spaceStandard)); /*TODO SEE THIS!!!*/
+    background-color:var(--backgroundColorMain);
+    z-index:var(--zNear);
+    position:absolute;
+    min-width:75vw;
+    height:100vh;
+    text-align:start;
 }
 
-#shoppingCartW {
-    height: 35px;
+.sideItem{
+    margin:var(--spaceBig) var(--spaceSmall);
 }
 
-
-#headerLogoM {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 8vh;
-    margin-bottom: 2px;
+#sideMenuWrapper{
+    display:flex;
+    flex-direction:column;
 }
 
-.svgM {
-    margin: 0 var(--spaceStandard);
-    height: 100%;
+/*endregion*/
+
+
+select{
+    background-color:var(--itemBackgroundColor);
+    color:var(--textColorMain);
+    border:none;
+    min-width:100px;
+    min-height:50px;
+    border-radius:10px;
+    font-size:var(--fontM);
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:5px;
 }
 
-
-#sideMenu {
-    font-size: var(--fontM);
-    font-family: var(--fontFamilyStandard), serif;
-    text-transform: uppercase;
-    font-weight: var(--boldy);
-    margin-top: calc(8.5vh - var(--spaceStandard)); /*TODO SEE THIS!!!*/
-    background-color: var(--backgroundColorMain);
-    z-index: var(--zNear);
-    position: absolute;
-    min-width: 75vw;
-    height: 100vh;
-    text-align: start;
+.headerLogo{
+    max-height:6vh;
+    min-height:80px;
+    margin:var(--spaceStandard) 0;
 }
 
-.sideItem {
-    margin: var(--spaceBig) var(--spaceSmall);
-}
-
-#sideMenuWrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-select {
-    background-color: var(--itemBackgroundColor);
-    color: var(--textColorMain);
-    border: none;
-    min-width: 100px;
-    min-height: 50px;
-    border-radius: 10px;
-    font-size: var(--fontM);
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px;
+#shoppingCart{
+    height:35px;
 }

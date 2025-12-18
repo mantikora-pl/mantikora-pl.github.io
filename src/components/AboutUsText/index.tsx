@@ -5,7 +5,7 @@ import {getLanguage,getTranslation} from "../../helper/translation";
 
 export function AboutUsText(){
     return(
-        <div className={"aboutUsTextWrapper"}>
+        <div id={"aboutUsTextWrapper"}>
             <NewLineToBr>
                 {getTranslation(getLanguage(),"aboutUsText")}
             </NewLineToBr>

@@ -1,5 +1,5 @@
-.aboutUsTextWrapper{
-    font-size:var(--fontMl);
+#aboutUsTextWrapper{
+    font-size:var(--fontML);
     text-align:center;
     color:var(--textColorMain)
 }

@@ -131,6 +131,10 @@ export const translations={
         "en":"next",
         "pl":"następna"
     },
+    "tickets":{
+        "en":"Tickets",
+        "pl":"Bilety"
+    }
 
 
 } as const

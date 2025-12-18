@@ -15,7 +15,7 @@ export default function News({maxItemsPerPage=12}:{maxItemsPerPage?:number}){
         const endOffset=itemOffset+maxItemsPerPage;
         setCurrentItems(news.slice(itemOffset,endOffset));
         setPageCount(Math.ceil(news.length/maxItemsPerPage));
-    },[itemOffset, maxItemsPerPage]);
+    },[itemOffset,maxItemsPerPage]);
 
 
     const handlePageClick=(event:{selected:number;})=>{
@@ -29,14 +29,15 @@ export default function News({maxItemsPerPage=12}:{maxItemsPerPage?:number}){
 
     return <div className={"innerPage skullBackground"}>
         <div id={"newsPage"}>
-            <div id={"bigNewsList"}>
+            <div>
                 {bigNewsItems.map((item,index)=>(
                     <BigNewsItem item={item} key={index}/>
                 ))}
             </div>
             <div id={"smallNewsWrapper"}>
                 {smallNewsItems.map((item,index)=>(
-                    <SmallNewsItem item={item} key={index} cssClass={`${index%4===0?' noLeftMargin':''} ${index%4===3?'noRightMargin':''}`}/>
+                    <SmallNewsItem item={item} key={index}
+                                   cssClass={`${index%4===0?' noLeftMargin':''} ${index%4===3?'noRightMargin':''}`}/>
                 ))}
             </div>
             <div className={"paginationWrapper"}>

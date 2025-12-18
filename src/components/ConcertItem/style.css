@@ -9,8 +9,8 @@
     min-width:60vw;
     border-collapse:collapse;
     padding:var(--spaceStandard);
-    cursor: pointer;
-    transition: transform 0.2s;
+    cursor:pointer;
+    transition:transform 0.2s;
 }
 
 .concertRow:first-of-type{
@@ -19,22 +19,22 @@
 
 .distanceDaysCell{
     font-size:var(--fontM);
-    max-width:60px!important;
-    white-space: nowrap;
+    max-width:60px !important;
+    white-space:nowrap;
 }
 
 .dayTooltip{
-    font-size:var(--fontM)!important;
+    font-size:var(--fontM) !important;
 }
 
 td{
     width:100%;
     height:fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: nowrap;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    flex-wrap:nowrap;
 }
 
 .concertRow:last-of-type{
@@ -42,11 +42,13 @@ td{
 }
 
 .concertRow:hover{
-    transform: scale(1.03);
+    transform:scale(1.03);
     background-color:var(--backgroundColorLighter);
-    .concertName,.concertLocation{
+
+    .concertName, .concertLocation{
         font-weight:600;
     }
+
     .concertName{
         font-size:var(--fontM);
     }
@@ -64,21 +66,21 @@ td{
     justify-content:space-evenly;
 }
 
-.fi:before {
+.fi:before{
     content:none !important;
 }
 
-.concertMonth,.concertDay,.concertYear{
+.concertMonth, .concertDay, .concertYear{
     color:#000;
-    text-shadow: -1px -1px 0 var(--textColorMain), 1px -1px 0 var(--textColorMain),
+    text-shadow:-1px -1px 0 var(--textColorMain), 1px -1px 0 var(--textColorMain),
     -1px 1px 0 var(--textColorMain), 1px 1px 0 var(--textColorMain);
 }
 
 .concertMonth, .concertYear, .concertDay{
     padding-bottom:var(--spaceSmall);
-    font-size:var(--fontMl);
+    font-size:var(--fontML);
     color:black;
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white,
+    text-shadow:-1px -1px 0 white, 1px -1px 0 white,
     -1px 1px 0 white, 1px 1px 0 white;
 }
 

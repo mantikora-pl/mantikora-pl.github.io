@@ -10,21 +10,21 @@ import {AboutUsText} from "../../components/AboutUsText";
 export default function AboutUs({honorableMentionsOn=false}:{honorableMentionsOn?:boolean}){
     return <div className={"innerPage gradientBackground"}>
         <AboutUsText/>
-        <div id={"aboutUsWrapper"}>
-            <div id={"socialEntitiesWrapper"}>
-                <section id={"socialEntityItemWrapper"}>
+        <div className={"centeredFlexColumnContainer"}>
+            <div className={"flexJustifyCenter"}>
+                <section id={"socialEntityItemContainer"}>
                     {bandMembers.map((item,id)=>(
                         <ContactEntity items={item} key={id}/>
                     ))}
                 </section>
             </div>
-            {honorableMentionsOn&& <div>
+            {honorableMentionsOn&&<div>
                 <p className={"smallHeader centerText"}>{getTranslation(getLanguage(),"honorableMentions")}</p>
-                <div id={"honorableMentionsWrapper"}>
+                <section id={"honorableMentionsItemContainer"}>
                     {honorableMentions.map((item)=>(
                         <HonorableMentionsItem item={item}/>
                     ))}
-                </div>
+                </section>
             </div>}
         </div>
     </div>

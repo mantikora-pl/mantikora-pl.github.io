@@ -10,7 +10,7 @@ import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw";
 //import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
 import {concertsRaw} from "../../data/concertList"
 import {getLanguage,getTranslation} from "../../helper/translation";
-
+import {isMobile} from 'react-device-detect';
 
 const cookies=new Cookies();
 export default function Tour(){
@@ -41,7 +41,7 @@ export default function Tour(){
     }
 
     function doesConcertMatchFilter(concert:Concert):boolean{
-        return (concert.name.toLowerCase().includes(filter.toLowerCase()) || concert.city.toLowerCase().includes(filter.toLowerCase())) && shouldBeVisible(concert)
+        return (concert.name.toLowerCase().includes(filter.toLowerCase())||concert.city.toLowerCase().includes(filter.toLowerCase()))&&shouldBeVisible(concert)
     }
 
     useEffect(()=>{
@@ -73,8 +73,9 @@ export default function Tour(){
     }))
     if(sortByLocation) concerts.sort((a,b)=>a.distanceKm-b.distanceKm)
     else concerts.sort((a,b)=>a.daysToEvent-b.daysToEvent)
-    const [filter, setFilter] = useState("");
-    function handleFilterConcerts(filterText:string) {
+    const [filter,setFilter]=useState("");
+
+    function handleFilterConcerts(filterText:string){
         setFilter(filterText)
     }
 
@@ -82,43 +83,32 @@ export default function Tour(){
         <div className={"concertPageHeader"}>
             <div className={"flex1"}/>
             <p className={"pageTitle"}>Tour</p>
-            <div id={"buttonSortByContainer"}>
+            <div id={"concertsControlsContainer"}>
                 {/*<input
                     type="text"
                     id="concertSearch"
                     onChange={e => handleFilterConcerts(e.target.value)}
                     placeholder="translate this"
                 />*/}
-                <BrowserView>
-                    <button
-                        id={"buttonSortBy"}
-                        onClick={()=>handleSortTypeChange(!sortByLocation)}>
-                        <p>{
-                            sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")
-                        }</p>
-                    </button>
-                </BrowserView>
-                <MobileView>
-                    <button
-                        id={"buttonSortByM"}
-                        onClick={()=>handleSortTypeChange(!sortByLocation)}>{
-                        sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
-                    </button>
-                </MobileView>
+                <button
+                    id={isMobile?"buttonOrderByM":"buttonOrderBy"}
+                    onClick={()=>handleSortTypeChange(!sortByLocation)}>
+                    {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                </button>
             </div>
         </div>
-        <div className={"concertItemsWrapper"}>
+        <div className={"width100 centeredFlexColumnContainer"}>
             {visibleCount()&&
-                <div className={"concertItems"}>
+                <div>
                     <BrowserView>
                         <table>
                             {concerts
                                 .filter(item=>doesConcertMatchFilter(item))
                                 .map((item,i)=>(
-                                <>
-                                    <ConcertItem item={concerts[i]} key={i} showDistance={sortByLocation}/>
-                                </>
-                            ))}
+                                    <>
+                                        <ConcertItem item={concerts[i]} key={i} showDistance={sortByLocation}/>
+                                    </>
+                                ))}
                         </table>
                     </BrowserView>
                     <MobileView>
@@ -132,7 +122,7 @@ export default function Tour(){
                     </MobileView>
                 </div>}
             {!visibleCount()&&
-                <p id={"messageNoConcertDates"}>no tour dates for now : (</p>
+                <p id={"noConcertDatesText"}>no tour dates for now : (</p>
             }
         </div>
     </div>

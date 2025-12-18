@@ -18,25 +18,27 @@ export interface TimelineElement{
 }
 
 function getLocalisedTimelineDate(year:number,month?:number,day?:number){
-    if (!month) return year
-    if (!day) return getMonthTranslation(getLanguage(),month)+" "+year
+    if(!month) return year
+    if(!day) return getMonthTranslation(getLanguage(),month)+" "+year
     return localizeDate(year,month,day)
 }
 
-export default function Timeline({items}:{items: TimelineElement[]}){
+export default function Timeline({items}:{items:TimelineElement[]}){
     return <VerticalTimeline>
         {items.map((item,i)=>(
             <VerticalTimelineElement key={i} className="vertical-timeline-element"
-                contentStyle={{background: 'linear-gradient(to bottom, var(--itemBackgroundColor), var(--backgroundColorMain))'
-            ,border:'1px solid var(--borderColorDarkPurple)'}}>
-                    <h2 className={"timeline-item-title"} style={{color:"white", fontSize:28}}>
-                        {getLocalisedTimelineDate(item.year,item.month,item.day)}
-                    </h2>
-                    {/*<h3 className="timeline-item-subtitle">{item.subtitle}</h3>*/}
+                                     contentStyle={{
+                                         background:'linear-gradient(to bottom, var(--itemBackgroundColor), var(--backgroundColorMain))'
+                                         ,border:'1px solid var(--borderColorDarkPurple)'
+                                     }}>
+                <h2 style={{color:"white",fontSize:28}}>
+                    {getLocalisedTimelineDate(item.year,item.month,item.day)}
+                </h2>
+                {/*<h3 className="timeline-item-subtitle">{item.subtitle}</h3>*/}
                 <div style={{display:"flex"}}>
                     <p className={"timelineItemDetails"}>{item.description}</p>
                     {item.photo?.length>0&&
-                   <img src={item.photo} alt={item.photoAlt} className={"timelineImg"}/>}
+                        <img src={item.photo} alt={item.photoAlt} className={"timelineImage"}/>}
                 </div>
             </VerticalTimelineElement>
         ))}

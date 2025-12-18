@@ -12,15 +12,15 @@ export interface Socials{
     subpageLink?:string
 }
 
-function ContactEntity({items}:{items: Socials}){
+function ContactEntity({items}:{items:Socials}){
     /*function handleClick(link:string){
        // window.location.href=link
     }*/
     //const link=items.subpageLink
     //const link="#/about/filip"
-    return(
-        <div className={"socialsWrapper"} /*onClick={()=>handleClick(link)}*/>
-          {<p>{items.entityName}</p>}
+    return (
+        <div className={"marginBig"} /*onClick={()=>handleClick(link)}*/>
+            {<p>{items.entityName}</p>}
             <img src={items.mainImage} alt={items.entityName} className={"mainImg"}/>
             <div className={"socialsList"}>
                 {items.items1.map((item,id)=>(
