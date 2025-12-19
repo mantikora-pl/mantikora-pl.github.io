@@ -2,7 +2,8 @@ import {ConcertRaw} from "../helper/concertRaw"
 import {translateDate} from "../helper/date"
 import {getLanguage} from "../helper/translation"
 
-export const concertsRaw:ConcertRaw[]=[
+export const concertsRaw_real:ConcertRaw[]=[]
+export const concertsRaw_mock:ConcertRaw[]=[
     {
         id:1,
         date:translateDate(2026,4,2,getLanguage()),

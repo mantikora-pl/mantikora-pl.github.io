@@ -1,13 +1,8 @@
 import React from 'react'
 import './style.css'
 import NewLineToBr from "../NewLineToBr"
+import {NewsI} from "../../data/newsData";
 
-export interface NewsI{
-    photoSrc:string,
-    date:string,
-    title:string,
-    content:string,
-}
 
 function BigNewsItem({item}:{item:NewsI}){
     return (

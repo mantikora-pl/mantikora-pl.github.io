@@ -1,12 +1,14 @@
 import 'react-vertical-timeline-component/style.min.css'
 import Timeline from "../../components/Timeline"
 import React from "react"
-import {timeLineItems} from "../../data/timelineData"
+import {timeLineItems_real, timeLineItems_mock} from "../../data/timelineData"
 import { HashLink } from 'react-router-hash-link';
 import ScrollToTop from "react-scroll-to-top";
+import {mock} from "../../data/mock"
 
 export default function BandTimeline(){
-    const years=Array.from(new Set(timeLineItems.map(item=>item.year)))
+    const timelineItems=(mock)?timeLineItems_mock:timeLineItems_real
+    const years=Array.from(new Set(timelineItems.map(item=>item.year)))
     return <div className={"innerPage gradientBackground"}>
         <div id={"yearsHeader"}>
             {years.map((item,i)=>(
@@ -15,7 +17,7 @@ export default function BandTimeline(){
                 </div>
             ))}
         </div>
-        <Timeline items={timeLineItems}/>
+        <Timeline items={timelineItems}/>
         <ScrollToTop/>
     </div>
 }
