@@ -36,7 +36,6 @@ export default function Timeline({items}:{items:TimelineElement[]}){
                 <h2 style={{color:"white",fontSize:28}}>
                     {getLocalisedTimelineDate(item.year,item.month,item.day)}
                 </h2>
-                {/*<h3 className="timeline-item-subtitle">{item.subtitle}</h3>*/}
                 <div style={{display:"flex"}}>
                     <p className={"timelineItemDetails"}>{item.description}</p>
                     {item.photo?.length>0?
@@ -46,4 +45,4 @@ export default function Timeline({items}:{items:TimelineElement[]}){
         ))}
     </VerticalTimeline>
 }
-
+//<h3 className="timeline-item-subtitle">{item.subtitle}</h3>*/
