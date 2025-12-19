@@ -19,7 +19,7 @@
 
 .distanceDaysCell{
     font-size:var(--fontM);
-    max-width:60px !important;
+    max-width:80px !important;
     white-space:nowrap;
 }
 

@@ -116,7 +116,7 @@ export const translations={
         "pl":""
     },
     "daysLeft":{
-        "en":" days left",
+        "en":" days to",
         "pl":" dni"
     },
     "unknown":{

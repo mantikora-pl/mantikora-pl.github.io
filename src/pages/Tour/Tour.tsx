@@ -41,7 +41,9 @@ export default function Tour(){
     }
 
     function doesConcertMatchFilter(concert:Concert):boolean{
-        return (concert.name.toLowerCase().includes(filter.toLowerCase())||concert.city.toLowerCase().includes(filter.toLowerCase()))&&shouldBeVisible(concert)
+        return (concert.name.toLowerCase().includes(filter.toLowerCase())
+                ||concert.city.toLowerCase().includes(filter.toLowerCase()))
+            &&shouldBeVisible(concert)
     }
 
     useEffect(()=>{
@@ -84,22 +86,31 @@ export default function Tour(){
     }
 
     return <div className={"innerPage gradientBackground"}>
-        <div className={"concertPageHeader"}>
-            <div className={"flex1"}/>
-            <p className={"pageTitle"}>Tour</p>
-            <div id={"concertsControlsContainer"}>
-                {/*<input
-                    type="text"
-                    id="concertSearch"
-                    onChange={e => handleFilterConcerts(e.target.value)}
-                    placeholder="translate this"
-                />*/}
-                <button
-                    id={isMobile?"buttonOrderByM":"buttonOrderBy"}
-                    onClick={()=>handleSortTypeChange(!sortByLocation)}>
-                    {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
-                </button>
-            </div>
+        <div className={"width100 centeredFlexColumnContainer"}>
+            <table>
+                <tr className={"concertPageHeader"}>
+                    <td className={"searchBarContainer"}>
+                        <input
+                            type="text"
+                            id="concertSearch"
+                            onChange={e=>handleFilterConcerts(e.target.value)}
+                            placeholder="Concert namelocation"
+                        />
+                    </td>
+                    <td></td>
+                    <td className={"pageTitle"}>Tour</td>
+                    <td></td>
+                    <td>
+                        <div id={"concertsControlsContainer"}>
+                            <button
+                                id={isMobile?"buttonOrderByM":"buttonOrderBy"}
+                                onClick={()=>handleSortTypeChange(!sortByLocation)}>
+                                {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div className={"width100 centeredFlexColumnContainer"}>
             {visibleCount()&&
@@ -110,7 +121,7 @@ export default function Tour(){
                                 .filter(item=>doesConcertMatchFilter(item))
                                 .map((item,i)=>(
                                     <>
-                                        <ConcertItem item={concerts[i]} key={i} showDistance={sortByLocation}/>
+                                        <ConcertItem item={item} key={i} showDistance={sortByLocation}/>
                                     </>
                                 ))}
                         </table>
@@ -119,7 +130,7 @@ export default function Tour(){
                         {concerts.map((item,i)=>(
                             <>
                                 {shouldBeVisible(item)&&
-                                    <ConcertItemM item={concerts[i]} key={i}/>
+                                    <ConcertItemM item={item} key={i}/>
                                 }
                             </>
                         ))}
