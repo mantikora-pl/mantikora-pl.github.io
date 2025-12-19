@@ -43,7 +43,7 @@ export const timeLineItems:TimelineElement[]=[
         photo:""
     }
 ]
-export const timeLineItems1: TimelineElement[] = [
+const timeLineItems1_temp: TimelineElement[] = [
     { id: 1, year: 2026, month: 1, day: 1, subtitle: "New Year Celebration", description: "Global celebrations for the New Year, welcoming 2026.", photo: "https://picsum.photos/300?random=1" },
     { id: 2, year: 2026, month: 4, subtitle: "Earth Day", description: "Community clean-up events held worldwide.", photo: "https://picsum.photos/300?random=2" },
     { id: 3, year: 2026, month: 5, day: 23, subtitle: "Tech Expo", description: "Latest technologies showcased at the annual Tech Expo.", photo: "https://picsum.photos/300?random=3" },
@@ -61,7 +61,7 @@ export const timeLineItems1: TimelineElement[] = [
     { id: 15, year: 2027, month: 5, subtitle: "Innovation Summit", description: "Industry leaders come together to discuss innovations.", photo: "https://picsum.photos/300?random=15" },
     { id: 16, year: 2027, month: 6, day: 1, subtitle: "World Environment Day", description: "Celebrating environmental protection efforts worldwide.", photo: "https://picsum.photos/300?random=16" },
     { id: 17, year: 2027, month: 7, subtitle: "Global Peace Day", description: "Initiatives aimed at fostering global peace.", photo: "https://picsum.photos/300?random=17" },
-    { id: 18, year: 2027, month: 8, day: 19, subtitle: "World Humanitarian Day", description: "Honoring humanitarian workers and their impact.", photo: "https://picsum.photos/300?random=18" },{ id: 19, year: 2026, subtitle: "Scientific Discovery", description: "Researchers discover a new planet in a nearby galaxy.", photo: "" },
+    { id: 18, year: 2027, month: 8, day: 19, subtitle: "World Humanitarian Day", description: "Honoring humanitarian workers and their impact.", photo: "https://picsum.photos/300?random=18" },
     { id: 19, year: 2027, month: 9, day: 30, subtitle: "Tech Innovation Launch", description: "The debut of significant new technology products.", photo: "https://picsum.photos/300?random=19" },
     { id: 20, year: 2027, month: 10, subtitle: "Healthcare Advances", description: "New healthcare technologies improve patient care.", photo: "https://picsum.photos/300?random=20" },
     { id: 21, year: 2027, month: 11, day: 11, subtitle: "Remembrance Day", description: "Honoring those who served in the armed forces.", photo: "https://picsum.photos/300?random=21" },
@@ -81,4 +81,6 @@ export const timeLineItems1: TimelineElement[] = [
     { id: 35, year: 2029, month: 1, day: 1, subtitle: "New Year's Celebration", description: "Festivities to welcome the New Year with hope.", photo: "https://picsum.photos/300?random=35" },
     { id: 36, year: 2029, month: 2, subtitle: "Winter Carnival", description: "Communities celebrate winter with parades and activities.", photo: "https://picsum.photos/300?random=36" },
 ]
+
+export const timeLineItems1=timeLineItems1_temp.reverse();
 
