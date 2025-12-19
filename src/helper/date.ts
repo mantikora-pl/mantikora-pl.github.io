@@ -9,51 +9,63 @@ export interface EventDate{
 const dateTranslations={
     1:{
         "en":"January",
-        "pl":"Stycznia"
+        "pl":"stycznia",
+        "pl-noDay":"Styczeń"
     },
     2:{
         "en":"February",
-        "pl":"Lutego"
+        "pl":"lutego",
+        "pl-noDay":"Luty"
     },
     3:{
         "en":"March",
-        "pl":"Marca"
+        "pl":"marca",
+        "pl-noDay":"Marzec"
     },
     4:{
         "en":"April",
-        "pl":"Kwietnia"
+        "pl":"kwietnia",
+        "pl-noDay":"Kwiecień"
     },
     5:{
         "en":"May",
-        "pl":"Maja"
+        "pl":"maja",
+        "pl-noDay":"Maj"
     },
     6:{
         "en":"June",
-        "pl":"Czerwca"
+        "pl":"czerwca",
+        "pl-noDay":"Czerwiec"
     },
     7:{
         "en":"July",
-        "pl":"Lipca"
+        "pl":"lipca",
+        "pl-noDay":"Lipiec"
     },
     8:{
         "en":"August",
-        "pl":"Sierpnia"
+        "pl":"sierpnia",
+        "pl-noDay":"Sierpień"
     },
     9:{
         "en":"September",
-        "pl":"Września"
+        "pl":"września",
+        "pl-noDay":"Wrzesień"
     },
     10:{
         "en":"October",
-        "pl":"Października"
+        "pl":"października",
+        "pl-noDay":"Październik"
     },
     11:{
         "en":"November",
-        "pl":"Listopada"
+        "pl":"listopada",
+        "pl-noDay":"Listopad"
     },
     12:{
         "en":"December",
-        "pl":"Grudnia"
+        "pl":"grudnia",
+        "pl-noDay":"Grudzień"
     }
 }
 //todo: add conjugation for polish. day missing-> not conjugated
