@@ -19,7 +19,7 @@ function ContactEntity({items}:{items:Socials}){
     //const link=items.subpageLink
     //const link="#/about/filip"
     return (
-        <div className={"marginBig"} /*onClick={()=>handleClick(link)}*/>
+        <div className={"socialsWrapper"} /*onClick={()=>handleClick(link)}*/>
             {<p>{items.entityName}</p>}
             <img src={items.mainImage} alt={items.entityName} className={"mainImg"}/>
             <div className={"socialsList"}>
