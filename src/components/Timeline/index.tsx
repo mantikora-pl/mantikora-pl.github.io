@@ -19,7 +19,8 @@ export interface TimelineElement{
 
 function getLocalisedTimelineDate(year:number,month?:number,day?:number){
     if(!month) return year
-    if(!day) return getMonthTranslation(getLanguage(),month)+" "+year
+    if(getLanguage()==="pl"&&!day) return getMonthTranslation(getLanguage()+"-noDay",month)+" "+year
+    else if(!day) return getMonthTranslation(getLanguage(),month)+" "+year
     return localizeDate(year,month,day)
 }
 
