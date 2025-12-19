@@ -9,7 +9,7 @@
     min-width:320px;
     padding:var(--spaceStandard);
     text-align:center;
-
+    margin:var(--spaceStandard);
     border:1px solid black;
     background-color:inherit;
     border-radius:var(--roundedCorners);

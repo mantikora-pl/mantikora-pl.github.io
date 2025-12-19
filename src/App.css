@@ -66,10 +66,6 @@ p{
     align-items:center;
 }
 
-.marginBig{
-    margin:var(--spaceBig);
-}
-
 .width100{
     width:100%;
 }
@@ -313,7 +309,7 @@ p{
 }
 
 #socialEntityItemContainer{
-    max-width:75vw;
+    max-width:80vw;
     align-items:center;
     justify-content:center;
 }
