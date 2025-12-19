@@ -3,37 +3,37 @@ import './style.css'
 import {getLanguage,getTranslation} from "../../helper/translation"
 import {Link} from "react-router-dom"
 import {BrowserView} from 'react-device-detect'
-
+import {useMedia} from 'use-media';
 
 export const navElements=[
-    {name:getTranslation(getLanguage(),"main"),href:"/"},
-    {name:getTranslation(getLanguage(),"news"),href:"/news"},
-    {name:getTranslation(getLanguage(),"tour"),href:"/tour"},
+    {name:getTranslation(getLanguage(),"main"),href:"/",shortName:getTranslation(getLanguage(),"main-short")},
+    {name:getTranslation(getLanguage(),"news"),href:"/news",shortName:getTranslation(getLanguage(),"news-short")},
+    {name:getTranslation(getLanguage(),"tour"),href:"/tour",shortName:getTranslation(getLanguage(),"tour-short")},
 
-    {name:getTranslation(getLanguage(),"discography"),href:"/discography"},
-    {name:getTranslation(getLanguage(),"lyrics"),href:"/lyrics"},
-    {name:getTranslation(getLanguage(),"history"),href:"/history"},
+    {name:getTranslation(getLanguage(),"discography"),href:"/discography",shortName:getTranslation(getLanguage(),"discography-short")},
 
-    //{name:getTranslation(getLanguage(),"gallery"), href:"/gallery"},
-    {name:getTranslation(getLanguage(),"band"),href:"/contact"},
+    {name:getTranslation(getLanguage(),"lyrics"),href:"/lyrics",shortName:getTranslation(getLanguage(),"lyrics-short")},
+    {name:getTranslation(getLanguage(),"timeline"),href:"/timeline",shortName:getTranslation(getLanguage(),"timeline-short")},
 
-    {name:getTranslation(getLanguage(),"merch"),href:"https://www.mantikora-shop.pl"}
+    {name:getTranslation(getLanguage(),"band"),href:"/aboutus",shortName:getTranslation(getLanguage(),"aboutus-short")},
+
+    /* {name:getTranslation(getLanguage(),"merch"),href:"https://www.mantikora-shop.pl"}*/
 
 ]
 
 function Navbar(){
+    const isWide=useMedia({minWidth:'1200px'});
     return (
-        <div className={"wrapper"}>
-            <BrowserView>
-                <header className={"navbar"}>
-                    {navElements.map((item,id)=>(
-                        <div className={"navbarItem"} key={id}>
-                            <Link to={item.href} className={"a"}>{item.name}</Link>
-                        </div>
-                    ))}
-                </header>
-            </BrowserView>
-        </div>
+       <BrowserView>
+           <ul className={"navbar"}>
+               {navElements.map((item,id)=>(
+                   <li className={"navbarItem"} key={id}>
+                       <Link to={item.href}
+                             className={"a"}>{isWide?item.name:item.shortName}</Link>
+                   </li>
+               ))}
+           </ul>
+       </BrowserView>
 
     )
 }

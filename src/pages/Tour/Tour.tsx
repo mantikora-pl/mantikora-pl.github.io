@@ -95,7 +95,7 @@ export default function Tour(){
                             type="text"
                             id="concertSearch"
                             onChange={e=>handleFilterConcerts(e.target.value)}
-                            placeholder="Concert namelocation"
+                            placeholder="Concert name/location"
                         />
                     </td>
                     <td></td>

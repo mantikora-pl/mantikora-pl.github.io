@@ -82,8 +82,8 @@ const routes=[
     {path:'/tour',element:<Tour/>},
     {path:'/discography',element:<Discography/>},
     {path:'/lyrics',element:<Lyrics/>},
-    {path:'/history',element:<BandTimeline/>},
-    {path:'/contact',element:<AboutUs/>},
+    {path:'/timeline',element:<BandTimeline/>},
+    {path:'/aboutus',element:<AboutUs/>},
     {path:'*',element:<NotFound/>},
     /*{path:'/about/:filip',element:<Person person={sample}/>}*/
 ]

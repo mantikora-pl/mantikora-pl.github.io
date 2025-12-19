@@ -2,7 +2,7 @@ import Cookies from "universal-cookie"
 
 export const translations={
     "main":{
-        "en":"Main",
+        "en":"Home",
         "pl":"Główna"
     },
     "news":{
@@ -21,14 +21,45 @@ export const translations={
         "en":"Lyrics",
         "pl":"Teksty"
     },
-    "history":{
+    "timeline":{
         "en":"Timeline",
         "pl":"Oś czasu"
     },
-    "band":{
-        "en":"Band",
+    "aboutus":{
+        "en":"About us",
         "pl":"Zespół"
     },
+
+    "main-short":{
+        "en":"Home",
+        "pl":"Główna"
+    },
+    "news-short":{
+        "en":"News",
+        "pl":"Wieści"
+    },
+    "tour-short":{
+        "en":"Tour",
+        "pl":"Trasa"
+    },
+    "discography-short":{
+        "en":"CDs",
+        "pl":"Płyty"
+    },
+    "lyrics-short":{
+        "en":"Lyrics",
+        "pl":"Teksty"
+    },
+    "timeline-short":{
+        "en":"History",
+        "pl":"Oś"
+    },
+    "aboutus-short":{
+        "en":"Band",
+        "pl":"O nas"
+    },
+
+
     "merch":{
         "en":"Store",
         "pl":"Sklep"
