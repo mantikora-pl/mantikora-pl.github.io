@@ -13,11 +13,11 @@ export default function BandTimeline(){
         <div id={"yearsHeader"}>
             {years.map((item,i)=>(
                 <div className={"yearLinkWrapper"}>
-                    <HashLink to={`/history/#year${item}`} className={"yearLink"}>{item}</HashLink>
+                    <HashLink to={`/timeline/#year${item}`} className={"yearLink"}>{item}</HashLink>
                 </div>
             ))}
         </div>
         <Timeline items={timelineItems}/>
-        <ScrollToTop/>
+        <ScrollToTop smooth/>
     </div>
 }

@@ -5,6 +5,7 @@ import React from "react"
 import {BrowserView,MobileView} from "react-device-detect"
 import {discsData_real, discsData_mock} from "../../data/discsData"
 import {mock} from "../../data/mock"
+import ScrollToTop from "react-scroll-to-top";
 
 export default function Discography(){
     const discsData=(mock)?discsData_mock:discsData_real
@@ -16,6 +17,7 @@ export default function Discography(){
         <BrowserView>
             <DiscList items={discsData}/>
         </BrowserView>
+        <ScrollToTop smooth/>
     </div>
 
 }

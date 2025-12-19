@@ -44,10 +44,6 @@ function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boole
     if(item.found===FoundEnum.NOT_FOUND) showDistance=false
 
     const dayOfTheWeekNumber=dayOfTheWeek(item.numericDate.year,item.numericDate.month,item.numericDate.day)
-    const props={
-        found:item.found
-    }
-
     return (
         <>
             {item.found!==FoundEnum.NOT_FOUND&&
