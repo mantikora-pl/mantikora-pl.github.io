@@ -13,13 +13,13 @@ function HonorableMentionsItem({item}:{item:HonorableMentionsItemI}){
         <div className={"entityContainer"}>
             <div className={"nameLinkWrapper"}>
                 <p className={"name"}>{item.name}</p>
-                {(item.link&&item.linkIcon)&&
+                {(item.link&&item.linkIcon)?
                     <a href={item.link} className={"link"}>
                         <img src={item.linkIcon} alt={"click to go to "+item.link}/>
                     </a>
-                }
+                    :null}
             </div>
-            {item.description&&<p className={"description"}>{item.description}</p>}
+            {item.description?<p className={"description"}>{item.description}</p>:null}
         </div>
 
     )

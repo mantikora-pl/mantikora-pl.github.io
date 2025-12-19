@@ -333,6 +333,27 @@ p{
 
 /*endregion*/
 
+#notFoundContainer{
+    margin-top:var(--spaceBig);
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+#notFoundContainer h1{
+    font-size:120px;
+    color:var(--mantikoraRed);
+}
+
+#notFoundContainer p{
+    font-size:var(--fontL);
+}
+
+#notFoundContainer a{
+    font-size:var(--fontML);
+}
+
 /*region animations*/
 
 .fadeInAnimation{

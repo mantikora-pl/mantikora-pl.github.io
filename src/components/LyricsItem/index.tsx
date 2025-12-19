@@ -25,11 +25,11 @@ function LyricsItem({items}:{items:LyricsItems[]}){
                             <path d="M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z" stroke={"currentColor"}/>
                         </svg>
                     </div>
-                    {visibleIndex.includes(i)&&(
+                    {visibleIndex.includes(i)?
                         <p className={"lyricsText"}>
                             <NewLineToBr>{item.lyrics}</NewLineToBr>
                         </p>
-                    )}
+                        :null}
                     <p className={"songCredits"}>{item.credits}</p>
                 </div>
             ))}

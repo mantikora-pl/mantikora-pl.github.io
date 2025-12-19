@@ -46,12 +46,12 @@ function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boole
     const dayOfTheWeekNumber=dayOfTheWeek(item.numericDate.year,item.numericDate.month,item.numericDate.day)
     return (
         <>
-            {item.found!==FoundEnum.NOT_FOUND&&
+            {item.found!==FoundEnum.NOT_FOUND?<>
                 <tr className={"concertRow"}>
                     {showDistance?
                         <>
                             <td className={"distanceDaysCell"} style={{color}}>{distance}</td>
-                            {item.found!==FoundEnum.FOUND_CITY&&<LocationDisclaimer/>}
+                            {item.found!==FoundEnum.FOUND_CITY?<LocationDisclaimer/>:null}
                         </>:
 
                         <td className={"distanceDaysCell"}>{item.daysToEvent+getTranslation(getLanguage(),"daysLeft")}</td>
@@ -68,14 +68,15 @@ function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boole
                         </Tooltip>
                     </td>
 
-                    <td><p className={"concertName"}>{item.name}</p></td>
-                    <td><p className={"concertLocation"}>{item.city}</p></td>
+                    <td className={"concertName"}>{item.name}</td>
+                    <td className={"concertLocation"}>{item.city}</td>
                     <td>
                         <a href={item.buyLink}>
                             <button className={"ticketsButton"}>{getTranslation(getLanguage(),"tickets")}</button>
                         </a>
                     </td>
                 </tr>
+            </>:null
             }
         </>
 
