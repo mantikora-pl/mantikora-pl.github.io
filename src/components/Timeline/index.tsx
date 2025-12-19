@@ -24,13 +24,14 @@ function getLocalisedTimelineDate(year:number,month?:number,day?:number){
 }
 
 export default function Timeline({items}:{items:TimelineElement[]}){
+    const verticalTimeLineStyle={background:"linear-gradient(to bottom, var(--itemBackgroundColor), var(--backgroundColorMain))"}
+
     return <VerticalTimeline>
         {items.map((item,i)=>(
             <VerticalTimelineElement key={i} className="vertical-timeline-element"
-                                     contentStyle={{
-                                         background:'linear-gradient(to bottom, var(--itemBackgroundColor), var(--backgroundColorMain))'
-                                         ,border:'1px solid var(--borderColorDarkPurple)'
-                                     }}>
+                                     contentStyle={verticalTimeLineStyle}
+                                     id={i===items.length-1||(i<items.length-1&&items[i+1].year<item.year)?`year${item.year}`:undefined}>
+
                 <h2 style={{color:"white",fontSize:28}}>
                     {getLocalisedTimelineDate(item.year,item.month,item.day)}
                 </h2>
