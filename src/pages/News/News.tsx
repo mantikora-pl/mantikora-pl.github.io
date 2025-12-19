@@ -1,21 +1,22 @@
-import BigNewsItem,{NewsI} from "../../components/BigNewsItem"
+import BigNewsItem from "../../components/BigNewsItem"
 import SmallNewsItem from "../../components/SmallNewsItem"
 import React,{useEffect,useState} from "react"
 import ReactPaginate from "react-paginate"
 import {getLanguage,getTranslation} from "../../helper/translation"
-import {news} from "../../data/newsData"
-
+import {newsData_mock,newsData_real,NewsI} from "../../data/newsData"
+import {mock} from "../../data/mock"
 export default function News({maxItemsPerPage=12}:{maxItemsPerPage?:number}){
+    const newsData=(mock)?newsData_mock:newsData_real
     const itemsPerRow=4
     const [currentItems,setCurrentItems]=useState<NewsI[]>([])
-    const [pageCount,setPageCount]=useState(Math.ceil(news.length/maxItemsPerPage))
+    const [pageCount,setPageCount]=useState(Math.ceil(newsData.length/maxItemsPerPage))
     const [itemOffset,setItemOffset]=useState(0)
 
     useEffect(()=>{
         const endOffset=itemOffset+maxItemsPerPage
-        setCurrentItems(news.slice(itemOffset,endOffset))
-        setPageCount(Math.ceil(news.length/maxItemsPerPage))
-    },[itemOffset,maxItemsPerPage])
+        setCurrentItems(newsData.slice(itemOffset,endOffset))
+        setPageCount(Math.ceil(newsData.length/maxItemsPerPage))
+    },[itemOffset, maxItemsPerPage, newsData])
 
 
     const handlePageClick=(event:{selected:number})=>{

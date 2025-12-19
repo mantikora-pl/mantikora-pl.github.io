@@ -7,13 +7,14 @@ import {getDistance} from "../../helper/findCity"
 import {getCoordinates} from "../../helper/CoordinateFetcher"
 import Cookies from "universal-cookie"
 import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw"
-//import {concertsRaw_secret as concertsRaw} from "../../data/concertList_secret"
-import {concertsRaw} from "../../data/concertList"
+import {concertsRaw_mock, concertsRaw_real} from "../../data/concertList"
 import {getLanguage,getTranslation} from "../../helper/translation"
+import {mock} from "../../data/mock";
 import {isMobile} from 'react-device-detect'
 
 const cookies=new Cookies()
 export default function Tour(){
+    const concertsRaw=(mock)?concertsRaw_mock:concertsRaw_real
     const [coordinates,setCoordinates]=useState({lat:0,lng:0})
     const gpsLocation=useRef(false)
     const [sortByLocation,setSortByLocation]=useState(false)

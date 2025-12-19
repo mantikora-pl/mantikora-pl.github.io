@@ -1,7 +1,7 @@
 import {TimelineElement} from "../components/Timeline"
 import {getLanguage,getTranslation} from "../helper/translation"
 
-export const timeLineItems:TimelineElement[]=[
+export const timeLineItems_real:TimelineElement[]=[
     {
         id:5,
         year:2026,
@@ -43,7 +43,7 @@ export const timeLineItems:TimelineElement[]=[
         photo:""
     }
 ]
-const timeLineItems1_temp: TimelineElement[] = [
+const timeLineItems_mock_R: TimelineElement[] = [
     { id: 1, year: 2026, month: 1, day: 1, subtitle: "New Year Celebration", description: "Global celebrations for the New Year, welcoming 2026.", photo: "https://picsum.photos/300?random=1" },
     { id: 2, year: 2026, month: 4, subtitle: "Earth Day", description: "Community clean-up events held worldwide.", photo: "https://picsum.photos/300?random=2" },
     { id: 3, year: 2026, month: 5, day: 23, subtitle: "Tech Expo", description: "Latest technologies showcased at the annual Tech Expo.", photo: "https://picsum.photos/300?random=3" },
@@ -82,5 +82,5 @@ const timeLineItems1_temp: TimelineElement[] = [
     { id: 36, year: 2029, month: 2, subtitle: "Winter Carnival", description: "Communities celebrate winter with parades and activities.", photo: "https://picsum.photos/300?random=36" },
 ]
 
-export const timeLineItems1=timeLineItems1_temp.reverse();
+export const timeLineItems_mock=timeLineItems_mock_R.reverse();
 

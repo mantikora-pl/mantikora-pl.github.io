@@ -1,6 +1,5 @@
-import {NewsI} from "../components/BigNewsItem"
 
-export const news:NewsI[]=[
+export const newsData_mock:NewsI[]=[
     {
         photoSrc:"https://picsum.photos/500?random=10",
         date:"December 1, 2025",
@@ -338,3 +337,11 @@ export const news:NewsI[]=[
         content:"Instead of asphalt, artists transformed a notorious pothole into a beautiful tile mosaic of a duck. Drivers now carefully swerve to preserve it.",
     }
 ]
+export const newsData_real:NewsI[]=[]
+
+export interface NewsI{
+    photoSrc:string,
+    date:string,
+    title:string,
+    content:string,
+}
