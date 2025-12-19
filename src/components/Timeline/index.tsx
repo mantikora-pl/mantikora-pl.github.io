@@ -19,7 +19,7 @@ export interface TimelineElement{
 
 function getLocalisedTimelineDate(year:number,month?:number,day?:number){
     if(!month) return year
-    if(getLanguage()==="pl"&&!day) return getMonthTranslation(getLanguage()+"-noDay",month)+" "+year
+    if(getLanguage()==="pl"&& !day) return getMonthTranslation(getLanguage()+"-noDay",month)+" "+year
     else if(!day) return getMonthTranslation(getLanguage(),month)+" "+year
     return localizeDate(year,month,day)
 }
@@ -39,8 +39,8 @@ export default function Timeline({items}:{items:TimelineElement[]}){
                 {/*<h3 className="timeline-item-subtitle">{item.subtitle}</h3>*/}
                 <div style={{display:"flex"}}>
                     <p className={"timelineItemDetails"}>{item.description}</p>
-                    {item.photo?.length>0&&
-                        <img src={item.photo} alt={item.photoAlt} className={"timelineImage"}/>}
+                    {item.photo?.length>0?
+                        <img src={item.photo} alt={item.photoAlt} className={"timelineImage"}/>:null}
                 </div>
             </VerticalTimelineElement>
         ))}
