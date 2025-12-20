@@ -31,7 +31,7 @@ export default function Lyrics(){
                 </div>
 
             </main>
-            <ScrollToTop/>
+            <ScrollToTop smooth/>
         </div>
     </div>
 }

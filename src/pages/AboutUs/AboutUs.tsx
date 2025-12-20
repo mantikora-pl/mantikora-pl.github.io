@@ -18,14 +18,14 @@ export default function AboutUs({honorableMentionsOn=false}:{honorableMentionsOn
                     ))}
                 </section>
             </div>
-            {honorableMentionsOn&&<div>
+            {honorableMentionsOn?<div>
                 <p className={"smallHeader centerText"}>{getTranslation(getLanguage(),"honorableMentions")}</p>
                 <section id={"honorableMentionsItemContainer"}>
                     {honorableMentions.map((item)=>(
                         <HonorableMentionsItem item={item}/>
                     ))}
                 </section>
-            </div>}
+            </div>:null}
         </div>
     </div>
 }

@@ -7,7 +7,7 @@ import {getDistance} from "../../helper/findCity"
 import {getCoordinates} from "../../helper/CoordinateFetcher"
 import Cookies from "universal-cookie"
 import {getConcertLocation,shouldBeVisible} from "../../helper/concertRaw"
-import {concertsRaw_mock, concertsRaw_real} from "../../data/concertList"
+import {concertsRaw_mock,concertsRaw_real} from "../../data/concertList"
 import {getLanguage,getTranslation} from "../../helper/translation"
 import {mock} from "../../data/mock";
 import {isMobile} from 'react-device-detect'
@@ -17,9 +17,11 @@ export default function Tour(){
     const concertsRaw=(mock)?concertsRaw_mock:concertsRaw_real
     const [coordinates,setCoordinates]=useState({lat:0,lng:0})
     const gpsLocation=useRef(false)
-    const [sortByLocation,setSortByLocation]=useState(false)
+    const [sortByLocation,setSortByLocation]=useState(cookies.get('concertSortType')==='location')
 
     function handleSortTypeChange(state:boolean){
+        cookies.set('concertSortType',state?'location':'date')
+
         const concertElements=document.querySelectorAll('.concertRow')
         const buttonElement=document.querySelector('#buttonSortBy p')
         concertElements.forEach((element,index)=>{
@@ -89,13 +91,14 @@ export default function Tour(){
     return <div className={"innerPage gradientBackground"}>
         <div className={"width100 centeredFlexColumnContainer"}>
             <table>
+                <tbody>
                 <tr className={"concertPageHeader"}>
                     <td className={"searchBarContainer"}>
                         <input
                             type="text"
                             id="concertSearch"
                             onChange={e=>handleFilterConcerts(e.target.value)}
-                            placeholder="Concert namelocation"
+                            placeholder="Concert name/location"
                         />
                     </td>
                     <td></td>
@@ -111,13 +114,15 @@ export default function Tour(){
                         </div>
                     </td>
                 </tr>
+                </tbody>
             </table>
         </div>
         <div className={"width100 centeredFlexColumnContainer"}>
-            {visibleCount()&&
+            {visibleCount()?
                 <div>
                     <BrowserView>
                         <table>
+                            <tbody>
                             {concerts
                                 .filter(item=>doesConcertMatchFilter(item))
                                 .map((item,i)=>(
@@ -125,21 +130,19 @@ export default function Tour(){
                                         <ConcertItem item={item} key={i} showDistance={sortByLocation}/>
                                     </>
                                 ))}
+                            </tbody>
                         </table>
                     </BrowserView>
                     <MobileView>
                         {concerts.map((item,i)=>(
                             <>
-                                {shouldBeVisible(item)&&
-                                    <ConcertItemM item={item} key={i}/>
+                                {shouldBeVisible(item)?
+                                    <ConcertItemM item={item} key={i}/>:null
                                 }
                             </>
                         ))}
                     </MobileView>
-                </div>}
-            {!visibleCount()&&
-                <p id={"noConcertDatesText"}>no tour dates for now : (</p>
-            }
+                </div>:<p id={"noConcertDatesText"}>no tour dates for now : (</p>}
         </div>
     </div>
 }
