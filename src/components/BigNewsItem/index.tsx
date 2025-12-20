@@ -1,23 +1,22 @@
 import React from 'react'
 import './style.css'
-import NewLineToBr from "../NewLineToBr";
+import NewLineToBr from "../NewLineToBr"
+import {NewsI} from "../../data/newsData";
 
-export interface NewsI{
-    photoSrc:string,
-    date:string,
-    title:string,
-    content:string,
-}
 
-function BigNewsItem({item}:{item: NewsI}){
-    return(
-        <div className={"listWrapper"}>
-            <div className={"newsItemWrapperB"}>
-                <img className={"newsImageB"} src={item.photoSrc} alt={item.title+" image"}/>
-                <div className={"newsDetailsWrapperB"}>
-                    <p className={"newsTitleB"}>{item.title}</p>
-                    <p className={"newsDateB"}>{item.date}</p>
-                    <p className={"newsContentB"}><NewLineToBr>{item.content}</NewLineToBr></p>
+function BigNewsItem({item}:{item:NewsI}){
+    return (
+        <div className={"bigNewsContainer"}>
+            <div className={"bigNewsItemContainer"}>
+                <div className={"bigNewsImageWrapper"}>
+                    <img className={"bigNewsImage"} src={item.photoSrc} alt={item.title+" image"}/>
+                </div>
+                <div className={"bigNewsDetailsWrapper"}>
+                    <p className={"bigNewsTitle"}>{item.title}</p>
+                    <p className={"bigNewsDate"}>{item.date}</p>
+                    <p className={"bigNewsDescription"}>
+                        <NewLineToBr>{item.content}</NewLineToBr>
+                    </p>
                 </div>
             </div>
         </div>

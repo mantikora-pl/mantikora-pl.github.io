@@ -3,15 +3,19 @@ import News from './pages/News/News'
 import Home from './pages/Home/Home'
 import './App.css'
 import './Var.css'
-import {HashRouter,Route,Routes} from 'react-router-dom';
-import Tour from "./pages/Tour/Tour";
-import Discography from "./pages/Discography/Discography";
-import Lyrics from "./pages/Lyrics/Lyrics";
-import BandTimeline from "./pages/BandTimeline/BandTimeline";
-/*import Gallery from "./pages/Gallery/Gallery";*/
-import AboutUs from "./pages/AboutUs/AboutUs";
-//import Person,{PersonalData} from "./components/Person";
-import NotFound from "./pages/404/404";
+import {HashRouter,Route,Routes} from 'react-router-dom'
+import Tour from "./pages/Tour/Tour"
+import Discography from "./pages/Discography/Discography"
+import Lyrics from "./pages/Lyrics/Lyrics"
+import BandTimeline from "./pages/BandTimeline/BandTimeline"
+/*import Gallery from "./pages/Gallery/Gallery"*/
+import AboutUs from "./pages/AboutUs/AboutUs"
+//import Person,{PersonalData} from "./components/Person"
+import NotFound from "./pages/404/404"
+import Header from "./components/Header"
+import Navbar from "./components/Navbar"
+import PageInMaking from "./components/PageInMaking"
+import MyFooter from "./components/MyFooter"
 
 /*
 const sample:PersonalData={
@@ -78,8 +82,8 @@ const routes=[
     {path:'/tour',element:<Tour/>},
     {path:'/discography',element:<Discography/>},
     {path:'/lyrics',element:<Lyrics/>},
-    {path:'/history',element:<BandTimeline/>},
-    {path:'/contact',element:<AboutUs/>},
+    {path:'/timeline',element:<BandTimeline/>},
+    {path:'/aboutus',element:<AboutUs/>},
     {path:'*',element:<NotFound/>},
     /*{path:'/about/:filip',element:<Person person={sample}/>}*/
 ]
@@ -88,12 +92,22 @@ function App(){
     return (
         <HashRouter>
             <div>
-                <Routes>
-                    {routes.map(({path,element})=>(
-                        <Route key={path} path={path} element={element}/>
-                    ))}
-                </Routes>
+                <div className={"page"} style={{cursor: "url('cursor.cur'), auto"}}>
+                    <span id={"top"}/>
+                    <div className={"stickyTop"}>
+                        <Header/>
+                        <Navbar/>
+                    </div>
+                    <PageInMaking/>
+                    <Routes>
+                        {routes.map(({path,element})=>(
+                            <Route key={path} path={path} element={element}/>
+                        ))}
+                    </Routes>
+                </div>
+                <MyFooter/>
             </div>
+
         </HashRouter>
     )
 }

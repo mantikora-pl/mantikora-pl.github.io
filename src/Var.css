@@ -1,16 +1,18 @@
 :root{
-    --backgroundColorDarker: #111315;
-    --backgroundColorMain:#181b1c;
-    --backgroundColorLighter:#282c34;
+    --backgroundColorDarker: #090909;
+    --backgroundColorDarkerOpaque: #090909EE;
+    --backgroundColorMain: #141414;
+    --backgroundColorLighter:#1b1b1b;
+    --backgroundColorLight:#272727;
     --itemBackgroundColor:#383737;
 
     --bwSkullsBackground:url("../public/bwSkullsBg.png");
 
     --redAccentColor: #c42424;
-    --blueAccentColor: #044b98;
+    --blueAccentColor: #00234d;
     --mantikoraRed:#690024;
     --mantikoraPurple:#401378;
-    --textColorMain:#F0FFFF;
+    --textColorMain: #d3e3e3;
     --textColorInactive:#808080;
     --linkColor: #a6d8ff;
     --testColor1:cadetblue;
@@ -19,16 +21,18 @@
     --testColor4:plum;
     --testColor5:slateblue;
 
-    --fontXXl:36px;
-    --fontXl:32px;
+    --borderColorDarkPurple: #200346;
+
+    --fontXXL:36px;
+    --fontXL:32px;
     --fontL:28px;
-    --fontMl:24px;
+    --fontML:24px;
     --fontM:20px;
     --fontSM:16px;
     --fontS:14px;
     --fontXS:12px;
 
-    --fontFamilyStandard:Georgia, serif, "Noto Sans Jap";
+    --fontFamilyStandard:aviano-serif, "Noto Sans Jap";
 
     --borderThinWhite: 1px solid white;
     --borderThinBlack: 1px solid black;
@@ -39,7 +43,7 @@
     --roundedCorners:10px;
     --roundedCornersCircle: 50%;
 
-    --boldy:500; /*font-weight*/
+    --boldy:600; /*font-weight*/
 
     --spaceHuge:30px;
     --spaceBig:15px; /*margin/padding*/

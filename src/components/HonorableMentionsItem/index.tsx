@@ -8,18 +8,18 @@ export interface HonorableMentionsItemI{
     description?:string
 }
 
-function HonorableMentionsItem({item}:{item: HonorableMentionsItemI}){
-    return(
-        <div className={"itemWrapper"}>
+function HonorableMentionsItem({item}:{item:HonorableMentionsItemI}){
+    return (
+        <div className={"entityContainer"}>
             <div className={"nameLinkWrapper"}>
-                <p className={"entityName"}>{item.name}</p>
-                {(item.link && item.linkIcon) &&
-                    <a href={item.link} className={"entityLink"}>
+                <p className={"name"}>{item.name}</p>
+                {(item.link&&item.linkIcon)?
+                    <a href={item.link} className={"link"}>
                         <img src={item.linkIcon} alt={"click to go to "+item.link}/>
                     </a>
-                }
+                    :null}
             </div>
-            {item.description && <p className={"entityDescription"}>{item.description}</p>}
+            {item.description?<p className={"description"}>{item.description}</p>:null}
         </div>
 
     )

@@ -20,5 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "mantikora_band@gmail.com"
+          git config --global user.name "mantikora-pl"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/mantikora-pl/mantikora-pl.github.io.git
+      
+      
+
       - name: Build and deploy
         run: npm run deploy -- --branch gh-pages

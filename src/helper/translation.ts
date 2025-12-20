@@ -1,6 +1,8 @@
+import Cookies from "universal-cookie"
+
 export const translations={
     "main":{
-        "en":"Main",
+        "en":"Home",
         "pl":"Główna"
     },
     "news":{
@@ -19,14 +21,45 @@ export const translations={
         "en":"Lyrics",
         "pl":"Teksty"
     },
-    "history":{
+    "timeline":{
         "en":"Timeline",
         "pl":"Oś czasu"
     },
-    "band":{
-        "en":"Band",
+    "aboutus":{
+        "en":"About us",
         "pl":"Zespół"
     },
+
+    "main-short":{
+        "en":"Home",
+        "pl":"Główna"
+    },
+    "news-short":{
+        "en":"News",
+        "pl":"Wieści"
+    },
+    "tour-short":{
+        "en":"Tour",
+        "pl":"Trasa"
+    },
+    "discography-short":{
+        "en":"CDs",
+        "pl":"Płyty"
+    },
+    "lyrics-short":{
+        "en":"Lyrics",
+        "pl":"Teksty"
+    },
+    "timeline-short":{
+        "en":"History",
+        "pl":"Oś"
+    },
+    "aboutus-short":{
+        "en":"Band",
+        "pl":"O nas"
+    },
+
+
     "merch":{
         "en":"Store",
         "pl":"Sklep"
@@ -44,8 +77,14 @@ export const translations={
         "pl":"STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE"
     },
     "aboutUsText":{
-        "en":"to do later",
-        "pl":"tu będzie o nas"
+        "en":"We're a thrash metal band from Poznan, Poland.\n"+
+            "We've been going since April 2025, we have a few of our own songs, and we're working on our demo.\n"+
+            "We're aiming to drop our first album and hit the stage in 2026, so stay tuned! \n"+
+            "Meanwhile, we invite you to follow us on our social media profiles.",
+        "pl":"Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
+            "Powstaliśmy w kwietniu 2025 roku, obecnie mamy kilka autorskich utworów i pracujemy nad demo.\n"+
+            "Planujemy wydać pierwszy album i zacząć koncertować w 2026, także czekajcie na nas! \n"+
+            "a w międzyczasie zapraszamy do odwiedzenia naszych profili na mediach społecznościowych."
     },
     "writtenByEveryone":{
         "en":"Written by the whole band",
@@ -56,12 +95,12 @@ export const translations={
         "pl":"Podziękowania dla: "
     },
     "sortByLocation":{
-        "en":"Sort concerts by location",
-        "pl":"Sortuj koncerty po odległości"
+        "en":"Order by distance",
+        "pl":"Sortuj po odległości"
     },
     "sortByDate":{
-        "en":"Sort concerts by date",
-        "pl":"Sortuj koncerty po dacie"
+        "en":"Order by date",
+        "pl":"Sortuj po dacie"
     },
 
     "timelineDesc-1":{
@@ -107,6 +146,31 @@ export const translations={
         "en":"",
         "pl":""
     },
+    "daysLeft":{
+        "en":" days to",
+        "pl":" dni"
+    },
+    "unknown":{
+        "en":"Unknown",
+        "pl":"nieznany"
+    },
+    "previous":{
+        "en":"previous",
+        "pl":"poprzednia"
+    },
+    "next":{
+        "en":"next",
+        "pl":"następna"
+    },
+    "tickets":{
+        "en":"Tickets",
+        "pl":"Bilety"
+    },
+    "approxLocation":{
+        "en":"approximate location based on country",
+        "pl":"lokalizacja bazowana na kraju, nie mieście"
+    }
+
 
 } as const
 
@@ -114,7 +178,34 @@ export function getTranslation(locale:string,key:string):string{
     const translation=translations[key as keyof typeof translations]
     return translation?.[locale as keyof typeof translation]||""
 }
-const validLanguages=["en","pl"]
-const code=navigator.language.substring(0,2)
 
-export const defaultLang=validLanguages.includes(code)?code:"en"
+
+interface ILanguage{
+    nameInSelf: string,
+    icon: string,
+    code: string
+}
+export const languagesData:ILanguage[]=[
+    {
+        nameInSelf:"english",
+        icon:"🇺🇸",
+        code:"en"
+    },
+    {
+        nameInSelf:"polski",
+        icon:"🇵🇱",
+        code:"pl"
+    }
+]
+
+export const cookies=new Cookies()
+export function getLanguage(){
+    if(!Boolean(cookies.get('language'))){
+        const codeFromBrowser=navigator.language.substring(0,2)
+        if(languagesData.some(lang => lang.code === codeFromBrowser))
+            cookies.set('language',codeFromBrowser,{path:"/"})
+        else
+            cookies.set('language',"en",{path:"/"})
+    }
+    return cookies.get("language")
+}

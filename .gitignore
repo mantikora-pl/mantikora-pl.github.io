@@ -23,9 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 ai.md
 
-/src/data/cityData.ts
-/src/data/honorableMentions.ts
-/src/data/concertList_secret.ts
 /src/data/lyrics_secret.ts
-/src/data/discData_secret.ts
-/src/test
+/.idea/dataSources.xml

@@ -1,13 +1,13 @@
-import {daysToEvent,EventDate} from "./date";
-import {findCityByNameAndCountry} from "./findCity";
-import transliterate from "@sindresorhus/transliterate";
+import {daysToEvent,EventDate} from "./date"
+import {findCityByNameAndCountry} from "./findCity"
+import transliterate from "@sindresorhus/transliterate"
 
 export function shouldBeVisible(item:ConcertRaw):boolean{
     return item.visible&&daysToEvent({
         year:item.numericDate.year,
         month:item.numericDate.month,
         day:item.numericDate.day
-    })>=0;
+    })>=0
 }
 
 export interface ConcertRaw{
@@ -24,5 +24,5 @@ export interface ConcertRaw{
 
 export function getConcertLocation(concert:ConcertRaw){
     const data=findCityByNameAndCountry(transliterate(concert.city),concert.country)
-    return {lat:data.lat as number,lng:data.lng as number}
+    return {lat:data.lat as number,lng:data.lng as number, found:data.found}
 }

@@ -1,50 +1,31 @@
-import Header from "../../components/Header";
-import Navbar from "../../components/Navbar";
-import ContactEntity from "../../components/ContactEntity";
-import NewLineToBr from "../../components/NewLineToBr";
-import MyFooter from "../../components/MyFooter";
-import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
-import PageInMaking from "../../components/PageInMaking";
-/*import HonorableMentionsItem from "../../components/HonorableMentionsItem";
-import {honorableMentions} from "../../data/honorableMentions";
-import {defaultLang,getTranslation} from "../../helper/translation";*/
-import {bandMembers} from "../../data/bandMembers";
+import ContactEntity from "../../components/ContactEntity"
+import React from "react"
+import HonorableMentionsItem from "../../components/HonorableMentionsItem"
+import {honorableMentions} from "../../data/honorableMentions"
+import {getLanguage,getTranslation} from "../../helper/translation"
+import {bandMembers} from "../../data/bandMembers"
+import {AboutUsText} from "../../components/AboutUsText"
 
 
-
-const lorem=new LoremIpsum()
-
-export default function AboutUs(){
-    return <div>
-        <div className={"page"}>
-            <div className={"stickyTop"}>
-                <Header/>
-                <Navbar/>
+export default function AboutUs({honorableMentionsOn=false}:{honorableMentionsOn?:boolean}){
+    return <div className={"innerPage gradientBackground"}>
+        <AboutUsText/>
+        <div className={"centeredFlexColumnContainer"}>
+            <div className={"flexJustifyCenter"}>
+                <section id={"socialEntityItemContainer"}>
+                    {bandMembers.map((item,id)=>(
+                        <ContactEntity items={item} key={id}/>
+                    ))}
+                </section>
             </div>
-            <div id={"aboutUsWrapper"}>
-                <PageInMaking/>
-                <p id={"contactSubHeader"}><NewLineToBr>{lorem.generateParagraphs(1)}</NewLineToBr></p>
-                <div id={"socialEntitiesWrapper"}>
-                    <section id={"socialEntityItemWrapper"}>
-                        {bandMembers.map((item,id)=>(
-                            <ContactEntity items={item} key={id}/>
-                        ))}
-                    </section>
-                </div>
-            </div>
-
-            {/*<div>
-                <p className={"smallHeader centerText"}>{getTranslation(defaultLang,"honorableMentions")}</p>
-                <div id={"honorableMentionsWrapper"}>
-                {honorableMentions.map((item)=>(
-                    <HonorableMentionsItem item={item}/>
-                ))}
-                </div>
-            </div>*/}
-
-
+            {honorableMentionsOn?<div>
+                <p className={"smallHeader centerText"}>{getTranslation(getLanguage(),"honorableMentions")}</p>
+                <section id={"honorableMentionsItemContainer"}>
+                    {honorableMentions.map((item)=>(
+                        <HonorableMentionsItem item={item}/>
+                    ))}
+                </section>
+            </div>:null}
         </div>
-        <MyFooter/>
     </div>
 }
