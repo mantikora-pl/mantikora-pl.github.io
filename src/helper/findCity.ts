@@ -1,5 +1,5 @@
-import {cityData,defaultCountryLocation} from "../data/cityData"
-
+import {cityData} from "../data/cityData"
+import {defaultCountryLocation} from "../data/countryData";
 
 /**
  * in KM
@@ -52,7 +52,7 @@ interface CityInfo{
     lng:number,
     found:FoundEnum
 }
-export function findCityByNameAndCountry(city:string,country:string):CityInfo{
+export function findCityByNameAndCountry(city:string,country:string,state?:string):CityInfo{
     for (let i=0;i<cityData.length;i++){
         if(
             cityData[i].city.toUpperCase()===city.toUpperCase() &&
