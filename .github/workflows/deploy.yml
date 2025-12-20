@@ -20,5 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "mantikora_band@gmail.com"
+          git config --global user.name "mantikora-pl"
+      
+      
+
       - name: Build and deploy
         run: npm run deploy -- --branch gh-pages
