@@ -16,6 +16,7 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import PageInMaking from "./components/PageInMaking"
 import MyFooter from "./components/MyFooter"
+import NewsArticle from "./pages/NewsArticle/NewsArticle";
 
 /*
 const sample:PersonalData={
@@ -84,6 +85,7 @@ const routes=[
     {path:'/lyrics',element:<Lyrics/>},
     {path:'/timeline',element:<BandTimeline/>},
     {path:'/aboutus',element:<AboutUs/>},
+    {path:"/article/:id",element:<NewsArticle/>},
     {path:'*',element:<NotFound/>},
     /*{path:'/about/:filip',element:<Person person={sample}/>}*/
 ]

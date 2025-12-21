@@ -13,7 +13,14 @@
         padding:var(--spaceBig);
     }
 
-    .bigNewsItemWrapper:hover{
+    .bigNewsImageWrapper{
+        overflow:hidden;
+        max-height:300px;
+        max-width:300px;
+        margin-right:var(--spaceBig);
+    }
+
+    .bigNewsItemContainer:hover{
         .bigNewsImage{
             transform:scale(1.04);
         }
@@ -21,13 +28,6 @@
         .bigNewsTitle{
             text-decoration:underline;
         }
-    }
-
-    .bigNewsImageWrapper{
-        overflow:hidden;
-        max-height:300px;
-        max-width:300px;
-        margin-right:var(--spaceBig);
     }
 
     .bigNewsImage{
