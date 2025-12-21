@@ -21,7 +21,7 @@ export const concertsRaw_mock:ConcertRaw[]=[
         numericDate:{year:2026,month:5,day:3},
         name:"Example concert",
         country:"US",
-        state:"NY",
+        state:"New York",
         city:"New York",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
@@ -98,7 +98,7 @@ export const concertsRaw_mock:ConcertRaw[]=[
         numericDate:{year:2026,month:8,day:13},
         name:"does this country exist???",
         country:"",
-        state:undefined,
+        state:"",
         city:"Lavender Town",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
@@ -120,7 +120,7 @@ export const concertsRaw_mock:ConcertRaw[]=[
         numericDate:{year:2026,month:4,day:20},
         name:"These jokes are getting worse",
         country:"NL",
-        state:undefined,
+        state:"Amsterdam",
         city:"Amsterdam",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true
@@ -142,7 +142,18 @@ export const concertsRaw_mock:ConcertRaw[]=[
         numericDate:{year:2027,month:8,day:23},
         name:"koncert w lakewood",
         country:"US",
-        state:"OH",
+        state:"Ohio",
+        city:"Lakewood",
+        buyLink:"https://www.ticketmaster.com/mantikora",
+        visible:true
+    },
+    {
+        id:100,
+        date:translateDate(2027,8,26,getLanguage()),
+        numericDate:{year:2027,month:8,day:26},
+        name:"koncert w innym lakewood",
+        country:"US",
+        state:"Colorado",
         city:"Lakewood",
         buyLink:"https://www.ticketmaster.com/mantikora",
         visible:true

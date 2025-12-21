@@ -13,7 +13,7 @@ export interface Concert{
     numericDate:{year:number,month:number,day:number},
     name:string
     country:string
-    state?:string
+    state:string
     city:string
     buyLink:string
     visible:boolean

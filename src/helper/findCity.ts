@@ -47,25 +47,27 @@ export enum FoundEnum{
 
 interface CityInfo{
     country:string,
+    state:string,
     city:string,
     lat:number,
     lng:number,
     found:FoundEnum
 }
-export function findCityByNameAndCountry(city:string,country:string,state?:string):CityInfo{
+export function findCityByNameAndCountry(city:string,state:string,country:string):CityInfo{
     for (let i=0;i<cityData.length;i++){
         if(
             cityData[i].city.toUpperCase()===city.toUpperCase() &&
-            cityData[i].country.toUpperCase()===country.toUpperCase()
+            cityData[i].country.toUpperCase()===country.toUpperCase() &&
+            cityData[i].state.toUpperCase()===state.toUpperCase()
         ){
-            return {country:cityData[i].country,city:cityData[i].city,lat:cityData[i].lat,lng:cityData[i].lng,found:FoundEnum.FOUND_CITY}
+            return {country:cityData[i].country,state:cityData[i].state,city:cityData[i].city,lat:cityData[i].lat,lng:cityData[i].lng,found:FoundEnum.FOUND_CITY}
         }
     }
 
     for(let i=0;i<defaultCountryLocation.length;i++){
         if(defaultCountryLocation[i].country===country){
-            return {country:defaultCountryLocation[i].country,city:"-",lat:defaultCountryLocation[i].lat,lng:defaultCountryLocation[i].lng,found:FoundEnum.FOUND_COUNTRY}
+            return {country:defaultCountryLocation[i].country,state:"",city:"",lat:defaultCountryLocation[i].lat,lng:defaultCountryLocation[i].lng,found:FoundEnum.FOUND_COUNTRY}
         }
     }
-    return {country:"",city:"",lat:-1000,lng:-1000,found:FoundEnum.NOT_FOUND}
+    return {country:"",state:"",city:"",lat:-1000,lng:-1000,found:FoundEnum.NOT_FOUND}
 }

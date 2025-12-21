@@ -16,13 +16,13 @@ export interface ConcertRaw{
     numericDate:{year:number,month:number,day:number},
     name:string //club/festival/event name
     country:string
-    state?:string //for us
+    state:string // or province
     city:string
     buyLink:string
     visible:boolean
 }
 
 export function getConcertLocation(concert:ConcertRaw){
-    const data=findCityByNameAndCountry(transliterate(concert.city),concert.country)
+    const data=findCityByNameAndCountry(concert.city,concert.state,concert.country)
     return {lat:data.lat as number,lng:data.lng as number, found:data.found}
 }
