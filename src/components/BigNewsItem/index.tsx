@@ -2,6 +2,8 @@ import React from 'react'
 import './style.css'
 import NewLineToBr from "../NewLineToBr"
 import {NewsI} from "../../data/newsData";
+import {localizeDate} from "../../helper/date";
+import {Link} from "react-router-dom";
 
 
 function BigNewsItem({item}:{item:NewsI}){
@@ -12,8 +14,8 @@ function BigNewsItem({item}:{item:NewsI}){
                     <img className={"bigNewsImage"} src={item.photoSrc} alt={item.title+" image"}/>
                 </div>
                 <div className={"bigNewsDetailsWrapper"}>
-                    <p className={"bigNewsTitle"}>{item.title}</p>
-                    <p className={"bigNewsDate"}>{item.date}</p>
+                    <Link className={"bigNewsTitle"} to={`/article/${item.id}`}>{item.title}</Link>
+                    <p className={"bigNewsDate"}>{localizeDate(item.year,item.month,item.day)}</p>
                     <p className={"bigNewsDescription"}>
                         <NewLineToBr>{item.content}</NewLineToBr>
                     </p>

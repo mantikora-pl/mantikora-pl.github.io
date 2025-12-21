@@ -1,4 +1,4 @@
-import LyricsItem,{LyricsItems} from "../../components/LyricsItem"
+import LyricsItem from "../../components/LyricsItem"
 import React from "react"
 import {getLanguage,getTranslation} from "../../helper/translation"
 import {HashLink as Link} from 'react-router-hash-link'
