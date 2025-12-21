@@ -15,7 +15,7 @@ export const navElements=[
     {name:getTranslation(getLanguage(),"lyrics"),href:"/lyrics",shortName:getTranslation(getLanguage(),"lyrics-short")},
     {name:getTranslation(getLanguage(),"timeline"),href:"/timeline",shortName:getTranslation(getLanguage(),"timeline-short")},
 
-    {name:getTranslation(getLanguage(),"band"),href:"/aboutus",shortName:getTranslation(getLanguage(),"aboutus-short")},
+    {name:getTranslation(getLanguage(),"aboutus"),href:"/aboutus",shortName:getTranslation(getLanguage(),"aboutus-short")},
 
     /* {name:getTranslation(getLanguage(),"merch"),href:"https://www.mantikora-shop.pl"}*/
 

@@ -45,13 +45,13 @@
     }
 
     /*region details*/
-    .smallNewsItemWrapper:hover{
+    .smallNewsItemContainer:hover{
         .smallNewsImage{
             transform:scale(1.04);
         }
 
         .smallNewsTitle{
-            /* text-decoration:underline; todo: uncomment AFTER creating logic for articles*/
+            text-decoration:underline;
         }
     }
 

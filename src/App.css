@@ -114,6 +114,76 @@ p{
 
 /*endregion*/
 
+/*region news article*/
+.articlePage{
+    max-width:min(50vw, 700px);
+    margin:0 auto;
+}
+
+.articleTopPhotoContainer{
+    margin:0 auto var(--spaceHuge) auto;
+    display:flex;
+    justify-content:center;
+}
+
+.articleTopPhoto{
+    max-width:max(22%, 300px);
+}
+
+.articleTitle{
+    font-size:var(--fontXL);
+}
+
+.articleDate{
+
+}
+
+.articleButton{
+    margin:var(--spaceHuge) 0;
+    background:none !important;
+    border:none;
+    padding:0 !important;
+    align-items:center;
+    display:flex;
+    color:var( --textColorMain);
+    font-size:var(--fontSM);
+}
+.articleButton p{
+    font-size:var(--fontSM);
+    margin-right:var(--spaceTiny);
+}
+
+.articleContent{
+    font-size:var(--fontM);
+}
+
+.articlePhotoContainer{
+    margin:var(--spaceHuge) 0;
+    width:100%;
+}
+
+.articlePhoto{
+    width:100%;
+}
+
+.articleBackLinkContainer{
+    width:100%;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+}
+
+.articleBackLink{
+    font-size:var(--fontM);
+    display:flex;
+    align-items:center;
+}
+.articleBackLink p{
+    margin-left:var(--spaceTiny);
+}
+
+/*endregion*/
+
 /* region pagination */
 .paginationWrapper{
     margin:var(--spaceBig) 0 var(--spaceSmall) 0;
@@ -341,6 +411,7 @@ p{
     justify-content:center;
     flex-direction:column;
 }
+
 #notFoundContainer h1{
     font-size:120px;
     color:var(--mantikoraRed);
