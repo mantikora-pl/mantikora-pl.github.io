@@ -43,7 +43,7 @@ td{
 
 .concertRow:hover{
     transform:scale(1.03);
-    background-color:var(--backgroundColorLighter);
+    background-color:var(--backgroundColorLighterTransparent);
 
     .concertName, .concertLocation{
         font-weight:600;

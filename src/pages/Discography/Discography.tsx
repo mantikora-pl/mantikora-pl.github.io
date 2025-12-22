@@ -9,7 +9,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 export default function Discography(){
     const discsData=(mock)?discsData_mock:discsData_real
-    return <div className={"innerPage gradientBackground"}>
+    return <div className={"innerPage skullBackground"}>
         <p className={"pageTitle"}>{getTranslation(getLanguage(),"our-cds")}</p>
         <MobileView>
             <DiscListM items={discsData}/>
