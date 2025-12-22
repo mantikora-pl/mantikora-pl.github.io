@@ -6,6 +6,7 @@ import {getLanguage,getTranslation} from "../../helper/translation"
 import {getColor} from "../../helper/getColor"
 import Tooltip from '@mui/material/Tooltip'
 import {FoundEnum} from "../../helper/findCity"
+import {stateNameToCode} from "../../helper/constants";
 
 export interface Concert{
     id:number
@@ -42,6 +43,7 @@ function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boole
     const distance=(getLanguage()==="en"&&navigator.language==="en-US")?item.distanceMi+" mi":item.distanceKm+" km"
     const color=getColor(item.distanceKm)
     if(item.found===FoundEnum.NOT_FOUND) showDistance=false
+    const location=(item.country==="US") ? `${item.city} (${stateNameToCode(item.state)})` : item.city
 
     const dayOfTheWeekNumber=dayOfTheWeek(item.numericDate.year,item.numericDate.month,item.numericDate.day)
     return (
@@ -69,7 +71,7 @@ function ConcertItem({item,showDistance=false}:{item:Concert,showDistance?:boole
                     </td>
 
                     <td className={"concertName"}>{item.name}</td>
-                    <td className={"concertLocation"}>{item.city}</td>
+                    <td className={"concertLocation"}>{location}</td>
                     <td>
                         <a href={item.buyLink}>
                             <button className={"ticketsButton"}>{getTranslation(getLanguage(),"tickets")}</button>
