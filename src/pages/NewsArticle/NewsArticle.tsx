@@ -9,7 +9,7 @@ export default function NewsArticle(){
     const {id}=useParams();
     if(!id) return null;
     const newsData=getNewsDataById(parseInt(id));
-    return <div className={"innerPage gradientBackground"}>
+    return <div className={"innerPage skullBackground"}>
         <div className={"articlePage"}>
             <div className={"articleTopPhotoContainer"}>
                 <img src={newsData.photoSrc} alt={newsData.title} className={"articleTopPhoto"} onLoad={

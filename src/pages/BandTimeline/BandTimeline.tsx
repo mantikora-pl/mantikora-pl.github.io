@@ -9,11 +9,11 @@ import {mock} from "../../data/mock"
 export default function BandTimeline(){
     const timelineItems=(mock)?timeLineItems_mock:timeLineItems_real
     const years=Array.from(new Set(timelineItems.map(item=>item.year)))
-    return <div className={"innerPage gradientBackground"}>
+    return <div className={"innerPage skullBackground"}>
         <div id={"yearsHeader"}>
             {years.map((item,i)=>(
                 <div className={"yearLinkWrapper"}>
-                    <HashLink to={`/timeline/#year${item}`} className={"yearLink"}>{item}</HashLink>
+                    <HashLink to={`/timeline/#year${item}`} className={"yearLink"} smooth={true}>{item}</HashLink>
                 </div>
             ))}
         </div>

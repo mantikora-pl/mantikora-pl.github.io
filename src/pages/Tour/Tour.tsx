@@ -88,7 +88,7 @@ export default function Tour(){
         setFilter(filterText)
     }
 
-    return <div className={"innerPage gradientBackground"}>
+    return <div className={"innerPage skullBackground"}>
         <div className={"width100 centeredFlexColumnContainer"}>
             <table>
                 <tbody>

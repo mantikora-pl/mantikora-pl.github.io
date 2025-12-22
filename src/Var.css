@@ -6,7 +6,9 @@
     --backgroundColorLight:#272727;
     --itemBackgroundColor:#383737;
 
-    --bwSkullsBackground:url("../public/bwSkullsBg.png");
+    --backgroundColorLighterTransparent:rgba(255, 255, 255, 0.07);
+
+    --bwSkullsBackground:url("../public/bwSkullsBgDark.png");
 
     --redAccentColor: #c42424;
     --blueAccentColor: #00234d;
