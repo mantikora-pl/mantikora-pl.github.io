@@ -1,6 +1,5 @@
 import {daysToEvent,EventDate} from "./date"
 import {findCityByNameAndCountry} from "./findCity"
-import transliterate from "@sindresorhus/transliterate"
 
 export function shouldBeVisible(item:ConcertRaw):boolean{
     return item.visible&&daysToEvent({
