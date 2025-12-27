@@ -1,0 +1,25 @@
+
+#sideMenu{
+    padding-top:var(--spaceStandard);
+    padding-left:var(--spaceBig);
+    min-width:70vw;
+    height:100vh;
+    position:absolute;
+    z-index:var(--zNear);
+
+    background-color:var(--backgroundColorLighter);
+    text-align:start;
+    font-size:var(--fontM);
+    font-family:var(--fontFamilyStandard), serif;
+    text-transform:uppercase;
+    font-weight:var(--boldy);
+}
+
+.sideItem{
+    margin-top: var(--spaceBig);
+    margin-bottom: var(--spaceBig);
+}
+
+.languageSelectContainer{
+    margin-bottom:var(--spaceBig);
+}

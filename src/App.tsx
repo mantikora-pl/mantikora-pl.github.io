@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import News from './pages/News/News'
 import Home from './pages/Home/Home'
 import './App.css'
@@ -8,7 +8,6 @@ import Tour from "./pages/Tour/Tour"
 import Discography from "./pages/Discography/Discography"
 import Lyrics from "./pages/Lyrics/Lyrics"
 import BandTimeline from "./pages/BandTimeline/BandTimeline"
-/*import Gallery from "./pages/Gallery/Gallery"*/
 import AboutUs from "./pages/AboutUs/AboutUs"
 //import Person,{PersonalData} from "./components/Person"
 import NotFound from "./pages/404/404"
@@ -91,14 +90,15 @@ const routes=[
 ]
 
 function App(){
+    const [sideMenuVisible,setSideMenuVisible]=useState(false)
     return (
         <HashRouter>
             <div>
                 <div className={"page"} style={{cursor: "url('cursor.cur'), auto"}}>
                     <span id={"top"}/>
                     <div className={"stickyTop"}>
-                        <Header/>
-                        <Navbar/>
+                        <Header setSideMenuVisible={setSideMenuVisible} sideMenuVisible={sideMenuVisible}/>
+                        <Navbar sideMenuVisible={sideMenuVisible}/>
                     </div>
                     <PageInMaking/>
                     <Routes>

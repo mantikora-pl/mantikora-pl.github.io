@@ -38,10 +38,6 @@ hair?:string,*/
 export default function Person({person}:{person:PersonalData}){
     return <div>
         <div className={"page"}>
-            <div className={"stickyTop"}>
-                <Header/>
-                <Navbar/>
-            </div>
             <main className={"personMain"}>
 
                 <div className={"personLeft"}>
@@ -92,7 +88,6 @@ export default function Person({person}:{person:PersonalData}){
                         </div>:null}
                 </div>
             </main>
-            <MyFooter/>
         </div>
     </div>
 }
