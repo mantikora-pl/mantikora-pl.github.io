@@ -88,7 +88,7 @@ export default function Tour(){
         setFilter(filterText)
     }
 
-    return <div className={"innerPage skullBackground"}>
+    return <div className={"innerPage skullBackground"} id={"concertPage"}>
         <div className={"width100 centeredFlexColumnContainer"}>
             <table>
                 <tbody>
@@ -98,7 +98,7 @@ export default function Tour(){
                             type="text"
                             id="concertSearch"
                             onChange={e=>handleFilterConcerts(e.target.value)}
-                            placeholder="Concert name/location"
+                            placeholder={getTranslation(getLanguage(),"concertSearch")}
                         />
                     </td>
                     <td></td>

@@ -169,6 +169,10 @@ export const translations={
     "approxLocation":{
         "en":"approximate location based on country",
         "pl":"lokalizacja bazowana na kraju, nie mieście"
+    },
+    "concertSearch":{
+        "en":"Concert name/location",
+        "pl":"Nazwa/miejsce koncertu"
     }
 
 

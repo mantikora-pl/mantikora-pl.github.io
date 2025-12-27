@@ -236,6 +236,9 @@ p{
 /*endregion*/
 
 /*region concert page*/
+#concertPage{
+    min-height:66vh;
+}
 
 .concertPageHeader{
     margin-top:var(--spaceBig);
