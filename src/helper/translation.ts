@@ -173,6 +173,10 @@ export const translations={
     "concertSearch":{
         "en":"Concert name/location",
         "pl":"Nazwa/miejsce koncertu"
+    },
+    "comingSoon":{
+        "en":"lyrics coming soon",
+        "pl":"tekst będzie dostepny niedługo"
     }
 
 
