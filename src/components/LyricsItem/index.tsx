@@ -6,7 +6,7 @@ export interface LyricsItems{
     id:number,
     name:string,
     lyrics:string,
-    credits?:string,
+    credits?:string, //delete
 }
 
 function LyricsItem({items}:{items:LyricsItems[]}){
@@ -30,7 +30,6 @@ function LyricsItem({items}:{items:LyricsItems[]}){
                             <NewLineToBr>{item.lyrics}</NewLineToBr>
                         </p>
                         :null}
-                    <p className={"songCredits"}>{item.credits}</p>
                 </div>
             ))}
         </>
