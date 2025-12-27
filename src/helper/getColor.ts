@@ -20,6 +20,6 @@ export function getColor(value:number,green:number=40,yellow:number=200,red:numb
         return `rgb(${red}, ${green}, ${blue})`
     }
     else{
-        return '#7c1805'
+        return '#b61b00'
     }
 }
