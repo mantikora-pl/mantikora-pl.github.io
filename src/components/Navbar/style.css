@@ -38,4 +38,27 @@
     flex-wrap:nowrap;
 }
 
+/*region hamburger/side*/
+
+#hamburgerM{
+    height:25px;
+}
+
+.hamburgerW{
+    display:none;
+}
+
+#hamburgerWIcon{
+    display:none;
+    height:25px;
+}
+
+#sideMenuWrapper{
+    display:flex;
+    flex-direction:column;
+}
+
+/*endregion*/
+
+
 

@@ -28,59 +28,6 @@
     height:80px;
 }
 
-/*region hamburger/side*/
-#hamburgerM{
-    height:25px;
-}
-
-.hamburgerW{
-    display:none;
-}
-
-#hamburgerWIcon{
-    display:none;
-    height:25px;
-}
-
-#sideMenu{
-    font-size:var(--fontM);
-    font-family:var(--fontFamilyStandard), serif;
-    text-transform:uppercase;
-    font-weight:var(--boldy);
-    margin-top:calc(8.5vh - var(--spaceStandard)); /*TODO SEE THIS!!!*/
-    background-color:var(--backgroundColorMain);
-    z-index:var(--zNear);
-    position:absolute;
-    min-width:75vw;
-    height:100vh;
-    text-align:start;
-}
-
-.sideItem{
-    margin:var(--spaceBig) var(--spaceSmall);
-}
-
-#sideMenuWrapper{
-    display:flex;
-    flex-direction:column;
-}
-
-/*endregion*/
-
-
-select{
-    background-color:var(--itemBackgroundColor);
-    color:var(--textColorMain);
-    border:none;
-    min-width:100px;
-    min-height:50px;
-    border-radius:10px;
-    font-size:var(--fontM);
-    font-weight:bold;
-    text-transform:uppercase;
-    padding:5px;
-}
-
 .headerLogo{
     max-height:6vh;
     min-height:80px;
@@ -89,4 +36,5 @@ select{
 
 #shoppingCart{
     height:35px;
+    visibility:hidden;
 }
