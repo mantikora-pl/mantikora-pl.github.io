@@ -1,0 +1,13 @@
+
+select{
+    background-color:var(--itemBackgroundColor);
+    color:var(--textColorMain);
+    border:none;
+    min-width:100px;
+    min-height:50px;
+    border-radius:10px;
+    font-size:var(--fontM);
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:5px;
+}

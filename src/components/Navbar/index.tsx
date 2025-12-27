@@ -2,8 +2,9 @@ import React from "react"
 import './style.css'
 import {getLanguage,getTranslation} from "../../helper/translation"
 import {Link} from "react-router-dom"
-import {BrowserView} from 'react-device-detect'
+import {BrowserView,MobileView} from 'react-device-detect'
 import {useMedia} from 'use-media';
+import MobileNav from "../MobileNav";
 
 export const navElements=[
     {name:getTranslation(getLanguage(),"main"),href:"/",shortName:getTranslation(getLanguage(),"main-short")},
@@ -21,19 +22,30 @@ export const navElements=[
 
 ]
 
-function Navbar(){
+function Navbar({sideMenuVisible}:{sideMenuVisible:boolean}){
     const isWide=useMedia({minWidth:'1200px'});
+
+
     return (
-       <BrowserView>
-           <ul className={"navbar"}>
-               {navElements.map((item,id)=>(
-                   <li className={"navbarItem"} key={id}>
-                       <Link to={item.href}
-                             className={"a"}>{isWide?item.name:item.shortName}</Link>
-                   </li>
-               ))}
-           </ul>
-       </BrowserView>
+        <>
+            <BrowserView>
+                <ul className={"navbar"}>
+                    {navElements.map((item,id)=>(
+                        <li className={"navbarItem"} key={id}>
+                            <Link to={item.href}
+                                  className={"a"}>{isWide?item.name:item.shortName}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </BrowserView>
+            <MobileView>
+                <div id={"sideMenuWrapper"}>
+                    {sideMenuVisible?
+                        <MobileNav/>:<></>}
+                </div>
+            </MobileView>
+        </>
+
 
     )
 }
