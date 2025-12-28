@@ -142,6 +142,8 @@ export function localizeDate(year:number,month:number,day:number){
 
 export function dayOfTheWeek(year:number,month:number,day:number):number{
     try{
+        if(day<1||day>31) throw new Error("day out of range")
+        if(month<1||month>12) throw new Error("month out of range")
         const date=new Date(year,month-1,day)
         return date.getDay()
     }

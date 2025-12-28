@@ -6,7 +6,6 @@ export interface LyricsItems{
     id:number,
     name:string,
     lyrics:string,
-    credits?:string, //delete
 }
 
 function LyricsItem({items}:{items:LyricsItems[]}){

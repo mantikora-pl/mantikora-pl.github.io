@@ -28,6 +28,7 @@ p{
 
 .stickyTop{
     position:sticky;
+    /*position: -webkit-sticky;*/
     top:0; /*do not delete*/
     z-index:var(--zNearest);
 }
