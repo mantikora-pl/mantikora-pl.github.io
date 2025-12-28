@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import React from "react";
 import {navElements} from "../Navbar";
 
-export default function MobileNav(){
+export default function MobileNav({setSideMenuVisible}:{setSideMenuVisible:any}){
     return (
         <div id={"sideMenu"}>
             <div className={"languageSelectContainer"}>
@@ -12,7 +12,7 @@ export default function MobileNav(){
             </div>
             {navElements.map((item,id)=>(
                 <div className={"sideItem"} key={id}>
-                    <Link to={item.href} className={"link"}>{item.name}</Link>
+                    <Link to={item.href} className={"link"} onClick={()=>setSideMenuVisible(false)}>{item.name}</Link>
                 </div>
             ))}
         </div>
