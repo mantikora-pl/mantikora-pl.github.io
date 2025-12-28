@@ -260,9 +260,17 @@ p{
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
-    /*width:80vw;*/
     min-width:60vw;
     padding:var(--spaceStandard);
+}
+
+@media only screen and (max-width:900px){
+    .concertPageHeader{
+        width:80vw;
+    }
+    .searchBarContainer{
+        max-width:25vw;
+    }
 }
 
 #concertsControlsContainer{
@@ -273,7 +281,6 @@ p{
 #buttonOrderBy, #buttonOrderByM{
     background-color:var(--blueAccentColor);
     color:var(--textColorMain);
-    font-size:var(--fontM);
     border:0;
     border-radius:var(--roundedCornersSmall);
 }
@@ -282,12 +289,14 @@ p{
     width:140px;
     height:60px;
     padding:var(--spaceStandard);
+    font-size:var(--fontM);
 }
 
 #buttonOrderByM{
-    width:100px;
+    width:80px;
     min-height:20px;
     padding:var(--spaceSmall);
+    font-size:var(--fontS);
 }
 
 #noConcertDatesText{
@@ -309,7 +318,7 @@ p{
     outline:none;
     color:var(--textColorMain);
     background-color:var(--backgroundColorLight);
-    min-width:150px;
+    max-width:30vw;
 }
 
 /*endregion*/

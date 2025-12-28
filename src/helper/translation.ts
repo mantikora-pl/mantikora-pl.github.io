@@ -147,7 +147,7 @@ export const translations={
         "pl":""
     },
     "daysLeft":{
-        "en":" days to",
+        "en":" days left",
         "pl":" dni"
     },
     "unknown":{
@@ -173,6 +173,10 @@ export const translations={
     "concertSearch":{
         "en":"Concert name/location",
         "pl":"Nazwa/miejsce koncertu"
+    },
+    "search":{
+        "en":"Search",
+        "pl":"Szukaj"
     },
     "comingSoon":{
         "en":"lyrics coming soon",

@@ -21,17 +21,15 @@ export default function Tour(){
 
     function handleSortTypeChange(state:boolean){
         cookies.set('concertSortType',state?'location':'date')
+        setSortByLocation(state)
 
-        const concertElements=document.querySelectorAll('.concertRow')
-        const buttonElement=document.querySelector('#buttonSortBy p')
+        const concertElements=document.querySelectorAll('.concertRow, .concertRowM')
         concertElements.forEach((element,index)=>{
             setTimeout(()=>element.classList.add('fadeInAnimation'),index*70)
         })
-        buttonElement?.classList.add('fadeInAnimation')
-        setSortByLocation(state)
+
         setTimeout(()=>{
             concertElements.forEach((element)=>element.classList.remove('fadeInAnimation'))
-            buttonElement?.classList.remove('fadeInAnimation')
         },500+concertElements.length*70)
     }
 
@@ -90,32 +88,24 @@ export default function Tour(){
 
     return <div className={"innerPage skullBackground"} id={"concertPage"}>
         <div className={"width100 centeredFlexColumnContainer"}>
-            <table>
-                <tbody>
-                <tr className={"concertPageHeader"}>
-                    <td className={"searchBarContainer"}>
-                        <input
-                            type="text"
-                            id="concertSearch"
-                            onChange={e=>handleFilterConcerts(e.target.value)}
-                            placeholder={getTranslation(getLanguage(),"concertSearch")}
-                        />
-                    </td>
-                    <td></td>
-                    <td className={"pageTitle"}>Tour</td>
-                    <td></td>
-                    <td>
-                        <div id={"concertsControlsContainer"}>
-                            <button
-                                id={isMobile?"buttonOrderByM":"buttonOrderBy"}
-                                onClick={()=>handleSortTypeChange(!sortByLocation)}>
-                                {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div className={"concertPageHeader"}>
+                <div className={"searchBarContainer"}>
+                    <input
+                        type="text"
+                        id="concertSearch"
+                        onChange={e=>handleFilterConcerts(e.target.value)}
+                        placeholder={isMobile?getTranslation(getLanguage(),"search"):getTranslation(getLanguage(),"concertSearch")}
+                    />
+                </div>
+                <div className={"pageTitle"}>Tour</div>
+                <div id={"concertsControlsContainer"}>
+                    <button
+                        id={isMobile?"buttonOrderByM":"buttonOrderBy"}
+                        onClick={()=>handleSortTypeChange(!sortByLocation)}>
+                        {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
+                    </button>
+                </div>
+            </div>
         </div>
         <div className={"width100 centeredFlexColumnContainer"}>
             {visibleCount()?
@@ -134,13 +124,13 @@ export default function Tour(){
                         </table>
                     </BrowserView>
                     <MobileView>
-                        {concerts.map((item,i)=>(
-                            <>
-                                {shouldBeVisible(item)?
-                                    <ConcertItemM item={item} key={i}/>:null
-                                }
-                            </>
-                        ))}
+                        {concerts
+                            .filter(item=>doesConcertMatchFilter(item))
+                            .map((item,i)=>(
+                                <>
+                                    <ConcertItemM item={item} key={i} showDistance={sortByLocation}/>
+                                </>
+                            ))}
                     </MobileView>
                 </div>:<p id={"noConcertDatesText"}>no tour dates for now : (</p>}
         </div>
