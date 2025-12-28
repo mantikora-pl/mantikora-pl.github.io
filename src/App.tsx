@@ -13,7 +13,7 @@ import AboutUs from "./pages/AboutUs/AboutUs"
 import NotFound from "./pages/404/404"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
-// import PageInMaking from "./components/PageInMaking"
+import PageInMaking from "./components/PageInMaking"
 import MyFooter from "./components/MyFooter"
 import NewsArticle from "./pages/NewsArticle/NewsArticle";
 
@@ -94,13 +94,13 @@ function App(){
     return (
         <HashRouter>
             <div>
-                <div className={"page"} style={{cursor: "url('cursor.cur'), auto"}}>
+                <div className={"page"} style={{cursor:"url('cursor.cur'), auto"}}>
                     <span id={"top"}/>
                     <div className={"stickyTop"}>
                         <Header setSideMenuVisible={setSideMenuVisible} sideMenuVisible={sideMenuVisible}/>
-                        <Navbar sideMenuVisible={sideMenuVisible}/>
+                        <Navbar setSideMenuVisible={setSideMenuVisible} sideMenuVisible={sideMenuVisible}/>
                     </div>
-                   {/* <PageInMaking/>*/}
+                    <PageInMaking/>
                     <Routes>
                         {routes.map(({path,element})=>(
                             <Route key={path} path={path} element={element}/>

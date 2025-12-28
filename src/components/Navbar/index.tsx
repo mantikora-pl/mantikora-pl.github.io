@@ -34,7 +34,8 @@ export const navElements=[
 
 ]
 
-function Navbar({sideMenuVisible}:{sideMenuVisible:boolean}){
+function Navbar({sideMenuVisible,setSideMenuVisible}:{sideMenuVisible:boolean,
+    setSideMenuVisible:any}){
     const isWide=useMedia({minWidth:'1200px'});
 
 
@@ -52,7 +53,8 @@ function Navbar({sideMenuVisible}:{sideMenuVisible:boolean}){
             </BrowserView>
             <MobileView>
                 {sideMenuVisible?
-                    <MobileNav/>:<></>}
+                    <MobileNav setSideMenuVisible={setSideMenuVisible}/>:<></>
+                }
             </MobileView>
         </>
 
