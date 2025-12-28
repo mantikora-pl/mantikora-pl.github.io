@@ -1,25 +1,25 @@
 export function getColor(value:number,green:number=40,yellow:number=200,red:number=1000){
     if(value<green){
-        return '#389c14'
+        return `rgb(56,156,20)`
     }
     else if(value<yellow){
-        const ratio=(value-10)/90
-        const red=Math.round(56+(201*ratio))
-        const green=156
-        const blue=Math.round(20+(12*ratio))
-        return `rgb(${red}, ${green}, ${blue})`
+        const ratio=(value-green)/(yellow-green)
+        const calculatedRed=Math.round(56+(176*ratio))
+        const calculatedGreen=Math.round(156+(84*ratio))
+        const calculatedBlue=Math.round(20+(-8*ratio))
+        return `rgb(${calculatedRed}, ${calculatedGreen}, ${calculatedBlue})`
     }
     else if(value===yellow){
-        return '#e8f00c'
+        return `rgb(232,240,12)`
     }
     else if(value<red){
-        const ratio=(value-100)/500
-        const red=Math.round(232+(24*ratio))
-        const green=Math.round(240-(228*ratio))
-        const blue=12
-        return `rgb(${red}, ${green}, ${blue})`
+        const ratio=(value-yellow)/(red-yellow)
+        const calculatedRed=Math.round(232+(-45*ratio))
+        const calculatedGreen=Math.round(240+(-213*ratio))
+        const calculatedBlue=Math.round(12+(-12*ratio))
+        return `rgb(${calculatedRed}, ${calculatedGreen}, ${calculatedBlue})`
     }
     else{
-        return '#b61b00'
+        return `rgb(187,27,0)`
     }
 }

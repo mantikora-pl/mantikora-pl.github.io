@@ -13,13 +13,30 @@
     font-family:var(--fontFamilyStandard), serif;
     text-transform:uppercase;
     font-weight:var(--boldy);
+
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.2s;
+    animation-fill-mode:forwards;
+    animation-delay:0s;
+    animation-name:flyInFromLeftSimple;
 }
 
 .sideItem{
-    margin-top: var(--spaceBig);
-    margin-bottom: var(--spaceBig);
+    margin:var(--spaceBig) 0;
+    font-size:var(--fontML);
 }
 
 .languageSelectContainer{
     margin-bottom:var(--spaceBig);
 }
+
+@keyframes flyInFromLeftSimple{
+    from{
+        transform:translateX(-60%);
+    }
+    to{
+        transform:translateX(0%);
+    }
+}
+

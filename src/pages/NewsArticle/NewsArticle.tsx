@@ -4,6 +4,7 @@ import {localizeDate} from "../../helper/date";
 import {Link} from "react-router-dom";
 import ShareIcon from '@mui/icons-material/Share';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import {isMobile} from "react-device-detect";
 
 export default function NewsArticle(){
     const {id}=useParams();
@@ -18,7 +19,7 @@ export default function NewsArticle(){
             </div>
             <div className={"articleTitle"}>{newsData.title}</div>
             <div className={"articleDate"}>{localizeDate(newsData.year,newsData.month,newsData.day)}</div>
-            <button onClick={async()=>{
+            {!isMobile ?  <button onClick={async()=>{
                 try{
                     await navigator.share({
                         title:`${newsData.title}`,
@@ -27,10 +28,10 @@ export default function NewsArticle(){
                 }
                 catch{}
             }}
-                    className={"articleButton"}>
+                                  className={"articleButton"}>
                 <p> Share</p>
                 <ShareIcon/>
-            </button>
+            </button>:null}
             <div className={"articleContent"}>{newsData.content}</div>
             <div className={"articlePhotoContainer"}>
                 <img src={newsData.photoSrc} alt={newsData.title} className={"articlePhoto"}/>

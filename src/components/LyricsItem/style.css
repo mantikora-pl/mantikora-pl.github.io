@@ -27,6 +27,12 @@
     width:30px;
 }
 
+@media only screen and (max-width:900px){
+    .closeIcon{
+        width:40px!important;
+    }
+}
+
 .lyricsText{
     font-weight:var(--boldy);
     font-size:var(--fontM);

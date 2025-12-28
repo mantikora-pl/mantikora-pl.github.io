@@ -93,17 +93,6 @@ export const concertsRaw_mock:ConcertRaw[]=[
         visible:true
     },
     {
-        id:21,
-        date:translateDate(2026,8,13,getLanguage()),
-        numericDate:{year:2026,month:8,day:13},
-        name:"does this country exist???",
-        country:"",
-        state:"",
-        city:"Lavender Town",
-        buyLink:"https://www.ticketmaster.com/mantikora",
-        visible:true
-    },
-    {
         id:8,
         date:translateDate(2026,10,1,getLanguage()),
         numericDate:{year:2026,month:10,day:1},

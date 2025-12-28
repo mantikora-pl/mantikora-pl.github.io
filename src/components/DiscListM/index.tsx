@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './style.css'
 
 export interface Disc{
@@ -10,6 +10,27 @@ export interface Disc{
 }
 
 function DiscListM({items}:{items:Disc[]}){
+
+    useEffect(()=>{
+        const observer=new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    if(entry.target.classList.contains('discWrapperM')){
+                        entry.target.classList.add(Math.random()<0.5?'flyInLeftAnimation':'flyInRightAnimation')
+                    }
+                    observer.unobserve(entry.target)
+                }
+            })
+        })
+
+        const elements=document.querySelectorAll('.discWrapperM')
+        elements.forEach((element)=>observer.observe(element))
+
+        return ()=>{
+            elements.forEach((element)=>observer.unobserve(element))
+        }
+    },[])
+    
     return (
         <div className={"listWrapperM"}>
             {items.map((item,i)=>(
@@ -28,7 +49,6 @@ function DiscListM({items}:{items:Disc[]}){
                             <p className={"albumCreditsM"}>{item.credits}</p>
                         </div>
                     </div>
-                    <hr/>
                 </div>
             ))}
         </div>

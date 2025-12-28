@@ -11,12 +11,24 @@ export const navElements=[
     {name:getTranslation(getLanguage(),"news"),href:"/news",shortName:getTranslation(getLanguage(),"news-short")},
     {name:getTranslation(getLanguage(),"tour"),href:"/tour",shortName:getTranslation(getLanguage(),"tour-short")},
 
-    {name:getTranslation(getLanguage(),"discography"),href:"/discography",shortName:getTranslation(getLanguage(),"discography-short")},
+    {
+        name:getTranslation(getLanguage(),"discography"),
+        href:"/discography",
+        shortName:getTranslation(getLanguage(),"discography-short")
+    },
 
     {name:getTranslation(getLanguage(),"lyrics"),href:"/lyrics",shortName:getTranslation(getLanguage(),"lyrics-short")},
-    {name:getTranslation(getLanguage(),"timeline"),href:"/timeline",shortName:getTranslation(getLanguage(),"timeline-short")},
+    {
+        name:getTranslation(getLanguage(),"timeline"),
+        href:"/timeline",
+        shortName:getTranslation(getLanguage(),"timeline-short")
+    },
 
-    {name:getTranslation(getLanguage(),"aboutus"),href:"/aboutus",shortName:getTranslation(getLanguage(),"aboutus-short")},
+    {
+        name:getTranslation(getLanguage(),"aboutus"),
+        href:"/aboutus",
+        shortName:getTranslation(getLanguage(),"aboutus-short")
+    },
 
     /* {name:getTranslation(getLanguage(),"merch"),href:"https://www.mantikora-shop.pl"}*/
 
@@ -39,10 +51,8 @@ function Navbar({sideMenuVisible}:{sideMenuVisible:boolean}){
                 </ul>
             </BrowserView>
             <MobileView>
-                <div id={"sideMenuWrapper"}>
-                    {sideMenuVisible?
-                        <MobileNav/>:<></>}
-                </div>
+                {sideMenuVisible?
+                    <MobileNav/>:<></>}
             </MobileView>
         </>
 

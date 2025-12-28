@@ -27,7 +27,12 @@ p{
 }
 
 .stickyTop{
+    position:-webkit-sticky;
+    position:-moz-sticky;
+    position:-ms-sticky;
+    position:-o-sticky;
     position:sticky;
+    /*position: -webkit-sticky;*/
     top:0; /*do not delete*/
     z-index:var(--zNearest);
 }
@@ -120,6 +125,13 @@ p{
     margin:0 auto;
 }
 
+@media only screen and (max-width:900px){
+    .articlePage{
+        max-width:90vw !important;
+        margin:0 var(--spaceBig) !important;
+    }
+}
+
 .articleTopPhotoContainer{
     margin:0 auto var(--spaceHuge) auto;
     display:flex;
@@ -134,8 +146,8 @@ p{
     font-size:var(--fontXL);
 }
 
-.articleDate{
-
+.articleDate, .articleTitle, .articleContent{
+    margin:var(--spaceStandard) 0;
 }
 
 .articleButton{
@@ -145,9 +157,10 @@ p{
     padding:0 !important;
     align-items:center;
     display:flex;
-    color:var( --textColorMain);
+    color:var(--textColorMain);
     font-size:var(--fontSM);
 }
+
 .articleButton p{
     font-size:var(--fontSM);
     margin-right:var(--spaceTiny);
@@ -178,6 +191,7 @@ p{
     display:flex;
     align-items:center;
 }
+
 .articleBackLink p{
     margin-left:var(--spaceTiny);
 }
@@ -246,9 +260,17 @@ p{
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
-    /*width:80vw;*/
     min-width:60vw;
     padding:var(--spaceStandard);
+}
+
+@media only screen and (max-width:900px){
+    .concertPageHeader{
+        width:80vw;
+    }
+    .searchBarContainer{
+        max-width:25vw;
+    }
 }
 
 #concertsControlsContainer{
@@ -259,7 +281,6 @@ p{
 #buttonOrderBy, #buttonOrderByM{
     background-color:var(--blueAccentColor);
     color:var(--textColorMain);
-    font-size:var(--fontM);
     border:0;
     border-radius:var(--roundedCornersSmall);
 }
@@ -268,12 +289,14 @@ p{
     width:140px;
     height:60px;
     padding:var(--spaceStandard);
+    font-size:var(--fontM);
 }
 
 #buttonOrderByM{
-    width:100px;
+    width:80px;
     min-height:20px;
     padding:var(--spaceSmall);
+    font-size:var(--fontS);
 }
 
 #noConcertDatesText{
@@ -295,7 +318,7 @@ p{
     outline:none;
     color:var(--textColorMain);
     background-color:var(--backgroundColorLight);
-    min-width:150px;
+    max-width:30vw;
 }
 
 /*endregion*/
@@ -308,6 +331,7 @@ p{
 
 #lyricsImageBackground{
     border-width:20px 0;
+    min-height:70vh;
 }
 
 #lyricsPageIn{
@@ -332,6 +356,18 @@ p{
     align-self:flex-start;
     justify-content:center;
     align-items:center;
+}
+
+@media only screen and (max-width:900px){
+    #songListContainer{
+        display:none;
+    }
+
+    #lyricsContainer{
+        margin:0 auto;
+        width:85% !important;
+    }
+
 }
 
 #songList{
@@ -404,6 +440,7 @@ p{
 
 /*endregion*/
 
+/*region not found*/
 #notFoundContainer{
     margin-top:var(--spaceBig);
     display:flex;
@@ -425,6 +462,7 @@ p{
 #notFoundContainer a{
     font-size:var(--fontML);
 }
+/*endregion*/
 
 /*region animations*/
 
@@ -434,6 +472,14 @@ p{
     animation-iteration-count:1;
     animation-timing-function:ease-in;
     animation-duration:0.5s;
+}
+
+.fadeInAnimationShort{
+    opacity:1;
+    animation-name:fadeInOpacity;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.25s;
 }
 
 @media screen and (max-width:var(--mediumScreen)){

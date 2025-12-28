@@ -12,8 +12,8 @@
     display:block;
     flex-direction:column !important;
     justify-content:space-between;
-    margin-top:40px; /*change because wtf*/
     max-width:800px;
+    margin:var(--spaceHuge);
 }
 
 .coverArtM, .albumDetailsWrapperM{
@@ -22,6 +22,7 @@
 
 .coverArtM{
     aspect-ratio:1 !important;
+    border-radius:var(--roundedCornersSmall);
 }
 
 .albumTitleM{
@@ -46,4 +47,42 @@
     margin-top:var(--spaceBig);
     font-size:var(--fontM);
     text-align:center;
+}
+
+.flyInLeftAnimation, .flyInRightAnimation{
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.4s;
+    animation-fill-mode:forwards;
+    animation-delay:0s;
+}
+
+.flyInLeftAnimation{
+    animation-name:flyInFromLeft;
+}
+
+.flyInRightAnimation{
+    animation-name:flyInFromRight;
+}
+
+@keyframes flyInFromLeft{
+    from{
+        opacity:0.7;
+        transform:translateX(-15%);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes flyInFromRight{
+    from{
+        opacity:0.7;
+        transform:translateX(15%);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
 }

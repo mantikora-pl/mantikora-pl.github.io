@@ -6,7 +6,6 @@ export interface LyricsItems{
     id:number,
     name:string,
     lyrics:string,
-    credits?:string, //delete
 }
 
 function LyricsItem({items}:{items:LyricsItems[]}){
@@ -26,7 +25,7 @@ function LyricsItem({items}:{items:LyricsItems[]}){
                         </svg>
                     </div>
                     {visibleIndex.includes(i)?
-                        <p className={"lyricsText"}>
+                        <p className={"lyricsText fadeInAnimationShort"}>
                             <NewLineToBr>{item.lyrics}</NewLineToBr>
                         </p>
                         :null}

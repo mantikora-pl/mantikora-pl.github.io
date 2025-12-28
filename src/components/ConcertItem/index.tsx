@@ -33,7 +33,7 @@ export function generateFlagClassName(code:string):string{
 
 ScrollReveal().reveal('.concertRow')
 
-function LocationDisclaimer(){
+export function LocationDisclaimer(){
     return <Tooltip title={getTranslation(getLanguage(),"approxLocation")} placement={"top"}>
         <p>*</p>
     </Tooltip>

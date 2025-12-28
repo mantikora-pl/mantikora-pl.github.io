@@ -65,7 +65,6 @@ function Header({sideMenuVisible,setSideMenuVisible}:{sideMenuVisible:boolean,
                 </div>
             </BrowserView>
 
-
             <MobileView>
                 <div className={"pageHeader"}>
                 <div>
@@ -97,8 +96,6 @@ function Header({sideMenuVisible,setSideMenuVisible}:{sideMenuVisible:boolean,
                 </div>
                 </div>
             </MobileView>
-
-
 
         </header>
     )
