@@ -1,13 +1,18 @@
-import {Disc} from "../components/DiscList"
 import {getLanguage,getTranslation} from "../helper/translation"
 
 export const single=" ("+getTranslation(getLanguage(),"single")+")"
+export interface Disc{
+    credits?:string,
+    title:string,
+    date:string,
+    coverArtSrc?:string,
+    songs:string[]
+}
 
 export const discsData_real:Disc[]=[
     {
         title:"M.I.N.D",
         date:"XX.XX.2026",
-        coverArtSrc:"/mind.png",
         songs:[
             "Devil's Mouth"+single,
             "Davy Jones's Locker",
@@ -24,7 +29,6 @@ export const discsData_real:Disc[]=[
     {
         title:"Devil's Mouth - demo",
         date:"XX.3.2026",
-        coverArtSrc:"/devilsMouth.png",
         songs:[
             "Devil's Mouth",
             "Vanitas",

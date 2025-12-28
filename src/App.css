@@ -110,7 +110,7 @@ p{
 
 /*region news page*/
 #newsPage{
-    max-width:90vw;
+    min-height:70vh;
     margin:0 auto;
 }
 
@@ -303,10 +303,11 @@ p{
     font-size:var(--fontS);
 }
 
-#noConcertDatesText{
+.noDataText{
     font-size:var(--fontL);
     margin:var(--spaceBig);
     text-transform:uppercase;
+    text-align:center;
 }
 
 .searchBarContainer{

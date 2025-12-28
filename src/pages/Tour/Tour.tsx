@@ -33,7 +33,7 @@ export default function Tour(){
         },500+concertElements.length*70)
     }
 
-    function visibleCount():boolean{
+    function visibleConcertsExist():boolean{
         let count=0
         concertsRaw.forEach((item)=>{
             if(shouldBeVisible(item)) count++
@@ -90,25 +90,27 @@ export default function Tour(){
         <div className={"width100 centeredFlexColumnContainer"}>
             <div className={"concertPageHeader"}>
                 <div className={"searchBarContainer"}>
-                    <input
-                        type="text"
-                        id="concertSearch"
-                        onChange={e=>handleFilterConcerts(e.target.value)}
-                        placeholder={isMobile?getTranslation(getLanguage(),"search"):getTranslation(getLanguage(),"concertSearch")}
-                    />
+                    {visibleConcertsExist()?
+                        <input
+                            type="text"
+                            id="concertSearch"
+                            onChange={e=>handleFilterConcerts(e.target.value)}
+                            placeholder={isMobile?getTranslation(getLanguage(),"search"):getTranslation(getLanguage(),"concertSearch")}
+                        />
+                        :null}
                 </div>
                 <div className={"pageTitle"}>Tour</div>
                 <div id={"concertsControlsContainer"}>
-                    <button
+                    {visibleConcertsExist()?<button
                         id={isMobile?"buttonOrderByM":"buttonOrderBy"}
                         onClick={()=>handleSortTypeChange(!sortByLocation)}>
                         {sortByLocation?getTranslation(getLanguage(),"sortByDate"):getTranslation(getLanguage(),"sortByLocation")}
-                    </button>
+                    </button>:null}
                 </div>
             </div>
         </div>
         <div className={"width100 centeredFlexColumnContainer"}>
-            {visibleCount()?
+            {visibleConcertsExist()?
                 <div>
                     <BrowserView>
                         <table>
@@ -132,7 +134,9 @@ export default function Tour(){
                                 </>
                             ))}
                     </MobileView>
-                </div>:<p id={"noConcertDatesText"}>no tour dates for now : (</p>}
+                </div>:
+                <p className={"noDataText"}>{getTranslation(getLanguage(),"noConcerts")}</p>
+            }
         </div>
     </div>
 }

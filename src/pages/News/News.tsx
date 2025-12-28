@@ -33,48 +33,54 @@ export default function News({maxItemsPerPage=12}:{maxItemsPerPage?:number}){
 
     return <div className={"innerPage skullBackground"}>
         <div id={"newsPage"}>
-            <BrowserView>
-                <div>
-                    {bigNewsItems.map((item,index)=>(
-                        <BigNewsItem item={item} key={index}/>
-                    ))}
-                </div>
-                <div id={"smallNewsWrapper"}>
-                    {smallNewsItems.map((item,index)=>(
-                        <SmallNewsItem item={item} key={index}
-                                       cssClass={`${index%4===0?' noLeftMargin':''} ${index%4===3?'noRightMargin':''}`}/>
-                    ))}
-                </div>
-            </BrowserView>
-            <MobileView>
-                <div>
-                    {currentItems.map((item,index)=>(
-                        <BigNewsItem item={item} key={index}/>
-                    ))}
-                </div>
-            </MobileView>
-            <div className={"paginationWrapper"}>
-                <ReactPaginate
-                    nextLabel={isMobile?">":`${getTranslation(getLanguage(),"next")} >`}
-                    onPageChange={handlePageClick}
-                    pageCount={pageCount}
-                    previousLabel={isMobile?"<":`< ${getTranslation(getLanguage(),"previous")}`}
-                    containerClassName="pagination"
-                    pageRangeDisplayed={3}
-                    activeClassName="active"
-                    marginPagesDisplayed={2}
-                    pageClassName="pageItem"
-                    pageLinkClassName="pageLink"
-                    previousClassName="pageItem"
-                    previousLinkClassName="pageLink"
-                    nextClassName="pageItem"
-                    nextLinkClassName="pageLink"
-                    breakLabel="..."
-                    breakClassName="pageItem"
-                    breakLinkClassName="pageLink"
-                    renderOnZeroPageCount={null}
-                />
-            </div>
+            {currentItems.length>0?
+                <>
+                    <BrowserView>
+                        <div>
+                            {bigNewsItems.map((item,index)=>(
+                                <BigNewsItem item={item} key={index}/>
+                            ))}
+                        </div>
+                        <div id={"smallNewsWrapper"}>
+                            {smallNewsItems.map((item,index)=>(
+                                <SmallNewsItem item={item} key={index}
+                                               cssClass={`${index%4===0?' noLeftMargin':''} ${index%4===3?'noRightMargin':''}`}/>
+                            ))}
+                        </div>
+                    </BrowserView>
+                    <MobileView>
+                        <div>
+                            {currentItems.map((item,index)=>(
+                                <BigNewsItem item={item} key={index}/>
+                            ))}
+                        </div>
+                    </MobileView>
+                    <div className={"paginationWrapper"}>
+                        <ReactPaginate
+                            nextLabel={isMobile?">":`${getTranslation(getLanguage(),"next")} >`}
+                            onPageChange={handlePageClick}
+                            pageCount={pageCount}
+                            previousLabel={isMobile?"<":`< ${getTranslation(getLanguage(),"previous")}`}
+                            containerClassName="pagination"
+                            pageRangeDisplayed={3}
+                            activeClassName="active"
+                            marginPagesDisplayed={2}
+                            pageClassName="pageItem"
+                            pageLinkClassName="pageLink"
+                            previousClassName="pageItem"
+                            previousLinkClassName="pageLink"
+                            nextClassName="pageItem"
+                            nextLinkClassName="pageLink"
+                            breakLabel="..."
+                            breakClassName="pageItem"
+                            breakLinkClassName="pageLink"
+                            renderOnZeroPageCount={null}
+                        />
+                    </div>
+                </>
+                :
+                <p className={"noDataText"}>{getTranslation(getLanguage(),"noNews")}</p>
+            }
 
         </div>
 

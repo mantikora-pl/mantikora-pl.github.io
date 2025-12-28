@@ -181,6 +181,14 @@ export const translations={
     "comingSoon":{
         "en":"lyrics coming soon",
         "pl":"tekst będzie dostepny niedługo"
+    },
+    "noNews":{
+        "en":"No articles are available yet",
+        "pl":"Nie ma jeszcze artykułów"
+    },
+    "noConcerts":{
+        "en":"No concerts dates yet",
+        "pl":"Póki co nie ma koncertów"
     }
 
 

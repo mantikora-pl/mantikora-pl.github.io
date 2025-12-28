@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar"
 import PageInMaking from "./components/PageInMaking"
 import MyFooter from "./components/MyFooter"
 import NewsArticle from "./pages/NewsArticle/NewsArticle";
+import {mock} from "./data/mock";
 
 /*
 const sample:PersonalData={
@@ -100,7 +101,7 @@ function App(){
                         <Header setSideMenuVisible={setSideMenuVisible} sideMenuVisible={sideMenuVisible}/>
                         <Navbar setSideMenuVisible={setSideMenuVisible} sideMenuVisible={sideMenuVisible}/>
                     </div>
-                    <PageInMaking/>
+                    {mock?<PageInMaking/>:null}
                     <Routes>
                         {routes.map(({path,element})=>(
                             <Route key={path} path={path} element={element}/>

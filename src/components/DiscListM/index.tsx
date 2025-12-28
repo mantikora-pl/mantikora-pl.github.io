@@ -1,13 +1,6 @@
 import React,{useEffect} from 'react'
 import './style.css'
-
-export interface Disc{
-    credits?:string,
-    title:string,
-    date:string,
-    coverArtSrc:string,
-    songs:string[]
-}
+import {Disc} from "../../data/discsData";
 
 function DiscListM({items}:{items:Disc[]}){
 
@@ -30,13 +23,13 @@ function DiscListM({items}:{items:Disc[]}){
             elements.forEach((element)=>observer.unobserve(element))
         }
     },[])
-    
+
     return (
         <div className={"listWrapperM"}>
             {items.map((item,i)=>(
                 <div>
                     <div className="discWrapperM" key={i}>
-                        <img src={item.coverArtSrc} alt={"random pic"} className={"coverArtM"}/>
+                        <img src={item.coverArtSrc??"placeholder.webp"} alt={"album cover art"} className={"coverArtM"}/>
 
                         <div className={"albumDetailsWrapperM"}>
                             <p className={"albumTitleM"}>{item.title}</p>

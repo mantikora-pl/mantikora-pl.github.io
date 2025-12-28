@@ -1,14 +1,6 @@
 import React,{useEffect} from 'react'
 import './style.css'
-
-export interface Disc{
-    credits?:string,
-    title:string,
-    date:string,
-    coverArtSrc:string,
-    songs:string[]
-}
-
+import {Disc} from "../../data/discsData";
 function getCssClass(index:number){
     if(index%2===0) return "discWrapperLeft"
 
@@ -48,7 +40,7 @@ function DiscList({items}:{items:Disc[]}){
         <div className={"listContainer"}>
             {items.map((item,i)=>(
                 <div className={getCssClass(i)} key={i}>
-                    <img src={item.coverArtSrc} alt={"random pic"} className={"coverArt"}/>
+                    <img src={item.coverArtSrc??"placeholder.webp"}  alt={"album cover art"} className={"coverArt"}/>
                     <div className={"albumDetailsWrapper"}>
                         <p className={"albumTitle"}>{item.title}</p>
                         <p className={"albumDate"}>{item.date}</p>
