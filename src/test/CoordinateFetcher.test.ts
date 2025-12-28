@@ -8,6 +8,7 @@ describe("CoordinateFetcher",()=>{
         mockSetCoordinates=jest.fn()
         mockGpsLocation={current:false}
         CoordinateFetcher.fetchInProgress=false
+        jest.clearAllMocks()
     })
 
     it("should fetch coordinates using geolocation and set them",async()=>{
@@ -21,10 +22,13 @@ describe("CoordinateFetcher",()=>{
 
         Object.defineProperty(global.navigator,'geolocation',{value:mockGeolocation,writable:true})
 
-        await CoordinateFetcher.getInstance().getCoordinates(
+        const promise=CoordinateFetcher.getInstance().getCoordinates(
             mockSetCoordinates,
             mockGpsLocation
         )
+
+        await new Promise(resolve=>setTimeout(resolve,10))
+        await promise
 
         expect(mockSetCoordinates).toHaveBeenCalledWith({
             lat:51.1,
@@ -46,10 +50,13 @@ describe("CoordinateFetcher",()=>{
             })
         ) as jest.Mock
 
-        await CoordinateFetcher.getInstance().getCoordinates(
+        const promise=CoordinateFetcher.getInstance().getCoordinates(
             mockSetCoordinates,
             mockGpsLocation
         )
+
+        await new Promise(resolve=>setTimeout(resolve,10))
+        await promise
 
         expect(mockSetCoordinates).toHaveBeenCalledWith({
             lat:40.712776,
@@ -89,10 +96,13 @@ describe("CoordinateFetcher",()=>{
             })
         ) as jest.Mock
 
-        await CoordinateFetcher.getInstance().getCoordinates(
+        const promise=CoordinateFetcher.getInstance().getCoordinates(
             mockSetCoordinates,
             mockGpsLocation
         )
+
+        await new Promise(resolve=>setTimeout(resolve,10))
+        await promise
 
         expect(mockSetCoordinates).toHaveBeenCalledWith({
             lat:34.0522,
