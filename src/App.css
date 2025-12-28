@@ -104,6 +104,10 @@ p{
 
 /*endregion*/
 
+#instagramWidgetContainer{
+    margin:var(--spaceBig) 0;
+}
+
 /*region news page*/
 #newsPage{
     max-width:90vw;
