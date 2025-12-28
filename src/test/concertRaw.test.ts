@@ -4,6 +4,7 @@ import {getLanguage} from "../helper/translation";
 
 jest.mock("../helper/date",()=>({
     daysToEvent:jest.fn(),
+    translateDate:jest.fn((year,month,day,lang)=>({year,month,day}))
 }))
 
 describe("shouldBeVisible",()=>{

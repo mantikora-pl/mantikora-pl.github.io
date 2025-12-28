@@ -1,23 +1,26 @@
 import {getLanguage,getTranslation,translations} from '../helper/translation'
-import cookies from 'universal-cookie'
+import * as translationModule from '../helper/translation'
 
-jest.mock('universal-cookie',()=>{
-    const mockCookies={
-        get:jest.fn(),
-        set:jest.fn(),
-    }
-    return jest.fn(()=>mockCookies)
-})
+jest.mock('universal-cookie')
 
-const mockCookies=new cookies()
 
 describe('getLanguage',()=>{
     beforeEach(()=>{
         jest.clearAllMocks()
     })
 
+    const setupMockCookies=()=>{
+        const mockCookies=translationModule.cookies as jest.Mocked<typeof translationModule.cookies>
+        mockCookies.get=jest.fn().mockReturnValue(undefined)
+        mockCookies.set=jest.fn()
+        return mockCookies
+    }
+
     it('should return existing language from cookies if set',()=>{
-        (mockCookies.get as jest.Mock).mockReturnValue('fr')
+        const mockCookies=translationModule.cookies as jest.Mocked<typeof translationModule.cookies>
+        mockCookies.get=jest.fn().mockReturnValue('fr')
+        mockCookies.set=jest.fn()
+        
         expect(getLanguage()).toBe('fr')
         expect(mockCookies.get).toHaveBeenCalledWith('language')
         expect(mockCookies.set).not.toHaveBeenCalled()
@@ -25,10 +28,9 @@ describe('getLanguage',()=>{
 
     it('should set and return browser language if valid and not in cookies',()=>{
         const originalNavigatorLanguage=navigator.language
-
-        Object.defineProperty(global.navigator,'language',{value:'en-US',writable:true});
-        (mockCookies.get as jest.Mock).mockReturnValue(undefined)
-
+        Object.defineProperty(global.navigator,'language',{value:'en-US',writable:true})
+        
+        const mockCookies=setupMockCookies()
         expect(getLanguage()).toBe('en')
         expect(mockCookies.set).toHaveBeenCalledWith('language','en',{path:'/'})
 
@@ -37,10 +39,9 @@ describe('getLanguage',()=>{
 
     it('should set and return "en" if browser language is invalid',()=>{
         const originalNavigatorLanguage=navigator.language
-
-        Object.defineProperty(global.navigator,'language',{value:'xx-XX',writable:true});
-        (mockCookies.get as jest.Mock).mockReturnValue(undefined)
-
+        Object.defineProperty(global.navigator,'language',{value:'xx-XX',writable:true})
+        
+        const mockCookies=setupMockCookies()
         expect(getLanguage()).toBe('en')
         expect(mockCookies.set).toHaveBeenCalledWith('language','en',{path:'/'})
 
