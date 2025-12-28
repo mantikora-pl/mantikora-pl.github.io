@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import {Concert,LocationDisclaimer} from "../ConcertItem"
+import {Concert} from "../ConcertItem"
 import {localizeDate} from "../../helper/date"
 import {getLanguage,getTranslation} from "../../helper/translation";
 import {getColor} from "../../helper/getColor";

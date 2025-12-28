@@ -440,6 +440,7 @@ p{
 
 /*endregion*/
 
+/*region not found*/
 #notFoundContainer{
     margin-top:var(--spaceBig);
     display:flex;
@@ -461,6 +462,7 @@ p{
 #notFoundContainer a{
     font-size:var(--fontML);
 }
+/*endregion*/
 
 /*region animations*/
 
