@@ -27,6 +27,10 @@ p{
 }
 
 .stickyTop{
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     position:sticky;
     /*position: -webkit-sticky;*/
     top:0; /*do not delete*/
@@ -309,6 +313,7 @@ p{
 
 #lyricsImageBackground{
     border-width:20px 0;
+    min-height:70vh;
 }
 
 #lyricsPageIn{
@@ -333,6 +338,17 @@ p{
     align-self:flex-start;
     justify-content:center;
     align-items:center;
+}
+
+@media only screen and (max-width:900px){
+    #songListContainer{
+        display:none;
+    }
+    #lyricsContainer{
+        margin:0 auto;
+        width:85%!important;
+    }
+
 }
 
 #songList{
@@ -435,6 +451,14 @@ p{
     animation-iteration-count:1;
     animation-timing-function:ease-in;
     animation-duration:0.5s;
+}
+
+.fadeInAnimationShort{
+    opacity:1;
+    animation-name:fadeInOpacity;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-duration:0.25s;
 }
 
 @media screen and (max-width:var(--mediumScreen)){
