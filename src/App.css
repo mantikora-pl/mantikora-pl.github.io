@@ -27,10 +27,10 @@ p{
 }
 
 .stickyTop{
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
+    position:-webkit-sticky;
+    position:-moz-sticky;
+    position:-ms-sticky;
+    position:-o-sticky;
     position:sticky;
     /*position: -webkit-sticky;*/
     top:0; /*do not delete*/
@@ -125,6 +125,13 @@ p{
     margin:0 auto;
 }
 
+@media only screen and (max-width:900px){
+    .articlePage{
+        max-width:90vw !important;
+        margin:0 var(--spaceBig) !important;
+    }
+}
+
 .articleTopPhotoContainer{
     margin:0 auto var(--spaceHuge) auto;
     display:flex;
@@ -139,8 +146,8 @@ p{
     font-size:var(--fontXL);
 }
 
-.articleDate{
-
+.articleDate, .articleTitle, .articleContent{
+    margin:var(--spaceStandard) 0;
 }
 
 .articleButton{
@@ -150,9 +157,10 @@ p{
     padding:0 !important;
     align-items:center;
     display:flex;
-    color:var( --textColorMain);
+    color:var(--textColorMain);
     font-size:var(--fontSM);
 }
+
 .articleButton p{
     font-size:var(--fontSM);
     margin-right:var(--spaceTiny);
@@ -183,6 +191,7 @@ p{
     display:flex;
     align-items:center;
 }
+
 .articleBackLink p{
     margin-left:var(--spaceTiny);
 }
@@ -344,9 +353,10 @@ p{
     #songListContainer{
         display:none;
     }
+
     #lyricsContainer{
         margin:0 auto;
-        width:85%!important;
+        width:85% !important;
     }
 
 }
