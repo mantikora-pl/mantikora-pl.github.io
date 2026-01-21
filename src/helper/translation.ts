@@ -130,8 +130,8 @@ export const translations={
         "pl":""
     },
     "timelineDesc-4":{
-        "en":"Zespół w pełnym składzie",
-        "pl":"Zespół w pełnym składzie"
+        "en":"Pierwsza próba w pełnym składzie",
+        "pl":"First rehersal with all 5 band members"
     },
     "timelineSubTitle-4":{
         "en":"",
