@@ -21,14 +21,10 @@ export const bandMembers:Socials[]=[
         innerItems:[
             {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
         ]},
-    {entityName: "*gitarzysta którego nie ma*",
+    {entityName: "Maciej",
         mainImage: "/socials/JesusChad.png",
         innerItems:[
-            {icon:"/socials/youtube.png",link:" https://www.youtube.com/404",name:"youtube"},
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
-            {icon:"/socials/facebook.png",link:"https://www.facebook.com",name:"Facebook"},
-            {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
-            {icon:"/socials/tiktok.png",link:"https://www.tiktok.com/404",name:"Tik Tok"},
         ]},
     {entityName: "Kuba",
         mainImage: "/socials/MonsterBoomer.png",
