@@ -9,13 +9,15 @@ export const timeLineItems_real:TimelineElement[]=[
         description:getTranslation(getLanguage(),"timelineDesc-5"),
         photo:""
     },
-    /*   {
+    {
            id:4,
-           date:"2025 August",
+           year:2026,
+           month:1,
+           day:20,
            subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
            description:getTranslation(getLanguage(),"timelineDesc-4"),
-           photo:""
-       },*/
+           photo:"fullband.png"
+       },
     {
         id:3,
         year:2025,
