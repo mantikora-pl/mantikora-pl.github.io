@@ -9,7 +9,7 @@ export const timeLineItems_real:TimelineElement[]=[
         description:getTranslation(getLanguage(),"timelineDesc-5"),
         photo:""
     },
-    {
+  /*  {
            id:4,
            year:2026,
            month:1,
@@ -17,7 +17,7 @@ export const timeLineItems_real:TimelineElement[]=[
            subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
            description:getTranslation(getLanguage(),"timelineDesc-4"),
            photo:"fullband.png"
-       },
+       },*/
     {
         id:3,
         year:2025,

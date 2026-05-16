@@ -15,20 +15,20 @@ export const discsData_real:Disc[]=[
         date:"XX.XX.2026",
         songs:[
             "Devil's Mouth"+single,
-            "Davy Jones's Locker",
+            "Vanitas",
+            "Kompania",
             "Anima Sola"+single,
             "Herxheim",
+            "Davy Jones's Locker",
             "The Hanged Man XII",
             "Judgement XX",
-            "Vanitas"+single,
-            "Kompania",
             "MIND"+single,
         ],
         credits:getTranslation(getLanguage(),"writtenByEveryone")
     },
     {
         title:"Devil's Mouth - demo",
-        date:"XX.3.2026",
+        date:"28.4.2026",
         songs:[
             "Devil's Mouth",
             "Vanitas",

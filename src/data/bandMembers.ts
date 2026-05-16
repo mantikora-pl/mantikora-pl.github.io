@@ -26,12 +26,12 @@ export const bandMembers:Socials[]=[
         innerItems:[
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
         ]},
-    {entityName: "Kuba",
+    {entityName: "perkusista którego nie ma",
         mainImage: "/socials/MonsterBoomer.png",
         innerItems:[
-            {icon:"/socials/youtube.png",link:"https://www.youtube.com/@diabeloo8004",name:"youtube"},
-            {icon:"/socials/instagram.png",link:"https://www.instagram.com/jemiolsc2/",name:"instagram"},
-            {icon:"/socials/twitter.png",link:"https://x.com/Jemiol2137",name:"X (twitter)"},
+            {icon:"/socials/youtube.png",link:"https://www.youtube.com/404",name:"youtube"},
+            {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
+            {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
         ]},
 
     {entityName: "Janek",

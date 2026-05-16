@@ -77,18 +77,22 @@ export const translations={
         "pl":"STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE"
     },
     "aboutUsText":{
-        "en":"We're a thrash metal band from Poznan, Poland.\n"+
-            "We've been going since April 2025, we have a few of our own songs, and we're working on our demo.\n"+
-            "We're aiming to drop our first album and hit the stage in 2026, so stay tuned! \n"+
+        "en":"WE'RE LOOKING FOR A DRUMMER\n" +
+            "We're a thrash metal band from Poznan, Poland.\n"+
+            "We've been going since April 2025, we recorded a demo with 4 songs, and have more coming.\n"+
+            "We'd be ready to play live, but we're still looking for a new drummer :( \n"+
+            "We're aiming to drop a single this year, so stay tuned! \n"+
             "Meanwhile, we invite you to follow us on our social media profiles.",
-        "pl":"Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
-            "Powstaliśmy w kwietniu 2025 roku, obecnie mamy kilka autorskich utworów i pracujemy nad demo.\n"+
-            "Planujemy wydać pierwszy album i zacząć koncertować w 2026, także czekajcie na nas! \n"+
+        "pl":"SZUKAMY PERKUSISTY\n" +
+            "Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
+            "Powstaliśmy w kwietniu 2025 roku, nagraliśmy demo z 4 utworami, i piszemy więcej, "+
+            "niedługo wyjdzie singiel. \n"+
+            "Będziemy gotowi koncertować jak znajdziemy perkusiste, \n"+
             "a w międzyczasie zapraszamy do odwiedzenia naszych profili na mediach społecznościowych."
     },
     "writtenByEveryone":{
-        "en":"Written by the whole band",
-        "pl":"Napisany przez cały zespół"
+        "en":"Written by Filip & Aleks",
+        "pl":"Utwór napisany przez Filipa i Aleksa"
     },
     "honorableMentions":{
         "en":"Honorable mentions: ",
@@ -104,8 +108,8 @@ export const translations={
     },
 
     "timelineDesc-1":{
-        "en":"We've started to work on our first song - Devil's Mouth",
-        "pl":"Zaczyna powstawać pierwszy wspólny utwór - Devil's Mouth"
+        "en":"We've met for the first time and started working on our first song - Devil's Mouth",
+        "pl":"Spotkaliśmy się poraz pierwszy, zaczęliśmy pracować nad pierwszym wspólnyn utwórem - Devil's Mouth"
     },
     "timelineSubTitle-1":{
         "en":"",
@@ -139,8 +143,8 @@ export const translations={
     },
 
     "timelineDesc-5":{
-        "en":"We've recorded our demo",
-        "pl":"Zostaje nagrane demo"
+        "en":"In first half of 2026 we've recorded our demo which isn't public yet",
+        "pl":"W pierwszej połowie 2026 nagraliśmy demo, które nie jest publiczne"
     },
     "timelineSubTitle-5":{
         "en":"",
