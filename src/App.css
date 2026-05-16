@@ -119,6 +119,8 @@ p{
     flex-direction:row;
     justify-content:space-between;
     flex-wrap:wrap;
+    max-width:90vw;
+    margin: 0 auto;
 }
 
 /*endregion*/
