@@ -86,6 +86,7 @@ const routes=[
     {path:'/timeline',element:<BandTimeline/>},
     {path:'/aboutus',element:<AboutUs/>},
     {path:"/article/:id",element:<NewsArticle/>},
+    {path:"/secret-image",element:<img src={"shrendar-logo-temp.png"} alt={""}/>},
     {path:'*',element:<NotFound/>},
     /*{path:'/about/:filip',element:<Person person={sample}/>}*/
 ]
