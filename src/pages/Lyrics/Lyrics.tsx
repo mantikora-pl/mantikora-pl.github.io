@@ -4,7 +4,6 @@ import {getLanguage,getTranslation} from "../../helper/translation"
 import {HashLink as Link} from 'react-router-hash-link'
 import ScrollToTop from "react-scroll-to-top"
 import {songs} from "../../data/lyrics"
-import NotFound from "../404/404";
 const songsR=songs.reverse()
 
 export default function Lyrics(){
