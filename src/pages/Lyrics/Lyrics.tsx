@@ -29,7 +29,6 @@ export default function Lyrics(){
                 <div id={"lyricsContainer"}>
                     <LyricsItem items={songsR}/>
                 </div>
-                <img src={"shrendar-logo-temp.png"} alt={""} style={{display:"none"}}/>
 
             </main>
             <ScrollToTop smooth/>
