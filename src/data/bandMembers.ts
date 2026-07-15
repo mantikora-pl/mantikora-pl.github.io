@@ -26,12 +26,10 @@ export const bandMembers:Socials[]=[
         innerItems:[
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
         ]},
-    {entityName: "perkusista którego nie ma",
+    {entityName: "Patryk",
         mainImage: "/socials/MonsterBoomer.png",
         innerItems:[
-            {icon:"/socials/youtube.png",link:"https://www.youtube.com/404",name:"youtube"},
             {icon:"/socials/instagram.png",link:"https://www.instagram.com/404/",name:"instagram"},
-            {icon:"/socials/twitter.png",link:"https://x.com/404",name:"X (twitter)"},
         ]},
 
     {entityName: "Janek",
