@@ -4,6 +4,7 @@ import {getLanguage,getTranslation} from "../../helper/translation"
 import {HashLink as Link} from 'react-router-hash-link'
 import ScrollToTop from "react-scroll-to-top"
 import {songs} from "../../data/lyrics"
+import NotFound from "../404/404";
 const songsR=songs.reverse()
 
 export default function Lyrics(){
@@ -29,6 +30,7 @@ export default function Lyrics(){
                 <div id={"lyricsContainer"}>
                     <LyricsItem items={songsR}/>
                 </div>
+                <img src={"shrendar-logo-temp.png"} alt={""} style={{display:"none"}}/>
 
             </main>
             <ScrollToTop smooth/>
