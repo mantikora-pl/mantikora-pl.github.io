@@ -90,7 +90,7 @@ export const translations={
     },
     "writtenByEveryone":{
         "en":"Written by Filip & Aleks",
-        "pl":"Utwór napisany przez Filipa i Aleksa"
+        "pl":"Utwory napisane przez Filipa i Aleksa"
     },
     "honorableMentions":{
         "en":"Honorable mentions: ",
@@ -132,8 +132,8 @@ export const translations={
         "pl":""
     },
     "timelineDesc-4":{
-        "en":"First rehersal with all 5 band members",
-        "pl":"Pierwsza próba w pełnym składzie"
+        "en":"First rehearsal with the current 5 band members",
+        "pl":"Pierwsza próba w obecnym pełnym składzie"
     },
     "timelineSubTitle-4":{
         "en":"",
@@ -141,8 +141,8 @@ export const translations={
     },
 
     "timelineDesc-5":{
-        "en":"In first half of 2026 we've recorded our demo which isn't public yet",
-        "pl":"W pierwszej połowie 2026 nagraliśmy demo, które nie jest publiczne"
+        "en":"In first half of 2026 we've recorded our demo (which isn't publicly available)",
+        "pl":"W pierwszej połowie 2026 nagraliśmy demo (które nie jest publicznie dostępne)"
     },
     "timelineSubTitle-5":{
         "en":"",
