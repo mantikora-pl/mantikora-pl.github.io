@@ -34,5 +34,20 @@ export const songs: LyricsItems[] = [
         id: 4,
         name: "MIND",
         lyrics: lyrics[3] ?? getTranslation(getLanguage(),"comingSoon"),
-    }
+    },
+    {
+        id:5,
+        name:"December Mars",
+        lyrics: lyrics[4] ?? getTranslation(getLanguage(),"comingSoon")
+    },
+    {
+        id:6,
+        name:"Herxheim",
+        lyrics: lyrics[5] ?? getTranslation(getLanguage(),"comingSoon")
+    },
+    {
+        id:7,
+        name:"Anima Sola",
+        lyrics: lyrics[6] ?? getTranslation(getLanguage(),"comingSoon")
+    },
 ];

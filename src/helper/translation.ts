@@ -77,22 +77,20 @@ export const translations={
         "pl":"STRONA W PRZYGOTOWANIU WIĘKSZOŚĆ INFORMACJI TO TYLKO TEMPLATE"
     },
     "aboutUsText":{
-        "en":"WE'RE LOOKING FOR A DRUMMER\n" +
-            "We're a thrash metal band from Poznan, Poland.\n"+
+        "en":"We're a thrash metal band from Poznan, Poland.\n"+
             "We've been going since April 2025, we recorded a demo with 4 songs, and have more coming.\n"+
-            "We'd be ready to play live, but we're still looking for a new drummer :( \n"+
+            "Ready to play live in ~2-3 months \n"+
             "We're aiming to drop a single this year, so stay tuned! \n"+
             "Meanwhile, we invite you to follow us on our social media profiles.",
-        "pl":"SZUKAMY PERKUSISTY\n" +
-            "Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
+        "pl":"Jesteśmy młodym zespołem thrash metalowym z Poznania.\n" +
             "Powstaliśmy w kwietniu 2025 roku, nagraliśmy demo z 4 utworami, i piszemy więcej, "+
             "niedługo wyjdzie singiel. \n"+
-            "Będziemy gotowi koncertować jak znajdziemy perkusiste, \n"+
+            "Będziemy gotowi na koncerty za ok. 2-3 miesiące, \n"+
             "a w międzyczasie zapraszamy do odwiedzenia naszych profili na mediach społecznościowych."
     },
     "writtenByEveryone":{
         "en":"Written by Filip & Aleks",
-        "pl":"Utwór napisany przez Filipa i Aleksa"
+        "pl":"Utwory napisane przez Filipa i Aleksa"
     },
     "honorableMentions":{
         "en":"Honorable mentions: ",
@@ -134,8 +132,8 @@ export const translations={
         "pl":""
     },
     "timelineDesc-4":{
-        "en":"First rehersal with all 5 band members",
-        "pl":"Pierwsza próba w pełnym składzie"
+        "en":"First rehearsal with the current 5 band members",
+        "pl":"Pierwsza próba w obecnym pełnym składzie"
     },
     "timelineSubTitle-4":{
         "en":"",
@@ -143,8 +141,8 @@ export const translations={
     },
 
     "timelineDesc-5":{
-        "en":"In first half of 2026 we've recorded our demo which isn't public yet",
-        "pl":"W pierwszej połowie 2026 nagraliśmy demo, które nie jest publiczne"
+        "en":"In first half of 2026 we've recorded our demo (which isn't publicly available)",
+        "pl":"W pierwszej połowie 2026 nagraliśmy demo (które nie jest publicznie dostępne)"
     },
     "timelineSubTitle-5":{
         "en":"",

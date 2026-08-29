@@ -3,21 +3,23 @@ import {getLanguage,getTranslation} from "../helper/translation"
 
 export const timeLineItems_real:TimelineElement[]=[
     {
+        id:4,
+        year:2026,
+        month:7,
+        day:10,
+        subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
+        description:getTranslation(getLanguage(),"timelineDesc-4"),
+        photo:"fullband.png"
+    },
+    {
         id:5,
         year:2026,
+        month:4,
+        day:28,
         subtitle:getTranslation(getLanguage(),"timelineSubTitle-5"),
         description:getTranslation(getLanguage(),"timelineDesc-5"),
         photo:""
     },
-  /*  {
-           id:4,
-           year:2026,
-           month:1,
-           day:20,
-           subtitle:getTranslation(getLanguage(),"timelineSubTitle-4"),
-           description:getTranslation(getLanguage(),"timelineDesc-4"),
-           photo:"fullband.png"
-       },*/
     {
         id:3,
         year:2025,
@@ -33,7 +35,7 @@ export const timeLineItems_real:TimelineElement[]=[
         month:6,
         subtitle:getTranslation(getLanguage(),"timelineSubTitle-2"),
         description:getTranslation(getLanguage(),"timelineDesc-2"),
-        photo:"mantikoraLogoGradient.png"
+        photo:"mantikoraLogo1.png"
     },
     {
         id:1,

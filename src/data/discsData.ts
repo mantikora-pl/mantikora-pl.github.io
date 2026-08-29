@@ -12,7 +12,7 @@ export interface Disc{
 export const discsData_real:Disc[]=[
     {
         title:"M.I.N.D",
-        date:"XX.XX.2026",
+        date:"XX.XX.2027",
         songs:[
             "Devil's Mouth"+single,
             "Vanitas",
@@ -24,7 +24,7 @@ export const discsData_real:Disc[]=[
             "Judgement XX",
             "MIND"+single,
         ],
-        credits:getTranslation(getLanguage(),"writtenByEveryone")
+        credits:""
     },
     {
         title:"Devil's Mouth - demo",
@@ -35,6 +35,7 @@ export const discsData_real:Disc[]=[
             "Kompania",
             "MIND",
         ],
+        coverArtSrc:"devilsmouth.png",
         credits:getTranslation(getLanguage(),"writtenByEveryone")
     },
 ]
